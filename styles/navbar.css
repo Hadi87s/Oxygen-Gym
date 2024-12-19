@@ -1,0 +1,128 @@
+
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    position: sticky;
+    top: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 3px;
+    width: 98vw;
+    z-index: 2;
+    color:white;
+    margin: 5px auto;
+    border-radius: 23px;
+    height: 60.4px;
+    transition: height 200ms;
+    border: 1px solid white;
+    font-weight: bold;
+}
+
+nav.bck {
+    background-color: black;
+}
+
+nav.filter {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+nav .logo {
+    position: relative;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: 25px;
+}   
+nav .logo a {
+    all: unset;
+    cursor: pointer;
+}
+
+nav .logo::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 65%;
+    background-color: white;
+    top: 17.5%;
+    right: -10px;
+    cursor: default;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.3s;
+    /* width: 100%; */
+    text-align: center;
+}
+
+nav ul li{
+    position: relative;
+    margin: 0 20px;
+}
+nav ul li a {
+    padding: 15px 0;
+    all:unset;
+    cursor: pointer;
+    z-index: 2
+}
+
+nav ul li::before{
+    content: "";
+    position: absolute;
+    top: 97%;
+    width: 0;
+    height: 2px;
+    background-color: blue;
+    transition: width 300ms;
+}
+
+nav ul li:hover::before{
+    width: 100%;
+}
+
+nav .bars{
+    cursor: pointer;
+    font-size: 20px;
+    opacity: 0;
+}
+
+nav.grow{
+    height: 300px;
+}
+
+nav ul.order {
+    display: block;
+    transition: 0.3s;
+}
+
+@media (max-width:864px) {
+    nav ul{
+        display: none;
+        margin-top: 50px;
+        padding:0;
+    }
+    nav ul li {
+        padding: 5px;
+        margin-left: 0;
+    }
+    nav {
+        justify-content: space-between;
+        width: 98vw;
+    }
+    nav div {
+        padding: 15px;
+    }
+    nav .bars {
+        opacity: 1;
+    }
+    nav ul li:hover::before{
+        width: 0;
+    }
+
+}

@@ -1,0 +1,35 @@
+
+.video-background{
+    background-color: black;
+}
+.video-background video{
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    z-index: -1; 
+}
+
+.video-background .arrow{
+    all:unset;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: wibble 2s ease-in-out infinite;
+    cursor: pointer;
+}
+
+@keyframes wibble {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
