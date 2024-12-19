@@ -17,7 +17,7 @@ nav {
     border-radius: 23px;
     height: 60.4px;
     transition: height 200ms;
-    border: 1px solid white;
+    border: 2px solid white;
     font-weight: bold;
 }
 
@@ -44,21 +44,20 @@ nav .logo a {
 nav .logo::after {
     content: "";
     position: absolute;
-    width: 1px;
+    width: 3px;
     height: 65%;
     background-color: white;
     top: 17.5%;
     right: -10px;
     cursor: default;
+    border-radius: 10px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    transition: 0.3s;
-    /* width: 100%; */
-    text-align: center;
+    transition: 300ms ease-in-out;
 }
 
 nav ul li{
@@ -69,7 +68,6 @@ nav ul li a {
     padding: 15px 0;
     all:unset;
     cursor: pointer;
-    z-index: 2
 }
 
 nav ul li::before{
@@ -80,6 +78,7 @@ nav ul li::before{
     height: 2px;
     background-color: blue;
     transition: width 300ms;
+    border-radius: 10px;
 }
 
 nav ul li:hover::before{
@@ -109,7 +108,8 @@ nav ul.order {
     }
     nav ul li {
         padding: 5px;
-        margin-left: 0;
+        margin: 0;
+        width: fit-content;
     }
     nav {
         justify-content: space-between;
@@ -121,8 +121,15 @@ nav ul.order {
     nav .bars {
         opacity: 1;
     }
-    nav ul li:hover::before{
+    nav ul li::before {
+        content: "";
+        position: absolute;
+        top: 97%;
         width: 0;
+        height: 2px;
+        background-color: blue;
+        transition: width 300ms;
+        border-radius: 10px;
     }
 
 }
