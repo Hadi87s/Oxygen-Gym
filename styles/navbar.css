@@ -33,7 +33,7 @@ nav {
     transition: height 200ms;
     border: 2px solid var(--secondary-color);
     font-weight: bold;
-    box-shadow: 0 7px 20px rgba(255, 255, 255, 0.5);
+    /* box-shadow: 0 7px 20px rgba(255, 255, 255, 0.5); */
 }
 
 nav.bck {
@@ -85,8 +85,11 @@ nav ul li a {
     padding: 15px 0;
     all:unset;
     cursor: pointer;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Glow effect for text */
-    transition: color 0.3s, text-shadow 0.3s;
+    /* text-shadow: 0 0 4px rgba(255, 255, 255, 0.8); 
+    transition: color 0.3s, text-shadow 0.3s; */
+}
+nav ul li a:hover {
+    /* color: #fd442a; */
 }
 
 nav ul li::before{
@@ -117,12 +120,14 @@ nav.grow{
 }
 
 nav ul.order {
-    display: block;
+    display: flex;
     transition: 0.3s;
 }
 
 @media (max-width:960px) {
     nav ul{
+        flex-direction: column;
+        align-items: center;
         display: none;
         margin-top: 50px;
         padding:0;

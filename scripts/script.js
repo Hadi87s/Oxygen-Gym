@@ -3,6 +3,26 @@ let navElements = document.querySelector("nav ul");
 let navListElements = [...document.querySelectorAll("nav ul li")];
 let Logo = document.querySelector("nav .logo");
 
+const build = document.querySelector(".build");
+const greatness = document.querySelector(".greatness");
+const Jc = document.querySelector(".Jc");
+
+window.onload = () => {
+  setTimeout(() => {
+    build.style.display = "block";
+  }, 320);
+  setTimeout(() => {
+    greatness.style.display = "block";
+  }, 900);
+  if (window.outerWidth <= 617) {
+    Jc.style.display = "none";
+  } else {
+    setTimeout(() => {
+      Jc.style.display = "block";
+    }, 1600);
+  }
+};
+
 document.getElementById("bugerList").onclick = (e) => {
   e.stopPropagation();
   nav.classList.toggle("grow");

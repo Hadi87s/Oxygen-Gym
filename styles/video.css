@@ -3,11 +3,11 @@
 :root{
     --main-color:#181818;
     --secondary-color:#f3f3f3;
-    --header-color:white;
+    --hero-color:white;
     --text-color:white;
 }
 
-.header{
+.hero{
     position: relative;
     height: 101vh;
     width: 100%;
@@ -52,7 +52,7 @@
     left: 50px;
     -webkit-text-fill-color: var(--secondary-color);
 }
-.video-background p {
+ .video-background p {
     position: absolute;
     bottom: 27%;
     left: 333px;
@@ -81,7 +81,7 @@
 }
 
 @media(max-width:617px){
-    .video-background p{
+    .hero .video-background p {
         display: none;
     }
 }
