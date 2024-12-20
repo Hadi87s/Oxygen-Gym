@@ -1,9 +1,16 @@
+:root{
+  --main-color:#181818;
+  --secondary-color:#f3f3f3;
+  --header-color:white;
+  --text-color:white;
+}
+
 body{
   font-family: "Oswald", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  /* background-color: #232323; */
+  background-color: var(--main-color);
   height: 300vh;
 }
 html{

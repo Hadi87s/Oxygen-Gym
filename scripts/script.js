@@ -19,17 +19,17 @@ window.onclick = (event) => {
   }
 };
 
-window.onscroll = () => {
-  if (window.scrollY > 0) {
-    nav.classList.remove("bck");
-    nav.classList.add("filter");
-    // nav.style.color = "black"; // Uncomment If Needed.
-  } else {
-    nav.classList.add("bck");
-    nav.classList.remove("filter");
-    // nav.style.color = "white"; // Uncomment If Needed.
-  }
-};
+// window.onscroll = () => {
+//   if (window.scrollY > 0) {
+//     // nav.classList.remove("bck");
+//     nav.classList.add("filter");
+//     // nav.style.color = "black"; // Uncomment If Needed.
+//   } else {
+//     // nav.classList.add("bck");
+//     nav.classList.remove("filter");
+//     // nav.style.color = "white"; // Uncomment If Needed.
+//   }
+// };
 
 Logo.onclick = () => {
   window.scrollTo({

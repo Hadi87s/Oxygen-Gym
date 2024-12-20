@@ -1,4 +1,11 @@
 
+:root{
+    --main-color:#181818;
+    --secondary-color:#f3f3f3;
+    --header-color:white;
+    --text-color:white;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -17,19 +24,20 @@ nav {
     justify-content: space-around;
     align-items: flex-start;
     padding: 3px;
-    width: 95vw;
+    width: 85vw;
     z-index: 2;
-    color:white;
+    color:var(--secondary-color);
     margin: 5px auto;
     border-radius: 23px;
     height: 60.4px;
     transition: height 200ms;
-    border: 2px solid white;
+    border: 2px solid var(--secondary-color);
     font-weight: bold;
+    box-shadow: 0 7px 20px rgba(255, 255, 255, 0.5);
 }
 
 nav.bck {
-    background-color: #181818;
+    background-color: var(--main-color);
 }
 
 nav.filter {
@@ -42,6 +50,8 @@ nav .logo {
     padding: 10px 10px;
     cursor: pointer;
     font-size: 25px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glow effect for text */
+    transition: color 0.3s, text-shadow 0.3s;
 }   
 nav .logo a {
     all: unset;
@@ -53,7 +63,7 @@ nav .logo::after {
     position: absolute;
     width: 3px;
     height: 65%;
-    background-color: white;
+    background-color: var(--secondary-color);
     top: 17.5%;
     right: -10px;
     cursor: default;
@@ -75,6 +85,8 @@ nav ul li a {
     padding: 15px 0;
     all:unset;
     cursor: pointer;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Glow effect for text */
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 nav ul li::before{
@@ -83,7 +95,7 @@ nav ul li::before{
     top: 97%;
     width: 0;
     height: 2px;
-    background-color: blue;
+    background-color: var(--secondary-color);
     transition: width 300ms;
     border-radius: 10px;
 }
@@ -96,10 +108,12 @@ nav .bars{
     cursor: pointer;
     font-size: 20px;
     opacity: 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glow effect for text */
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 nav.grow{
-    height: 300px;
+    height:300px;
 }
 
 nav ul.order {
@@ -107,7 +121,7 @@ nav ul.order {
     transition: 0.3s;
 }
 
-@media (max-width:864px) {
+@media (max-width:960px) {
     nav ul{
         display: none;
         margin-top: 50px;
@@ -120,7 +134,6 @@ nav ul.order {
     }
     nav {
         justify-content: space-between;
-        width: 98vw;
     }
     nav div {
         padding: 15px;
@@ -134,9 +147,14 @@ nav ul.order {
         top: 97%;
         width: 0;
         height: 2px;
-        background-color: blue;
+        background-color: var(--secondary-color);
         transition: width 300ms;
         border-radius: 10px;
     }
 
+}
+
+.container {
+    margin-left: 80px;
+    margin-right: 80px;
 }
