@@ -1,0 +1,15 @@
+
+
+.motivation-text{
+    padding: 20px;
+    background-color: #242424;
+    text-align: center;
+}
+.motivation-text h1{
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 3px white;
+    font-size: 100px;
+}
