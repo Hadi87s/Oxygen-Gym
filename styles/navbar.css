@@ -1,11 +1,4 @@
 
-:root{
-    --main-color:#181818;
-    --secondary-color:#f3f3f3;
-    --header-color:white;
-    --text-color:white;
-}
-
 * {
     box-sizing: border-box;
 }

@@ -1,12 +1,5 @@
 
 
-:root{
-    --main-color:#181818;
-    --secondary-color:#f3f3f3;
-    --hero-color:white;
-    --text-color:white;
-}
-
 .hero{
     position: relative;
     height: 101vh;
@@ -62,7 +55,7 @@
     font-size: 17px;
 }
 .video-background p span {
-    color: red;
+    color: var(--text-color);
     text-transform: uppercase;
     font-weight: bold;
 }

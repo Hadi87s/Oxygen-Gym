@@ -2,7 +2,7 @@
   --main-color:#181818;
   --secondary-color:#f3f3f3;
   --header-color:white;
-  --text-color:white;
+  --text-color:#DC143C;
 }
 
 body{
@@ -12,7 +12,4 @@ body{
   font-style: normal;
   background-color: var(--main-color);
   height: 300vh;
-}
-html{
-  margin-top: -5px;
 }
