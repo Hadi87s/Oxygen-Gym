@@ -68,6 +68,9 @@ nav ul {
     display: flex;
     justify-content: space-between;
     transition: 300ms ease-in-out;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 nav ul li{
@@ -156,9 +159,4 @@ nav ul.order {
         display: none;
     }
 
-}
-
-.container {
-    margin-left: 80px;
-    margin-right: 80px;
 }
