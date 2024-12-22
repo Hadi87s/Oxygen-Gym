@@ -10,7 +10,7 @@
     /* background-color: yellow; */
     border-radius: 10px;
     padding: 0 0 0 20px;
-    border: 2px solid var(--text-color);
+    border: 2px solid var(--crimson-color);
     box-shadow: 0 4px 20px rgba(229, 9, 20, 0.3);
     transition: all 0.3s ease-in-out;
 
@@ -20,12 +20,9 @@
     transform: translateY(-5px); /* Slight lift */
 }
 
-.about .main-heading{
+.main-heading{
     margin:0;
     padding: 20px;
-}
-
-.about .main-heading{
     text-align: start;
 }
 
@@ -47,16 +44,16 @@
 
 
 @media (max-width:1073px){
-    .about .main-heading p {
+    .main-heading p {
         font-size: 17px;
     }
 }
 
 @media (max-width:937px){
-    .about .main-heading h1 {
+    .main-heading h1 {
         font-size: 85px;
     }
-    .about .main-heading p {
+    .main-heading p {
         font-size: 15px;
     }
     .container {
@@ -65,18 +62,18 @@
     }
 }
 @media (max-width:837px){
-    .about .main-heading h1 {
+    .main-heading h1 {
         font-size: 75px;
     }
-    .about .main-heading p {
+    .main-heading p {
         font-size: 13px;
     }
 }
 @media (max-width:795){
-    .about .main-heading h1 {
+    .main-heading h1 {
         font-size: 45px;
     }
-    .about .main-heading p {
+    .main-heading p {
         font-size: 13px;
     }
     .container {
@@ -86,10 +83,10 @@
 }
 
 @media (max-width:735px){
-    .about .main-heading h1 {
+    .main-heading h1 {
         font-size: 40px;
     }
-    .about .main-heading p {
+    .main-heading p {
         font-size: 13px;
     }
     .about{

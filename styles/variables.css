@@ -2,7 +2,8 @@
   --main-color:#181818;
   --secondary-color:#f3f3f3;
   --header-color:white;
-  --text-color:#DC143C;
+  --crimson-color:#dc143c;
+  --crimson-shadow:#dc143c88;
 }
 
 body{
