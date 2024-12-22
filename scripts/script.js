@@ -5,7 +5,7 @@ let Logo = document.querySelector("nav .logo");
 
 const build = document.querySelector(".build");
 const greatness = document.querySelector(".greatness");
-const Jc = document.querySelector(".Jc");
+const btn = document.querySelector(".btn-grad");
 
 window.onload = () => {
   setTimeout(() => {
@@ -18,7 +18,7 @@ window.onload = () => {
     Jc.style.display = "none";
   } else {
     setTimeout(() => {
-      Jc.style.display = "block";
+      btn.style.display = "block";
     }, 1600);
   }
 };
@@ -39,17 +39,12 @@ window.onclick = (event) => {
   }
 };
 
-// window.onscroll = () => {
-//   if (window.scrollY > 0) {
-//     // nav.classList.remove("bck");
-//     nav.classList.add("filter");
-//     // nav.style.color = "black"; // Uncomment If Needed.
-//   } else {
-//     // nav.classList.add("bck");
-//     nav.classList.remove("filter");
-//     // nav.style.color = "white"; // Uncomment If Needed.
-//   }
-// };
+btn.onclick = () => {
+  window.scrollTo({
+    top: 747,
+    behavior: "smooth",
+  });
+};
 
 Logo.onclick = () => {
   window.scrollTo({

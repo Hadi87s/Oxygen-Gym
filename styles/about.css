@@ -1,17 +1,9 @@
 
-.container {
-    margin-left: 100px;
-    margin-right: 100px;
-}
 .about{
     display: flex;
     justify-content: space-between;
     margin-top: 100px;
-    /* background-color: yellow; */
-    border-radius: 10px;
     padding: 0 0 0 20px;
-    border: 2px solid var(--crimson-color);
-    box-shadow: 0 4px 20px rgba(229, 9, 20, 0.3);
     transition: all 0.3s ease-in-out;
 
 }
@@ -20,11 +12,6 @@
     transform: translateY(-5px); /* Slight lift */
 }
 
-.main-heading{
-    margin:0;
-    padding: 20px;
-    text-align: start;
-}
 
 .about .video-wrapper{
     height: 400px;
@@ -42,53 +29,7 @@
 
 }
 
-
-@media (max-width:1073px){
-    .main-heading p {
-        font-size: 17px;
-    }
-}
-
-@media (max-width:937px){
-    .main-heading h1 {
-        font-size: 85px;
-    }
-    .main-heading p {
-        font-size: 15px;
-    }
-    .container {
-        margin-left: 70px;
-        margin-right: 70px;
-    }
-}
-@media (max-width:837px){
-    .main-heading h1 {
-        font-size: 75px;
-    }
-    .main-heading p {
-        font-size: 13px;
-    }
-}
-@media (max-width:795){
-    .main-heading h1 {
-        font-size: 45px;
-    }
-    .main-heading p {
-        font-size: 13px;
-    }
-    .container {
-        margin-left: 60px;
-        margin-right: 60px;
-    }
-}
-
 @media (max-width:735px){
-    .main-heading h1 {
-        font-size: 40px;
-    }
-    .main-heading p {
-        font-size: 13px;
-    }
     .about{
         position: relative;
         flex-direction: column;
@@ -106,9 +47,5 @@
         position: absolute;
         right: 0;
         bottom: 0;
-    }
-    .container {
-        margin-left: 40px;
-        margin-right: 40px;
     }
 }

@@ -1,0 +1,48 @@
+
+
+.bCard {
+    margin:35px auto;
+    padding: 3em;
+    width: 450px;
+    background-color: var(--lighter-bg);
+    color: #f1f1f1;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.bCard::after,
+.bCard::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    padding: 3px;
+    border-radius: 12px;
+    background-image: conic-gradient(from var(--angle),transparent 80%,#dc143c);
+    animation: 8s spin linear infinite;
+}
+
+.bCard::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@keyframes spin {
+    0% {
+    --angle:0deg;
+    }
+    100% {
+        --angle:360deg;
+    }
+}
