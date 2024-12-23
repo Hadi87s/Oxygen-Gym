@@ -79,6 +79,8 @@
 @media (max-width:735px){
     .main-heading h1 {
         font-size: 40px;
+        -webkit-text-fill-color: var(--crimson-color);
+        -webkit-text-stroke: 0;
     }
     .main-heading p {
         font-size: 13px;

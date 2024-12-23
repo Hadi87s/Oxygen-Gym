@@ -1,0 +1,66 @@
+.footer {
+    background: var(--lighter-bg);
+    color: var(--secondary-color);
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 0.125em solid var(--crimson-color);
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+    background: linear-gradient(to right, var( --main-color), rgba(104, 15, 19, 0.5));
+    background-size: 300% 300%;
+    animation: gradientScroll 6s ease infinite;
+    font-size: 18px;
+    margin-top: 110px;
+}
+.footer .links {
+    width: 100%;
+}
+.footer ul{
+    list-style: none;
+} 
+.footer a{
+    all: unset;
+    cursor: pointer;
+} 
+.footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 4;
+    flex-direction: row;
+    justify-content: center;
+}
+.footer li a{
+    padding: 0.5rem 1.25rem;
+    transition: text-shadow 200ms ease-out;
+}
+.footer a:hover {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+.footer .socials ul {
+    display: flex;
+}
+
+.footer .socials ul li a i {
+    font-size: 25px;
+}
+
+.footer .rights{
+    margin-top: 1.25rem;
+    font-size: 16px;
+    text-align: center;
+}
+
+@keyframes gradientScroll {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
