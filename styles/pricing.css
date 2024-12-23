@@ -83,3 +83,44 @@
         width: 200px;
     }
 }
+
+/* From Uiverse.io by alexroumi */ 
+.plans .pricing button {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: var(--secondary-color);
+    z-index: 1;
+    background: var(--crimson-color);
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.plans .pricing button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: var(--secondary-color);
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px var(--crimson-color);
+    box-shadow: 4px 8px 19px -3px var(--crimson-color);
+    transition: all 250ms
+}
+
+.plans .pricing button:hover {
+    color: var(--crimson-color);
+    box-shadow: 0px 1px 30px -10px var(--crimson-color);
+}
+
+.plans .pricing button:hover::before {
+    width: 100%;
+}

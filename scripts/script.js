@@ -23,12 +23,37 @@ window.onload = () => {
   }
 };
 
-document.getElementById("bugerList").onclick = (e) => {
+// document.querySelector(".hamburger").onclick = (e) => {
+//   e.stopPropagation();
+//   console.log(`From hamburger being pressed!`);
+
+//   nav.classList.toggle("grow");
+//   setTimeout(() => {
+//     navElements.classList.toggle("order");
+//   }, 100);
+// };
+
+const hamburger = document.querySelector("#burgerList");
+const checkbox = hamburger.querySelector("input");
+
+checkbox.onchange = (e) => {
   e.stopPropagation();
-  nav.classList.toggle("grow");
-  setTimeout(() => {
-    navElements.classList.toggle("order");
-  }, 100);
+  if (checkbox.checked) {
+    console.log(`From hamburger being pressed!`);
+
+    nav.classList.add("grow");
+
+    setTimeout(() => {
+      navElements.classList.add("order");
+    }, 100);
+  } else {
+    // a7a
+    nav.classList.remove("grow");
+
+    setTimeout(() => {
+      navElements.classList.remove("order");
+    }, 100);
+  }
 };
 
 window.onclick = (event) => {
