@@ -41,7 +41,7 @@ window.onclick = (event) => {
 
 btn.onclick = () => {
   window.scrollTo({
-    top: 747,
+    top: 986.4,
     behavior: "smooth",
   });
 };
@@ -53,3 +53,25 @@ Logo.onclick = () => {
     behavior: "smooth",
   });
 };
+
+// Custom Reveal Animation Script.
+// Didn't use AOS due to some malfunction in hover when I use it sometimes.
+const revealElements = document.querySelectorAll(".reveal");
+
+function handleScroll() {
+  revealElements.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (elementTop < windowHeight - 50) {
+      element.classList.add("show"); // Add 'show' when element is in view
+    } else {
+      element.classList.remove("show"); // Remove 'show' when out of view (optional)
+    }
+  });
+}
+
+// Attach the scroll event
+window.addEventListener("scroll", handleScroll);
+
+AOS.init();
