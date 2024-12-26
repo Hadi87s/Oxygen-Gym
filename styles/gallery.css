@@ -128,7 +128,6 @@ h1 {
       color: var(--crimson-color);
     }
     div.roll-up p {
-      margin: -10px;
       font-size: 10px;
     }
   }
