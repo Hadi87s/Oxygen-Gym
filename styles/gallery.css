@@ -123,12 +123,13 @@ h1 {
     }
     div.roll-up h4{
       margin-left:-10px;
-      margin-top: 10px;
+      margin-top: 8px;
       font-size: 12px;
       color: var(--crimson-color);
     }
     div.roll-up p {
       font-size: 10px;
+      line-height: 13px;
     }
   }
   @media (max-width:360px) {

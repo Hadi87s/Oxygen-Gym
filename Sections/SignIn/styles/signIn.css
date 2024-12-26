@@ -20,10 +20,10 @@ body {
 
 .signin-wrapper {
     display: flex;
-    width: 800px;
+    width: 900px;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: inset 10px 6px 29px -15px var(--secondary-color);
+    box-shadow: 0px 0px 20px 7px rgb(50 50 50 / 36%);
     background: var(--lighter-bg);
     animation: fadeIn 0.4s ease-in-out;
 }
@@ -43,7 +43,7 @@ body {
     object-fit: cover;
 }
 
-/* Sign-in card */
+
 .signin-card {
     flex: 1;
     padding: 40px;
