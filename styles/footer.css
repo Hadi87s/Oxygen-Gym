@@ -43,6 +43,12 @@
     display: flex;
 }
 
+.footer .links ul li {
+    padding: 10px;
+}
+.footer .socials ul li {
+    padding: 10px;
+}
 .footer .socials ul li a i {
     font-size: 25px;
 }

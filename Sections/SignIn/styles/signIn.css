@@ -1,0 +1,243 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--main-color);
+}
+
+
+.signin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.signin-wrapper {
+    display: flex;
+    width: 800px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 30px -15px var(--secondary-color);
+    background: var(--lighter-bg);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Image */
+.signin-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--main-color);
+}
+
+.signin-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Sign-in card */
+.signin-card {
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Title and subtitle */
+.signin-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--crimson-color);
+}
+
+.signin-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+}
+
+/* Input fields */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid var(--crimson-color);
+    border-radius: 8px;
+    background: var(--main-color);
+    color: var(--secondary-color);
+    transition: all 0.3s ease-out;
+}
+
+.input-group input:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+.btn-grad {
+    width: 100%;
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: var(--secondary-color);
+    z-index: 1;
+    background: var(--crimson-color);
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.btn-grad::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: var(--secondary-color);
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px var(--crimson-color);
+    box-shadow: 4px 8px 19px -3px var(--crimson-color);
+    transition: all 250ms
+}
+
+.btn-grad:hover {
+    color: var(--crimson-color);
+    box-shadow: 0px 1px 30px -10px var(--crimson-color);
+}
+
+.btn-grad:hover::before {
+    width: 100%;
+}
+
+/* Footer links */
+.signin-footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.signin-footer a {
+    color: var(--crimson-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.signin-footer a:hover {
+    color: var(--secondary-color);
+}
+
+.input-group input:focus {
+    box-shadow: 0 0 30px -16px var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .signin-container{
+        padding: 0;
+        width: 90%;
+        
+    }
+    .signin-wrapper {
+        flex-direction: column;
+        margin: 50px 0 50px;
+    }
+    
+    .signin-wrapper .signin-image img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .signin-wrapper .signin-image {
+        height: 200px;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px;
+    }
+
+    .signin-card {
+        padding: 20px;
+    }
+}
+
+
+.signin-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.swiper{
+    height: 100%;
+}
+.swiper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: var(--crimson-color);
+}
+
+.swiper-pagination {
+    bottom: 10px;
+}
+
+.swiper .swiper-pagination-bullet {
+    background-color: var(--secondary-color); 
+    opacity: 0.6;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.swiper .swiper-pagination-bullet-active {
+    background-color: var(--crimson-color); 
+    opacity: 1;
+}

@@ -110,8 +110,6 @@ nav ul li:hover::before{
 }
 
 nav .hamburger{
-    /* cursor: pointer;
-    font-size: 20px; */
     display: none;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glow effect for text */
     transition: color 0.3s, text-shadow 0.3s;
@@ -152,12 +150,20 @@ nav ul.order {
     nav ul li::before {
         content: "";
         position: absolute;
-        top: 97%;
+        top: 91%;
         width: 0;
         height: 2px;
-        background-color: var(--secondary-color);
         transition: width 300ms;
         border-radius: 10px;
+    }
+    nav ul li:first-child:hover::before {
+        width: 90%;
+    }
+    nav ul li:last-child:hover::before {
+        width: 68%;
+    }
+    nav ul li:hover::before {
+        width: 90%;
     }
 
     nav .logo {

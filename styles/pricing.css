@@ -29,20 +29,6 @@
     line-height: 24px;
 }
 
-.container .pricing button{
-    all: unset;
-    margin-top: 35px;
-    cursor: pointer;
-    padding: 10px 35px;
-    background-color: var(--crimson-color);
-    border-radius: 10px;
-    transition: transform 200ms ease-in, background-color 200ms ease;
-}
-
-.container .pricing button:hover {
-    background-color: var(--secondary-color);
-    color: var(--crimson-color);
-}
 
 @media (max-width:566px){
     .container .pricing h1 {
@@ -84,7 +70,6 @@
     }
 }
 
-/* From Uiverse.io by alexroumi */ 
 .plans .pricing button {
     padding: 15px 25px;
     border: unset;
@@ -99,6 +84,7 @@
     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
     transition: all 250ms;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .plans .pricing button::before {
