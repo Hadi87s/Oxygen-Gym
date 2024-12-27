@@ -4,7 +4,15 @@ let navListElements = [...document.querySelectorAll("nav ul li a")];
 let Logo = document.querySelector("nav .logo");
 const build = document.querySelector(".build");
 const greatness = document.querySelector(".greatness");
-const btn = document.querySelector(".btn-grad");
+const btn = document.querySelector(".gB");
+
+document.addEventListener("DOMContentLoaded", () => {
+  AOS.init({
+    once: true,
+    duration: 500,
+    offset: 100, // Offset for triggering animations
+  });
+});
 
 window.onload = () => {
   setTimeout(() => {
@@ -67,8 +75,6 @@ Logo.onclick = () => {
   });
 };
 
-// Custom Reveal Animation Script.
-// Didn't use AOS due to some malfunction in hover when I use it sometimes.
 const revealElements = document.querySelectorAll(".reveal");
 
 function handleScroll() {
@@ -77,9 +83,9 @@ function handleScroll() {
     const windowHeight = window.innerHeight;
 
     if (elementTop < windowHeight - 50) {
-      element.classList.add("show"); // Add 'show' when element is in view
+      element.classList.add("show"); //
     } else {
-      element.classList.remove("show"); // Remove 'show' when out of view (optional)
+      element.classList.remove("show");
     }
   });
 }
@@ -88,17 +94,3 @@ function handleScroll() {
 window.addEventListener("scroll", handleScroll);
 
 AOS.init();
-
-// window.onscroll = () => {
-//   console.log(window.scrollY);
-//   navListElements.map((element) => {
-//     if (
-//       window.scrollY > 683 &&
-//       window.localStorage.getItem("darkmode") !== "active"
-//     ) {
-//       element.style.color = "#181818";
-//     } else {
-//       element.style.color = "#f3f3f3";
-//     }
-//   });
-// };

@@ -49,30 +49,11 @@
 
 
 
-.btn-grad {background-image: linear-gradient(to right, #000000 0%, #e74c3c  51%, #000000  100%)}
-.btn-grad {
+.LandingBtn {
     position: absolute;
     top: 90%;
     left: 50%; 
     transform: translate(-50%,-50%);
-    border: 1px solid var(--secondary-color);
-    margin: 10px;
-    padding: 10px 45px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;            
-    box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
-    cursor: pointer;
-    display: none;
-}
-
-.btn-grad:hover {
-    background-position: right center; 
-    color: #fff;
-    text-decoration: none;
 }
 
 
