@@ -29,7 +29,7 @@
     z-index: -1;
     padding: 3px;
     border-radius: 12px;
-    background-image: conic-gradient(from var(--angle),transparent 70%,#dc143c,transparent);
+    background-image: conic-gradient(from var(--angle),transparent 70%,var(--crimson-color),transparent);
     animation: 7s spin linear infinite;
 }
 

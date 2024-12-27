@@ -11,7 +11,7 @@
 }
 
 .plans:hover {
-    box-shadow: 0 8px 30px rgba(229, 9, 20, 0.5);
+    box-shadow: 0 8px 30px var(--box-shadow);
     transform: translateY(-5px);
 }
 
@@ -27,6 +27,7 @@
 .container .pricing p {
     text-align: start;
     line-height: 24px;
+    color: var(--text);
 }
 
 

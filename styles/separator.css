@@ -2,14 +2,14 @@
     text-align: center;
     padding: 20px 0;
     margin: 30px 0;
-    background: linear-gradient(90deg, #E50914, #121212);
-    color: #fff;
+    background:var(--separator-gradient);
+    color: var(--secondary-color);
     font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
-    border-top: 2px solid #E50914;
-    border-bottom: 2px solid #E50914;
-    box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+    border-top: 2px solid var( --crimson-color);
+    border-bottom: 2px solid var( --crimson-color);
+    box-shadow: 0 0 10px var(--box-shadow);
     margin-top: 110px;
     margin-bottom: 110px;
 }

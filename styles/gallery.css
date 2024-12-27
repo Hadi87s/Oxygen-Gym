@@ -1,11 +1,10 @@
 
 .showcase{
-    border-radius: 10px;
+    border-radius: 23px;
     padding: 0 0 0 20px;
     border: 2px solid var(--crimson-color);
-    box-shadow: 0 4px 20px rgba(229, 9, 20, 0.3);
+    box-shadow: 0 4px 20px var(--box-shadow);
     transition: all 0.3s ease-in-out;
-    /* margin-top: 250px; */
 }
 
 .showcase .main-heading{
@@ -15,7 +14,7 @@
 text-align: start;
 }
 .showcase:hover {
-    box-shadow: 0 8px 30px rgba(229, 9, 20, 0.5);
+    box-shadow: 0 8px 30px var(--box-shadow);
     transform: translateY(-5px);
 }
 
@@ -58,7 +57,7 @@ h1 {
   } 
   .card-list li:hover img {
     border: 1px solid var(--crimson-color);
-    box-shadow: 7px 4px 28px -12px rgba(229, 9, 20, 0.5);
+    box-shadow: 7px 4px 28px -12px var(--box-shadow);
   }
   
   .card-list  li::before {

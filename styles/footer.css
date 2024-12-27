@@ -8,8 +8,8 @@
     justify-content: center;
     align-items: center;
     border-top: 0.125em solid var(--crimson-color);
-    box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
-    background: linear-gradient(to right, var( --main-color), rgba(104, 15, 19, 0.5));
+    box-shadow: 0 0 10px var(--box-shadow);
+    background: linear-gradient(to right, var( --main-color), var(--footer-shadow));
     background-size: 300% 300%;
     animation: gradientScroll 6s ease infinite;
     font-size: 18px;
@@ -18,26 +18,26 @@
 .footer .links {
     width: 100%;
 }
-.footer ul{
-    list-style: none;
-} 
+
 .footer a{
     all: unset;
     cursor: pointer;
 } 
 .footer ul {
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
     flex: 4;
     flex-direction: row;
     justify-content: center;
+    padding: 0;
 }
 .footer li a{
     padding: 0.5rem 1.25rem;
     transition: text-shadow 200ms ease-out;
 }
 .footer a:hover {
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 15px var(--hover-shadow);
 }
 .footer .socials ul {
     display: flex;
