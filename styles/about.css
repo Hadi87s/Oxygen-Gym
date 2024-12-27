@@ -26,12 +26,10 @@
 
 
 .about .video-wrapper{
-    height: 400px;
-    width: 223px;
+    height: 360px;
     text-align: end;
     /* clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%); */
     border-radius: 19px;
-    clip-path: none;
     border-top-right-radius: 0;
     
 }
