@@ -17,25 +17,13 @@
 }
 
 
-/* .video-background .arrow{
-    all:unset;
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    animation: wibble 2s ease-in-out infinite;
-    cursor: pointer;
-    border-radius: 50%;
-} */
-
 .video-background h1{
     position: absolute;
     bottom: 40%;
-    color: var(--secondary-color);
     font-weight: bold;
     text-transform: uppercase;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 3px var(--secondary-color);
+    -webkit-text-stroke: 3px #f3f3f3;
     font-size: 100px;
     left: 20px;
 }
@@ -43,7 +31,7 @@
 .video-background .greatness{
     bottom: 25%;  
     left: 50px;
-    -webkit-text-fill-color: var(--secondary-color);
+    -webkit-text-fill-color: #f3f3f3;
 }
 .video-background p {
     position: absolute;

@@ -1,8 +1,7 @@
 let nav = document.querySelector("nav");
 let navElements = document.querySelector("nav ul");
-let navListElements = [...document.querySelectorAll("nav ul li")];
+let navListElements = [...document.querySelectorAll("nav ul li a")];
 let Logo = document.querySelector("nav .logo");
-
 const build = document.querySelector(".build");
 const greatness = document.querySelector(".greatness");
 const btn = document.querySelector(".btn-grad");
@@ -23,16 +22,6 @@ window.onload = () => {
   }
 };
 
-// document.querySelector(".hamburger").onclick = (e) => {
-//   e.stopPropagation();
-//   console.log(`From hamburger being pressed!`);
-
-//   nav.classList.toggle("grow");
-//   setTimeout(() => {
-//     navElements.classList.toggle("order");
-//   }, 100);
-// };
-
 const hamburger = document.querySelector("#burgerList");
 const checkbox = hamburger.querySelector("input");
 
@@ -47,7 +36,6 @@ checkbox.onchange = (e) => {
       navElements.classList.add("order");
     }, 100);
   } else {
-    // a7a
     nav.classList.remove("grow");
 
     setTimeout(() => {
@@ -100,3 +88,17 @@ function handleScroll() {
 window.addEventListener("scroll", handleScroll);
 
 AOS.init();
+
+// window.onscroll = () => {
+//   console.log(window.scrollY);
+//   navListElements.map((element) => {
+//     if (
+//       window.scrollY > 683 &&
+//       window.localStorage.getItem("darkmode") !== "active"
+//     ) {
+//       element.style.color = "#181818";
+//     } else {
+//       element.style.color = "#f3f3f3";
+//     }
+//   });
+// };
