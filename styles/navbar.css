@@ -146,7 +146,7 @@ nav .hamburger{
 
 .line {
     fill: none;
-    stroke: white;
+    stroke: var(--secondary-color);
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 3;
@@ -189,7 +189,6 @@ header nav #theme-switch{
 
 header nav #theme-switch:hover{
     background-color: #ffffff6e;
-    transform: rotate(-30deg);
 }
 
 header nav #theme-switch i:last-child {

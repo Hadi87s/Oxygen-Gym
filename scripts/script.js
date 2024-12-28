@@ -5,6 +5,7 @@ let Logo = document.querySelector("nav .logo");
 const build = document.querySelector(".build");
 const greatness = document.querySelector(".greatness");
 const btn = document.querySelector(".gB");
+const burgerList = document.querySelector("nav .hamburger svg");
 
 document.addEventListener("DOMContentLoaded", () => {
   AOS.init({
@@ -36,8 +37,6 @@ const checkbox = hamburger.querySelector("input");
 checkbox.onchange = (e) => {
   e.stopPropagation();
   if (checkbox.checked) {
-    console.log(`From hamburger being pressed!`);
-
     nav.classList.add("grow");
 
     setTimeout(() => {
@@ -45,7 +44,6 @@ checkbox.onchange = (e) => {
     }, 100);
   } else {
     nav.classList.remove("grow");
-
     setTimeout(() => {
       navElements.classList.remove("order");
     }, 100);
