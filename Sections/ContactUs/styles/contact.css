@@ -50,7 +50,7 @@ main {
     margin: 5px;
 }
 
-.Message form .fullName .textArea textarea{
+.Message form .fullName  textarea{
     width: 500px;
     padding: 20px;
 }
@@ -141,7 +141,8 @@ main {
 
 
 .textarea {
-    min-height: 100px; 
+    min-height: 120px; 
+    width: 375px;
 }
 
 .Subscribe-btn {
@@ -278,8 +279,8 @@ form .Subscribe-btn svg {
     }
 }
 
-@media (max-width:576px){
-    .Message form .textArea textarea{
+@media (max-width:544px){
+    .textarea{
         width: 230px;
     }
     .Message form h2 {
