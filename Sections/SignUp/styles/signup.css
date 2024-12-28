@@ -21,8 +21,8 @@ display: block;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0px 0px 20px 7px rgb(50 50 50 / 36%);
-    width: 60%;
-    height: 80%;
+    width: 80%;
+    height: 85%;
     animation: fadeIn 0.4s ease-in-out;
 }
 
@@ -157,28 +157,26 @@ display: block;
     text-decoration: underline;
 }
 
-@media (max-width: 960px) {
-    .signup-container {
-        flex-direction: column;
-    }
-
-    .signup-image {
-        width: 100%;
-    }
-
-    .signup-card {
-        width: 100%;
-    }
-}
-
-
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateX(-40px);
     }
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width:768px){
+    .signup-card{
+        width: 100%;
+    }
+}
+
+@media (max-width:480px){
+    
+    .signup-image {
+        display: none;
     }
 }
