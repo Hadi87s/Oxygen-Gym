@@ -7,12 +7,7 @@
     transition: all 0.3s ease-in-out;
 }
 
-.showcase .main-heading{
-    padding: 20px;
-}
-.showcase .main-heading h1{
-text-align: start;
-}
+
 .showcase:hover {
     box-shadow: 0 8px 30px var(--box-shadow);
     transform: translateY(-5px);
