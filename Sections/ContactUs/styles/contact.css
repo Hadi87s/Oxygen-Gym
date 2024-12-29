@@ -213,7 +213,7 @@ form .Subscribe-btn svg {
 
 .locations{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px,1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
     /* justify-content: space-between; */
     text-align: center;
@@ -224,6 +224,7 @@ form .Subscribe-btn svg {
     margin-bottom: 80px;
     /* margin-left: -403px;     */
     color: var(--secondary-color);  
+    transition: background-color 0.3s ease-out;
 }
 
 .locations .info{
@@ -234,19 +235,20 @@ form .Subscribe-btn svg {
     color: var(--lighter-bg);
 }
 .locations > div {
-    background-color: var(--lighter-bg);
+    background-color: var(--main-color);
     border-radius: 23px;
-    box-shadow: 0px 0px 23px -6px var(--card-shadow);
+    box-shadow: 0px 0px 20px 7px var(--card-shadow);
 }
 .locations .info div {
     padding: 1rem;
-    background-color: var(--main-color);
+    background-color: var(--lighter-bg);
     border-radius: 23px;
     color: var(--secondary-color);
 }
 
 .locations .info div i {
     font-size: 40px;
+    color: var(--crimson-color);
 }
 .locations .info div h3{
     font-size: 25px;
@@ -291,3 +293,37 @@ form .Subscribe-btn svg {
 @media (max-width:480px){
 
 }
+
+
+select {
+    
+    width: 200px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color);
+    background-color: var(--lighter-bg);
+    font-size: 16px;
+    color: var(--secondary-color);
+    appearance: none; 
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%23999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpolyline points="6 9 12 15 18 9"%3E%3C/polyline%3E%3C/svg%3E'); /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    transition: all 0.2s ease-out;
+  }
+
+  select:hover {
+    border-color: #888;
+  }
+
+  select:focus {
+    outline: none;
+    background-color: var(--lighter-bg);
+  }
+
+  .right{
+    margin-top: 40px;
+  }
+  #map {
+    border-bottom-left-radius: 23px;
+    border-bottom-right-radius: 23px;
+  }
