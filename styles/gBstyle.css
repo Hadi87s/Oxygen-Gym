@@ -12,7 +12,6 @@ button.gB {
     transition: all 250ms;
     overflow: hidden;
     cursor: pointer;
-    display: none;
 }
 
 button.gB::before {

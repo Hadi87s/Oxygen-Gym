@@ -1,0 +1,16 @@
+header nav ul {
+    margin-top: 15px !important;
+}
+
+.gym-image h2 {
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%,-50%);
+    font-size: 3rem;
+}
+.gym-image button {
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0.75rem 1.5rem !important;
+}
