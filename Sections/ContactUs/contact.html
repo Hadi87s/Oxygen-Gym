@@ -99,9 +99,9 @@
                 </div>
             </form>
         </section>
-        <section class="locations">
+        <!-- <section class="locations">
+            <h1>Get In Touch With Us Now!</h1>
             <div class="left">
-                <h1>Get In Touch With Us Now!</h1>
                 <div class="info">
                     <div class="card">
                         <i class="ri-phone-fill"></i>
@@ -117,11 +117,19 @@
                         <i class="ri-map-pin-fill"></i>
                         <h3>Location</h3>
                         <select id="locations">
-                            <option value="dubai" selected>Dubai</option>
-                            <option value="kuwait">Kuwait</option>
-                            <option value="abu_dhabi">Abu Dhabi</option>
-                            <option value="sabah_alsalem">Sabah AlSalem</option>
-                        </select>
+                            <option value="" disabled selected>Select a location</option>
+                            <optgroup label="UAE">
+                              <option value="abu_dhabi">Abu Dhabi</option>
+                              <option value="dubai">Dubai</option>
+                            </optgroup>
+                            <optgroup label="Kuwait">
+                              <option value="jabriya">Oxygen Jabriya</option>
+                              <option value="sabah_alsaleem">Sabah AlSalem</option>
+                              <option value="al_adalia">Al Adalia</option>
+                              <option value="new_riggae">New Riggae</option>
+                              <option value="al_mahboula">Al Mahboula</option>
+                            </optgroup>
+                          </select>
                     </div>
                     <div class="card">
                         <i class="ri-time-fill"></i>
@@ -136,13 +144,13 @@
                 
                 </div>
             </div>
-        </section>
+        </section> -->
         
     </main>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY0dc3XXYkrXoJFj8Bi91xRcIkBo6j8_0"></script>
-    <script src="../../scripts/darkmode.js"></script>
-    <script src="../../scripts/script.js"></script>
-    <script src="./scripts/contact.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY0dc3XXYkrXoJFj8Bi91xRcIkBo6j8_0"></script>
+    <script defer src="../../scripts/darkmode.js"></script>
+    <script defer src="../../scripts/script.js"></script>
+    <script defer src="./scripts/contact.js"></script>
 </body>
 </html>
