@@ -5,7 +5,7 @@ main {
     flex-direction: row;
     max-width: 1000px;   
     justify-content: center;
-    margin: 120px auto 0;
+    margin: 120px auto 40px;
     border-radius: 23px;
 }
 
