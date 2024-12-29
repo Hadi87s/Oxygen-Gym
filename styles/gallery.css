@@ -125,6 +125,9 @@ h1 {
       font-size: 10px;
       line-height: 13px;
     }
+    .card-list li:hover img {
+      box-shadow: none;
+  }
   }
   @media (max-width:360px) {
     .card-list  li img {
