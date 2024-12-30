@@ -30,6 +30,12 @@ nav {
     box-shadow: 0px 8px 20px -11px var(--nav-shadow);
     background-color: var(--nav-bck);
 }
+nav ul li:last-child{
+    display: none;
+    color: var(--secondary-color);
+    position: absolute;
+    bottom: -50%;
+}
 
 nav.bck {
     background-color: var(--main-color);
