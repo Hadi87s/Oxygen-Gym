@@ -15,8 +15,19 @@ header nav ul {
 
 .plans {
     margin-top: 100px;
+    animation: fadeIn 0.4s ease-in-out;
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .plans .card {
     background-color: var(--lighter-bg);
     color: var(--secondary-color);
@@ -36,4 +47,22 @@ header nav ul {
 .plans .card a:hover {
     color: var(--crimson-color);
     background-color: var(--secondary-color);
+}
+
+.arrow-back {
+    all:unset;
+    background-color: var(--lighter-bg);
+    border-radius: 10px;
+    padding: 0 0.6rem 0.2rem;
+    color: var(--secondary-color);
+    transition: 0.3s ease-out;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.arrow-back:hover {
+    color: var(--lighter-bg);
+    background-color: var(--secondary-color);
+
 }

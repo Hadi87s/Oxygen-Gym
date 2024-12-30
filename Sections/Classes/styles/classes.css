@@ -13,6 +13,17 @@ header nav ul {
 	margin-top: 100px;
 	margin-bottom: 50px;
 	transition: 0.3s ease-out;
+	animation: fadeIn 0.4s ease-in-out;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .class-timetable-section.class-details-timetable {
