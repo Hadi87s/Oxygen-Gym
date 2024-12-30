@@ -1,6 +1,12 @@
 header nav ul {
     margin-top: 15px !important;
 }
+
+@media (max-width:961px){
+    header nav ul {
+        margin-top: 45px !important;
+    }
+}
 body {
     height: 200vh;
 }
@@ -49,7 +55,7 @@ color: var(--secondary-color);
 }
 
 .shop {
-    margin-top: calc(100vh + 100px);
+    margin-top: calc(100vh + 50px);
 }
 
 .shop .card{

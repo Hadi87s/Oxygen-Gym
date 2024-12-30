@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../../styles/bootstrap.min.css.map">
     <link rel="stylesheet" href="../../styles/variables.css">
     <link rel="stylesheet" href="../../styles/navbar.css">
     <link rel="stylesheet" href="../../styles/normalize.css">
     <link rel="stylesheet" href="../../styles/all.min.css">
+    <link rel="stylesheet" href="./styles/plans.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
         <!--   Remix Icons   -->
-        <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+    
+
 </head>
-<body>
+<body class="">
     <header>
         <nav class="filter">
             <div class="logo"><a href="../../index.html">OXYGEN</a></div>
@@ -30,17 +40,47 @@
                 <li><a href="../ContactUs/contact.html">Contact</a></li>
                 <li><a href="../Login/login.html"><i class="ri-user-fill" style="font-size: 17px;"></i></a></li>
             </ul>
-                    <label class="hamburger" id="burgerList">
-                      <input type="checkbox">
-                      <svg viewBox="0 0 32 32">
-                        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
-                        <path class="line" d="M7 16 27 16"></path>
-                      </svg>
-                    </label>
+            <label class="hamburger" id="burgerList">
+                <input type="checkbox">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+                </label>
+                <button id="theme-switch">
+                    <i class="ri-sun-fill"></i>
+                    <i class="ri-moon-fill"></i>
+                </button>
         </nav>
     </header>
-    <h1>Plans Page</h1>
+
+    <section class="plans container text-center">
+        <section class="text mb-5">
+            <h1 class="heading mb-4">Choose Your Plan and <span style="color: var(--crimson-color);">Start</span> Your Fitness Journey Today!</h1>
+            <p class="fs-sm-6 fs-md-4 ms-5 me-5">At Oxygen, we provide flexible membership plans tailored to fit your fitness goals and lifestyle. Whether you're looking for short-term access or long-term commitment, our plans give you the freedom to choose what works best for you. Explore our locations and find the perfect plan for your journey to health and wellness.</p>
+        </section>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-5">
+                <div class="card ps-5 pe-5">
+                    <h1>Kuwait</h1>
+                    <p class="fs-sm-6 fs-md-4">Kuwait - Where Fitness Meets Community" "Join our Kuwait location to experience state-of-the-art fitness facilities, a vibrant community, and a variety of classes tailored to all fitness levels. Whether you're building strength, improving endurance, or focusing on wellness, our Kuwait branch offers the support and resources to help you thrive.</p>
+                    <a class="mb-4" href="./Kuwait.html">Enroll Now</a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-5">
+                <div class="card ps-5 pe-5">
+                    <h1>UAE</h1>
+                    <p class="fs-sm-6 fs-md-4">UAE - Elevate Your Fitness Experience" "Our UAE location provides a premium fitness environment equipped with modern amenities and expert trainers dedicated to helping you achieve your fitness goals. With diverse workout options and personalized guidance, you can elevate your fitness journey and reach new heights in the heart of the UAE.</p>
+                    <a class="mb-4" href="./UAE.html">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../scripts/navbar.js"></script>
     <script src="../../scripts/darkmode.js"></script>
+    <script src="./scripts/plans.js"></script>
 </body>
 </html>

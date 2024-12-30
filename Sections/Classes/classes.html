@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../styles/bootstrap.min.css.map">
     <link rel="stylesheet" href="../../styles/variables.css">
     <link rel="stylesheet" href="../../styles/navbar.css">
     <link rel="stylesheet" href="../../styles/normalize.css">
     <link rel="stylesheet" href="../../styles/all.min.css">
+    <link rel="stylesheet" href="./styles/classes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- font -->
@@ -19,7 +22,7 @@
 </head>
 <body>
     <header>
-        <nav class="filter">
+        <nav class="filter custom-navbar">
             <div class="logo"><a href="../../index.html">OXYGEN</a></div>
             <ul>
                 <li><a href="../Shop/shops.html">Shop</a></li>
@@ -28,18 +31,173 @@
                 <li><a href="../Exercises/exercises.html">Exercises</a></li>
                 <li><a href="../Classes/classes.html">Classes</a></li>
                 <li><a href="../ContactUs/contact.html">Contact</a></li>
-                <li><a href="../Login/login.html"><i class="ri-user-fill" style="font-size: 17px;"></i></a></li>
+                <li><a href="../SignIn/signin.html"><i class="ri-user-fill" style="font-size: 17px;"></i></a></li>
             </ul>
-                    <label class="hamburger" id="burgerList">
-                      <input type="checkbox">
-                      <svg viewBox="0 0 32 32">
-                        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
-                        <path class="line" d="M7 16 27 16"></path>
-                      </svg>
-                    </label>
+            <label class="hamburger" id="burgerList">
+                <input type="checkbox">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+                </label>
+                <button id="theme-switch">
+                    <i class="ri-sun-fill"></i>
+                    <i class="ri-moon-fill"></i>
+                </button>
         </nav>
     </header>
-    <h1>Classes Page</h1>
+    <section class="class-timetable-section spad">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="table-controls d-flex justify-content-center">
+                        <ul>
+                            <li class="active" data-tsfilter="all">All event</li>
+                            <li data-tsfilter="fitness">Fitness tips</li>
+                            <li data-tsfilter="motivation">Motivation</li>
+                            <li data-tsfilter="workout">Workout</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="class-timetable">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Monday</th>
+                                    <th>Tuesday</th>
+                                    <th>Wednesday</th>
+                                    <th>Thursday</th>
+                                    <th>Friday</th>
+                                    <th>Saturday</th>
+                                    <th>Sunday</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="class-time">6.00am - 8.00am</td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                        <h5>WEIGHT LOOSE</h5>
+                                        <span>RLefew D. Loee</span>
+                                    </td>
+                                    <td class="hover-bg ts-meta" data-tsmeta="fitness">
+                                        <h5>Cardio</h5>
+                                        <span>RLefew D. Loee</span>
+                                    </td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                        <h5>Yoga</h5>
+                                        <span>Keaf Shen</span>
+                                    </td>
+                                    <td class="hover-bg ts-meta" data-tsmeta="fitness">
+                                        <h5>Fitness</h5>
+                                        <span>Kimberly Stone</span>
+                                    </td>
+                                    <td class="dark-bg blank-td"></td>
+                                    <td class="hover-bg ts-meta" data-tsmeta="motivation">
+                                        <h5>Boxing</h5>
+                                        <span>Rachel Adam</span>
+                                    </td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                        <h5>Body Building</h5>
+                                        <span>Robert Cage</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="class-time">10.00am - 12.00am</td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="fitness">
+                                        <h5>Fitness</h5>
+                                        <span>Kimberly Stone</span>
+                                    </td>
+                                    <td class="hover-bg ts-meta" data-tsmeta="workout">
+                                        <h5>WEIGHT LOOSE</h5>
+                                        <span>RLefew D. Loee</span>
+                                    </td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="motivation">
+                                        <h5>Cardio</h5>
+                                        <span>RLefew D. Loee</span>
+                                    </td>
+                                    <td class="hover-bg ts-meta" data-tsmeta="workout">
+                                        <h5>Body Building</h5>
+                                        <span>Robert Cage</span>
+                                    </td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="motivation">
+                                        <h5>Karate</h5>
+                                        <span>Donald Grey</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                </tr>
+                                <tr>
+                                    <td class="class-time">5.00pm - 7.00pm</td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="fitness">
+                                        <h5>Boxing</h5>
+                                        <span>Rachel Adam</span>
+                                    </td>
+                                    <td class="hover-bg ts-meta" data-tsmeta="motivation">
+                                        <h5>Karate</h5>
+                                        <span>Donald Grey</span>
+                                    </td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                        <h5>Body Building</h5>
+                                        <span>Robert Cage</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                        <h5>Yoga</h5>
+                                        <span>Keaf Shen</span>
+                                    </td>
+                                    <td class="hover-bg ts-meta" data-tsmeta="motivation">
+                                        <h5>Cardio</h5>
+                                        <span>RLefew D. Loee</span>
+                                    </td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="fitness">
+                                        <h5>Fitness</h5>
+                                        <span>Kimberly Stone</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="class-time">7.00pm - 9.00pm</td>
+                                    <td class="hover-bg ts-meta" data-tsmeta="motivation">
+                                        <h5>Cardio</h5>
+                                        <span>RLefew D. Loee</span>
+                                    </td>
+                                    <td class="dark-bg blank-td"></td>
+                                    <td class="hover-bg ts-meta" data-tsmeta="fitness">
+                                        <h5>Boxing</h5>
+                                        <span>Rachel Adam</span>
+                                    </td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                        <h5>Yoga</h5>
+                                        <span>Keaf Shen</span>
+                                    </td>
+                                    <td class="hover-bg ts-meta" data-tsmeta="motivation">
+                                        <h5>Karate</h5>
+                                        <span>Donald Grey</span>
+                                    </td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="fitness">
+                                        <h5>Boxing</h5>
+                                        <span>Rachel Adam</span>
+                                    </td>
+                                    <td class="hover-bg ts-meta" data-tsmeta="workout">
+                                        <h5>WEIGHT LOOSE</h5>
+                                        <span>RLefew D. Loee</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../scripts/bootstrap.bundle.min.js.map"></script>
     <script src="../../scripts/navbar.js"></script>
+    <script src="./scripts/classes.js"></script>
+    <script src="../../scripts/darkmode.js"></script>
 </body>
 </html>

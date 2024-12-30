@@ -52,7 +52,7 @@ h1 {
   } 
   .card-list li:hover img {
     border: 1px solid var(--crimson-color);
-    box-shadow: 7px 4px 28px -12px var(--box-shadow);
+    /* box-shadow: 7px 4px 28px -12px var(--box-shadow); */
   }
   
   .card-list  li::before {

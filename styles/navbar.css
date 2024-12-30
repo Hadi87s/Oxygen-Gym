@@ -116,7 +116,7 @@ nav ul li:hover::before{
 
 
 nav.grow{
-    height:300px;
+    height:calc(100% - 20px);
 }
 
 nav ul.order {
@@ -212,6 +212,10 @@ header nav #theme-switch i:last-child {
         display: none;
         margin-top: 50px;
         padding:0;
+        height: 60%;
+    }
+    nav ul li:last-child{
+        display: block;
     }
     nav ul li {
         padding: 5px;

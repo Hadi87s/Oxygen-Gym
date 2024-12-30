@@ -44,6 +44,9 @@
     .red-border {
         padding: 0;
     }
+    .bCard::after, .bCard::after {
+        background-image: conic-gradient(from var(--angle), transparent);
+    }
 }
 @media (max-width:474px){
     .container .pricing h1 {
