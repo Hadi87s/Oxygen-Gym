@@ -27,6 +27,7 @@ body {
     padding: 0.75rem 1.5rem !important;
 }
 
+
 .main-title i,
 .main-title h2{
 color: var(--secondary-color);
@@ -54,4 +55,37 @@ color: var(--secondary-color);
 .shop .card{
     color: var(--secondary-color);
     background-color: var(--lighter-bg);
+}
+
+.card .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.card .buttons > button{
+    all: unset;
+    padding: 0.4rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--crimson-color);
+    color: var(--secondary-color);
+    transition: 0.2s ease-out;  
+    margin-right: 10px;
+}
+
+.card .buttons > button:hover {
+    color: var(--crimson-color);
+    background-color: var(--secondary-color);
+}
+
+.card .crossed-price {
+    text-decoration: line-through;
+    color: var(--nav-hover);
+}
+
+.card img {
+    border-radius: 10px;
+    border: 1px solid var(--nav-hover);
 }

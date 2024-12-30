@@ -77,7 +77,7 @@ nav ul {
     transform: translate(-50%);
     font: bold 1.5rem;
     text-transform: uppercase;
-    margin: 16px !important;
+    /* margin: 16px !important; */
 }
 
 
