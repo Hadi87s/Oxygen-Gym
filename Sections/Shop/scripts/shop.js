@@ -1,6 +1,6 @@
 function renderSupplements(productImage) {
   // The container.
-  let shopSector = document.querySelector(".suppliments-sector");
+  let shopSector = document.querySelector(".supplements-sector");
 
   // the column for each card.
   let column = document.createElement("div");
@@ -15,7 +15,7 @@ function renderSupplements(productImage) {
   card.classList.add("p-4");
   card.classList.add("mb-4");
 
-  // craeting the Image
+  // creating the Image
   const image = document.createElement("img");
   image.alt = "Product";
   image.src = productImage;
@@ -40,7 +40,7 @@ function renderSupplements(productImage) {
 
   price.appendChild(crossedTag);
   price.appendChild(document.createTextNode(" 5.99$"));
-  // Craeting the Buttons.
+  // Creating the Buttons.
 
   const Buttons = document.createElement("div");
   Buttons.classList.add("buttons");
@@ -75,9 +75,9 @@ function renderSupplements(productImage) {
 
   shopSector.appendChild(column);
 }
-function renderSnaks(productImage) {
+function renderSnacks(productImage) {
   // The container.
-  let shopSector = document.querySelector(".snaks-sector");
+  let shopSector = document.querySelector(".snacks-sector");
 
   // the column for each card.
   let column = document.createElement("div");
@@ -92,7 +92,7 @@ function renderSnaks(productImage) {
   card.classList.add("p-4");
   card.classList.add("mb-4");
 
-  // craeting the Image
+  // creating the Image
   const image = document.createElement("img");
   image.alt = "Product";
   image.src = productImage;
@@ -117,7 +117,7 @@ function renderSnaks(productImage) {
 
   price.appendChild(crossedTag);
   price.appendChild(document.createTextNode(" 5.99$"));
-  // Craeting the Buttons.
+  // Creating the Buttons.
 
   const Buttons = document.createElement("div");
   Buttons.classList.add("buttons");
@@ -169,7 +169,7 @@ function renderWearables(productImage) {
   card.classList.add("p-4");
   card.classList.add("mb-4");
 
-  // craeting the Image
+  // creating the Image
   const image = document.createElement("img");
   image.alt = "Product";
   image.src = productImage;
@@ -194,7 +194,7 @@ function renderWearables(productImage) {
 
   price.appendChild(crossedTag);
   price.appendChild(document.createTextNode(" 5.99$"));
-  // Craeting the Buttons.
+  // Creating the Buttons.
 
   const Buttons = document.createElement("div");
   Buttons.classList.add("buttons");
@@ -233,10 +233,10 @@ renderSupplements("../../images/ISO WHEY.jpg");
 renderSupplements("../../images/ISO WHEY.jpg");
 renderSupplements("../../images/ISO WHEY.jpg");
 renderSupplements("../../images/ISO WHEY.jpg");
-renderSnaks("../../images/ISO WHEY.jpg");
-renderSnaks("../../images/ISO WHEY.jpg");
-renderSnaks("../../images/ISO WHEY.jpg");
-renderSnaks("../../images/ISO WHEY.jpg");
+renderSnacks("../../images/ISO WHEY.jpg");
+renderSnacks("../../images/ISO WHEY.jpg");
+renderSnacks("../../images/ISO WHEY.jpg");
+renderSnacks("../../images/ISO WHEY.jpg");
 renderWearables("../../images/ISO WHEY.jpg");
 renderWearables("../../images/ISO WHEY.jpg");
 renderWearables("../../images/ISO WHEY.jpg");

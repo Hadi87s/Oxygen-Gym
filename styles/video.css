@@ -75,6 +75,9 @@
     .hero .video-background p {
         display: none;
     }
+    .video-background h1{
+        font-size: 55px
+    }
 }
 
 @media(max-width:375px){

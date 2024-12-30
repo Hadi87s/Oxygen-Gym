@@ -172,6 +172,10 @@ display: block;
     .signup-card{
         width: 100%;
     }
+    .signup-container{
+        width: 90%;
+        height: 86%;
+    }
 }
 
 @media (max-width:480px){
