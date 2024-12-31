@@ -4,7 +4,7 @@
     padding: 0 0 0 20px;
     border: 2px solid var(--crimson-color);
     box-shadow: 0 4px 20px var(--box-shadow);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 
@@ -13,7 +13,6 @@
     transform: translateY(-5px);
 }
 
-/* trying the blur effect */
 @import url("https://unpkg.com/papercss@1.9.2/dist/paper.css") layer(csspaper);
 
 .card-list:has(li:hover) li:not(:hover) {

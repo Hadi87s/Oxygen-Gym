@@ -28,12 +28,23 @@ header nav ul {
         transform: translateY(0);
     }
 }
-.plans .card {
+.container .pricing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.plans .bCard {
     background-color: var(--lighter-bg);
     color: var(--secondary-color);
     min-height: 400px;
+    max-width: 400px;
     border-radius: 23px;
+    padding: 3rem 1rem;
+    margin: 10px 35px;
+    position: relative;
 }
+
 
 .plans .card a {
     all: unset;
@@ -65,4 +76,42 @@ header nav ul {
     color: var(--lighter-bg);
     background-color: var(--secondary-color);
 
+}
+
+.container .pricing h1 {
+    color: var(--crimson-color);
+    text-align: center;
+    font-size: 80px;
+    margin: 0 0 30px 0;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 3px var(--secondary-color);
+}
+
+.container .pricing p {
+    text-align: start;
+    line-height: 24px;
+    color: var(--text);
+}
+
+
+.pricing .bCard a {
+    all:unset;
+    padding: 12px 25px;
+    background-color: var(--crimson-color);
+    color: var(--secondary-color);
+    border-radius: 13px;
+    display: block;
+    width: 100px;
+    margin: 25px auto 0;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+.pricing .bCard a:hover {
+    background-color: var(--secondary-color);
+    color: var(--crimson-color);
 }

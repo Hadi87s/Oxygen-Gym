@@ -9,7 +9,7 @@ button.gB {
     font-size: 17px;
     -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
-    transition: all 250ms;
+    transition: all 200ms;
     overflow: hidden;
     cursor: pointer;
 }
@@ -26,7 +26,7 @@ button.gB::before {
     z-index: -1;
     -webkit-box-shadow: 4px 8px 19px -3px var(--crimson-color);
     box-shadow: 4px 8px 19px -3px var(--crimson-color);
-    transition: all 250ms
+    transition: all 200ms
 }
 
 button.gB:hover {

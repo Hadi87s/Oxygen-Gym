@@ -3,12 +3,13 @@
 .bCard {
     margin:35px auto;
     padding: 3em;
-    width: 450px;
+    max-width: 450px;
     background-color: var(--lighter-bg);
-    color: #f1f1f1;
+    color: var(--secondary-color);
     text-align: center;
-    border-radius: 10px;
+    border-radius: 23px;
     position: relative;
+    
 }
 
 @property --angle {
@@ -28,8 +29,8 @@
     transform: translate(-50%,-50%);
     z-index: -1;
     padding: 3px;
-    border-radius: 12px;
-    background-image: conic-gradient(from var(--angle),transparent 70%,var(--crimson-color),transparent);
+    border-radius: 23px;
+    background-image: conic-gradient(from var(--angle),var(--crimson-color) 10%,var(--secondary-color) 30%,transparent 30%,transparent 30%);
     animation: 7s spin linear infinite;
 }
 
