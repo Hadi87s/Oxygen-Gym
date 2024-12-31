@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calendar</title>
   <link rel="stylesheet" href="style.css">
-  <script type="text/javascript" src="app.js" defer></script>
+  <link rel="stylesheet" href="./styles/products.css">
+  <link rel="stylesheet" href="../../styles/gBstyle.css">
+  <script defer type="text/javascript" src="app.js" defer></script>
 </head>
 <body>
   <nav id="sidebar">
@@ -61,7 +63,7 @@
       <li class="active">
         <a href="calendar.html">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-40q0-17 11.5-28.5T280-880q17 0 28.5 11.5T320-840v40h320v-40q0-17 11.5-28.5T680-880q17 0 28.5 11.5T720-840v40h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg>
-          <span>Calendar</span>
+          <span>Control Center</span>
         </a>
       </li>
       <li>
@@ -74,8 +76,44 @@
   </nav>
   <main>
     <div class="container">
-      <h2>Calendar</h2>
+      <h2>Projects Management</h2>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis porro iure quaerat aliquam! Optio dolorum in eum provident, facilis error repellendus excepturi enim dolor deleniti adipisci consectetur doloremque, unde maiores odit sapiente. Atque ab necessitatibus laboriosam consequatur eius similique, ex dolorum eum eaque sequi id veritatis voluptates perspiciatis, cupiditate pariatur.</p>
+    </div>
+    <div class="container">
+        <div class="btn-container"><button id="add-product">Add Button</button></div>
+        <div class="product-popup">
+          <div class="adding-card">
+            <section class="heading">
+              <button id="cancel-button">Cancel</button>
+              <h1>Add a Product</h1>  
+            </section>
+            <form class="file-upload-form">
+              <label class="file-upload-label" for="file">
+                <div class="file-upload-design">
+                  <svg height="1em" viewBox="0 0 640 512">
+                    <path
+                      d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z"
+                    ></path>
+                  </svg>
+                  <p>Drag and Drop</p>
+                  <p>or</p>
+                  <span class="browse-button">Browse file</span>
+                </div>
+                <input type="file" id="file" />
+              </label>
+            </form>
+              <label style="margin-top: 20px;" for="prod-name">Name</label>
+              <input id="prod-name" type="text">
+              <label for="prod-description">Description</label>
+              <input id="prod-description" type="text">
+              <label for="prod-price">Price</label>
+              <input id="prod-price" type="text">
+              <button class="add-btn">Add Product</button>
+          </div>
+        </div>
+    </div>
+    <div class="containe">
+      <h1>Available Products:</h1>
     </div>
   </main>
 </body>
