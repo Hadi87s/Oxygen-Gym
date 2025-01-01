@@ -49,23 +49,13 @@ function renderSupplements(
   const Buttons = document.createElement("div");
   Buttons.classList.add("buttons");
 
-  // cart Icon
-  const cart = document.createElement("i");
-  cart.classList.add("ri-shopping-cart-fill");
+  const trashIcon = document.createElement("i");
+  trashIcon.classList.add("ri-delete-bin-line");
 
-  // wishlist icon
-  const wishlist = document.createElement("i");
-  wishlist.classList.add("ri-heart-fill");
-  const addToCart = document.createElement("button");
-  addToCart.appendChild(document.createTextNode("Add to "));
-  addToCart.appendChild(cart);
-
-  const addToWishlist = document.createElement("button");
-  addToWishlist.appendChild(document.createTextNode("Add to "));
-  addToWishlist.appendChild(wishlist);
-
-  Buttons.appendChild(addToCart);
-  Buttons.appendChild(addToWishlist);
+  const deleteBtn = document.createElement("button");
+  deleteBtn.appendChild(document.createTextNode("Delete"));
+  deleteBtn.appendChild(trashIcon);
+  Buttons.appendChild(deleteBtn);
 
   // Adding everything to the product List.
   card.appendChild(image);
@@ -130,23 +120,13 @@ function renderSnacks(
   const Buttons = document.createElement("div");
   Buttons.classList.add("buttons");
 
-  // cart Icon
-  const cart = document.createElement("i");
-  cart.classList.add("ri-shopping-cart-fill");
+  const trashIcon = document.createElement("i");
+  trashIcon.classList.add("ri-delete-bin-line");
 
-  // wishlist icon
-  const wishlist = document.createElement("i");
-  wishlist.classList.add("ri-heart-fill");
-  const addToCart = document.createElement("button");
-  addToCart.appendChild(document.createTextNode("Add to "));
-  addToCart.appendChild(cart);
-
-  const addToWishlist = document.createElement("button");
-  addToWishlist.appendChild(document.createTextNode("Add to "));
-  addToWishlist.appendChild(wishlist);
-
-  Buttons.appendChild(addToCart);
-  Buttons.appendChild(addToWishlist);
+  const deleteBtn = document.createElement("button");
+  deleteBtn.appendChild(document.createTextNode("Delete"));
+  deleteBtn.appendChild(trashIcon);
+  Buttons.appendChild(deleteBtn);
 
   // Adding everything to the product List.
   card.appendChild(image);
@@ -211,23 +191,13 @@ function renderWearables(
   const Buttons = document.createElement("div");
   Buttons.classList.add("buttons");
 
-  // cart Icon
-  const cart = document.createElement("i");
-  cart.classList.add("ri-shopping-cart-fill");
+  const trashIcon = document.createElement("i");
+  trashIcon.classList.add("ri-delete-bin-line");
 
-  // wishlist icon
-  const wishlist = document.createElement("i");
-  wishlist.classList.add("ri-heart-fill");
-  const addToCart = document.createElement("button");
-  addToCart.appendChild(document.createTextNode("Add to "));
-  addToCart.appendChild(cart);
-
-  const addToWishlist = document.createElement("button");
-  addToWishlist.appendChild(document.createTextNode("Add to "));
-  addToWishlist.appendChild(wishlist);
-
-  Buttons.appendChild(addToCart);
-  Buttons.appendChild(addToWishlist);
+  const deleteBtn = document.createElement("button");
+  deleteBtn.appendChild(document.createTextNode("Delete"));
+  deleteBtn.appendChild(trashIcon);
+  Buttons.appendChild(deleteBtn);
 
   // Adding everything to the product List.
   card.appendChild(image);
@@ -241,17 +211,9 @@ function renderWearables(
   shopSector.appendChild(column);
 }
 
-let shopNow = document.getElementById("shopNow");
-let shop = document.getElementById("shop");
-
-shopNow.onclick = () => {
-  shop.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
-};
-
 function renderProduct(product) {
+  console.log(product);
+
   if (product["category"] == "supplements") {
     renderSupplements(
       product["image"],

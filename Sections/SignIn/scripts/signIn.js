@@ -25,7 +25,7 @@ login.onclick = (e) => {
   if (email.value == "admin@pal.com" && password.value == "admin") {
     // Redirects to the dashboard
     window.open(
-      "http://localhost/Web%20Project/Sections/Dashboard/calendar.html",
+      "http://localhost/Web%20Project/Sections/Dashboard/control-center.html",
       "_self"
     );
   }

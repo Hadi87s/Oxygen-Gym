@@ -26,7 +26,7 @@ if (isset($_POST['name']) && isset($_POST['description']) && isset($_POST['price
                 $db->query($qs);
                 $db->close();
 
-                header("location:calendar.html");
+                header("location:control-center.html");
             } catch (Exception $e) {
                 echo "Error: " . $e->getMessage();
             }

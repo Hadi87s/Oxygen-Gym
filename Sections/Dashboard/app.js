@@ -40,3 +40,4 @@ addButton.onclick = () => {
 cancelBtn.onclick = () => {
   addPopUp.style.display = "none";
 };
+
