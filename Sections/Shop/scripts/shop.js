@@ -1,4 +1,9 @@
-function renderSupplements(productImage) {
+function renderSupplements(
+  productImage,
+  productName,
+  productDescription,
+  productPrice
+) {
   // The container.
   let shopSector = document.querySelector(".supplements-sector");
 
@@ -24,10 +29,10 @@ function renderSupplements(productImage) {
   // the text Header
   const header = document.createElement("h1");
 
-  header.appendChild(document.createTextNode("Sample"));
+  header.appendChild(document.createTextNode(productName));
 
   const description = document.createElement("p");
-  description.appendChild(document.createTextNode("someTextHere"));
+  description.appendChild(document.createTextNode(productDescription));
 
   // price tag
   const price = document.createElement("p");
@@ -39,7 +44,7 @@ function renderSupplements(productImage) {
   crossedTag.classList.add("crossed-price");
 
   price.appendChild(crossedTag);
-  price.appendChild(document.createTextNode(" 5.99$"));
+  price.appendChild(document.createTextNode(productPrice + "$"));
   // Creating the Buttons.
 
   const Buttons = document.createElement("div");
@@ -75,7 +80,12 @@ function renderSupplements(productImage) {
 
   shopSector.appendChild(column);
 }
-function renderSnacks(productImage) {
+function renderSnacks(
+  productImage,
+  productName,
+  productDescription,
+  productPrice
+) {
   // The container.
   let shopSector = document.querySelector(".snacks-sector");
 
@@ -101,10 +111,10 @@ function renderSnacks(productImage) {
   // the text Header
   const header = document.createElement("h1");
 
-  header.appendChild(document.createTextNode("Sample"));
+  header.appendChild(document.createTextNode(productName));
 
   const description = document.createElement("p");
-  description.appendChild(document.createTextNode("someTextHere"));
+  description.appendChild(document.createTextNode(productDescription));
 
   // price tag
   const price = document.createElement("p");
@@ -116,7 +126,7 @@ function renderSnacks(productImage) {
   crossedTag.classList.add("crossed-price");
 
   price.appendChild(crossedTag);
-  price.appendChild(document.createTextNode(" 5.99$"));
+  price.appendChild(document.createTextNode(productPrice + "$"));
   // Creating the Buttons.
 
   const Buttons = document.createElement("div");
@@ -152,7 +162,12 @@ function renderSnacks(productImage) {
 
   shopSector.appendChild(column);
 }
-function renderWearables(productImage) {
+function renderWearables(
+  productImage,
+  productName,
+  productDescription,
+  productPrice
+) {
   // The container.
   let shopSector = document.querySelector(".wearables-sector");
 
@@ -178,10 +193,10 @@ function renderWearables(productImage) {
   // the text Header
   const header = document.createElement("h1");
 
-  header.appendChild(document.createTextNode("Sample"));
+  header.appendChild(document.createTextNode(productName));
 
   const description = document.createElement("p");
-  description.appendChild(document.createTextNode("someTextHere"));
+  description.appendChild(document.createTextNode(productDescription));
 
   // price tag
   const price = document.createElement("p");
@@ -193,7 +208,7 @@ function renderWearables(productImage) {
   crossedTag.classList.add("crossed-price");
 
   price.appendChild(crossedTag);
-  price.appendChild(document.createTextNode(" 5.99$"));
+  price.appendChild(document.createTextNode(productPrice + "$"));
   // Creating the Buttons.
 
   const Buttons = document.createElement("div");
@@ -251,3 +266,48 @@ shopNow.onclick = () => {
     block: "start",
   });
 };
+
+// async function fetchProducts() {
+//   try {
+//     const response = await fetch("../fetch_products.php");
+//     if (!response.ok) {
+//       throw new Error("Failed to fetch products");
+//     }
+//     const products = await response.json();
+
+//     // Loop through products and render them based on their category
+//     products.forEach((product) => {
+//       switch (product.category) {
+//         case "supplements":
+//           renderSupplements(
+//             product.image_path,
+//             product.name,
+//             product.description,
+//             product.price
+//           );
+//           break;
+//         case "snacks":
+//           renderSnacks(
+//             product.image_path,
+//             product.name,
+//             product.description,
+//             product.price
+//           );
+//           break;
+//         case "wearables":
+//           renderWearables(
+//             product.image_path,
+//             product.name,
+//             product.description,
+//             product.price
+//           );
+//           break;
+//       }
+//     });
+//   } catch (error) {
+//     console.error("Error:", error);
+//   }
+// }
+
+// Call the function to fetch and render products
+// fetchProducts();

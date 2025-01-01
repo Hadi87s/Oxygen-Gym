@@ -30,7 +30,8 @@
     transition: all 0.3s ease-out;
 }
 
-.adding-card {
+.adding-card,
+.adding-card form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,6 +42,7 @@
     min-height: 200px;
     min-width: 350px;
 }
+
 
 .adding-card h1 {
     margin-bottom: 25px;
