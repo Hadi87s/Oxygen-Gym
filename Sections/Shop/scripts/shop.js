@@ -1,5 +1,5 @@
 function renderSupplements(
-  productImage,
+  productImage = "../../images/ISO WHEY.jpg",
   productName,
   productDescription,
   productPrice
@@ -24,7 +24,6 @@ function renderSupplements(
   const image = document.createElement("img");
   image.alt = "Product";
   image.src = productImage;
-  console.log(this.productImage);
 
   // the text Header
   const header = document.createElement("h1");
@@ -76,12 +75,12 @@ function renderSupplements(
   card.appendChild(Buttons);
 
   column.appendChild(card);
-  console.log(column);
 
   shopSector.appendChild(column);
 }
+
 function renderSnacks(
-  productImage,
+  productImage = "../../images/ISO WHEY.jpg",
   productName,
   productDescription,
   productPrice
@@ -106,7 +105,6 @@ function renderSnacks(
   const image = document.createElement("img");
   image.alt = "Product";
   image.src = productImage;
-  console.log(this.productImage);
 
   // the text Header
   const header = document.createElement("h1");
@@ -158,12 +156,12 @@ function renderSnacks(
   card.appendChild(Buttons);
 
   column.appendChild(card);
-  console.log(column);
 
   shopSector.appendChild(column);
 }
+
 function renderWearables(
-  productImage,
+  productImage = "../../images/ISO WHEY.jpg",
   productName,
   productDescription,
   productPrice
@@ -188,7 +186,6 @@ function renderWearables(
   const image = document.createElement("img");
   image.alt = "Product";
   image.src = productImage;
-  console.log(this.productImage);
 
   // the text Header
   const header = document.createElement("h1");
@@ -240,22 +237,21 @@ function renderWearables(
   card.appendChild(Buttons);
 
   column.appendChild(card);
-  console.log(column);
 
   shopSector.appendChild(column);
 }
-renderSupplements("../../images/ISO WHEY.jpg");
-renderSupplements("../../images/ISO WHEY.jpg");
-renderSupplements("../../images/ISO WHEY.jpg");
-renderSupplements("../../images/ISO WHEY.jpg");
-renderSnacks("../../images/ISO WHEY.jpg");
-renderSnacks("../../images/ISO WHEY.jpg");
-renderSnacks("../../images/ISO WHEY.jpg");
-renderSnacks("../../images/ISO WHEY.jpg");
-renderWearables("../../images/ISO WHEY.jpg");
-renderWearables("../../images/ISO WHEY.jpg");
-renderWearables("../../images/ISO WHEY.jpg");
-renderWearables("../../images/ISO WHEY.jpg");
+// renderSupplements("../../images/ISO WHEY.jpg");
+// renderSupplements("../../images/ISO WHEY.jpg");
+// renderSupplements("../../images/ISO WHEY.jpg");
+// renderSupplements("../../images/ISO WHEY.jpg");
+// renderSnacks("../../images/ISO WHEY.jpg");
+// renderSnacks("../../images/ISO WHEY.jpg");
+// renderSnacks("../../images/ISO WHEY.jpg");
+// renderSnacks("../../images/ISO WHEY.jpg");
+// renderWearables("../../images/ISO WHEY.jpg");
+// renderWearables("../../images/ISO WHEY.jpg");
+// renderWearables("../../images/ISO WHEY.jpg");
+// renderWearables("../../images/ISO WHEY.jpg");
 
 let shopNow = document.getElementById("shopNow");
 let shop = document.getElementById("shop");
@@ -267,47 +263,52 @@ shopNow.onclick = () => {
   });
 };
 
-// async function fetchProducts() {
-//   try {
-//     const response = await fetch("../fetch_products.php");
-//     if (!response.ok) {
-//       throw new Error("Failed to fetch products");
-//     }
-//     const products = await response.json();
+function renderProduct(product) {
+  if (product["category"] == "supplements") {
+    renderSupplements(
+      product["image"],
+      product["name"],
+      product["description"],
+      product["price"]
+    );
+  } else if (product["category"] == "snacks") {
+    renderSnacks(
+      product["image"],
+      product["name"],
+      product["description"],
+      product["price"]
+    );
+  } else if (product["category"] == "wearables") {
+    renderWearables(
+      product["image"],
+      product["name"],
+      product["description"],
+      product["price"]
+    );
+  }
+}
 
-//     // Loop through products and render them based on their category
-//     products.forEach((product) => {
-//       switch (product.category) {
-//         case "supplements":
-//           renderSupplements(
-//             product.image_path,
-//             product.name,
-//             product.description,
-//             product.price
-//           );
-//           break;
-//         case "snacks":
-//           renderSnacks(
-//             product.image_path,
-//             product.name,
-//             product.description,
-//             product.price
-//           );
-//           break;
-//         case "wearables":
-//           renderWearables(
-//             product.image_path,
-//             product.name,
-//             product.description,
-//             product.price
-//           );
-//           break;
-//       }
-//     });
-//   } catch (error) {
-//     console.error("Error:", error);
-//   }
-// }
-
-// Call the function to fetch and render products
-// fetchProducts();
+function fetchProducts() {
+  fetch(
+    "http://localhost/Web%20Project/Sections/Shop/scripts/fetch_products.php"
+  )
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch products");
+      }
+      return response.json();
+    })
+    .then((products) => {
+      if (products.length > 0) {
+        products.forEach((product) => {
+          renderProduct(product);
+        });
+      } else {
+        console.log("No products found");
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching products:", error);
+    });
+}
+fetchProducts();
