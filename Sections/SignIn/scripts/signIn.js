@@ -24,6 +24,9 @@ login.onclick = (e) => {
   e.preventDefault(); // Prevents the default form submission behavior
   if (email.value == "admin@pal.com" && password.value == "admin") {
     // Redirects to the dashboard
-    window.open("../../../Sections/Dashboard/calendar.html", "_self");
+    window.open(
+      "http://localhost/Web%20Project/Sections/Dashboard/calendar.html",
+      "_self"
+    );
   }
 };
