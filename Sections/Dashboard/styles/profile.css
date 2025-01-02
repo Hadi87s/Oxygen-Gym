@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --base-clr: #11121a;
+  --line-clr: #42434a;
+  --hover-clr: #222533;
+  --text-clr: #e6e6ef;
+  --accent-clr: #5e63ff;
+  --secondary-text-clr: #b0b3c1;
+}
+
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--base-clr);
+  color: var(--text-clr);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: var(--hover-clr);
+  padding: 20px;
+  border-radius: 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border: 1px solid var(--line-clr);
+}
+
+h2 {
+  color: var(--text-clr);
+  margin-bottom: 15px;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid var(--accent-clr);
+}
+
+.profile-name {
+  margin-top: 10px;
+  font-size: 24px;
+  color: var(--text-clr);
+}
+
+.profile-details {
+  margin-bottom: 20px;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid var(--line-clr);
+}
+
+.detail label {
+  font-weight: bold;
+  color: var(--text-clr);
+}
+
+.detail span {
+  color: var(--secondary-text-clr);
+}
+
+.change-password {
+  margin-top: 20px;
+}
+
+.change-password h3 {
+  margin-bottom: 15px;
+  color: var(--text-clr);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-clr);
+}
+
+.form-group input {
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--line-clr);
+  background-color: var(--base-clr);
+  color: var(--text-clr);
+}
+
+.btn {
+  background-color: var(--accent-clr);
+  color: var(--text-clr);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #4a4dff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  main {
+    margin-left: 0;
+  }
+}
