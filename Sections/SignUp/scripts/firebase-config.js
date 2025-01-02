@@ -1,6 +1,10 @@
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { initializeApp } from "../../../node_modules/firebase/app";
+import { getAuth } from "../../../node_modules/firebase/auth";
+import {
+  getFirestore,
+  doc,
+  setDoc,
+} from "../../../node_modules/firebase/firestore";
 
 // Firebase configuration (from Firebase Console)
 const firebaseConfig = {

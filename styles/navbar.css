@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+*::before, *::after {
+    box-sizing:unset !important;
+}
+
 header{
     position: sticky;
     top: 10px;
@@ -96,22 +100,24 @@ nav ul li{
 
 
 nav ul li a {
-    padding: 15px 0 !important;
     all:unset;
+    padding: 5px 10px !important;
     cursor: pointer;
     color:var(--secondary-color);
-    transition: color 0.3s, text-shadow 0.3s ease-out;
+    border-radius: 6px;
+    transition: all 0.15s ease-out;
 }
 
 nav ul li a:hover {
-    text-shadow: 0 0 10px var(--hover-shadow);
+    background-color: var(--nav-shadow);
+    color: var(--lighter-bg);
 }
 
 nav ul li a.active {
     color: var(--crimson-color);
 }
 
-nav ul li::before{
+/* nav ul li::before{
     content: "";
     position: absolute;
     top: 97%;
@@ -124,7 +130,7 @@ nav ul li::before{
 
 nav ul li:hover::before{
     width: 100%;
-}
+} */
 
 
 nav.grow{

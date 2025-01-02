@@ -1,14 +1,6 @@
-// signup.js
+// // SignUp.js
 
-let myInputs = document.querySelector(".input-group input");
-
-myInputs.array.forEach((element) => {
-  console.log(element);
-
-});
-// import { auth, db } from "../../../scripts/firebase-config.js";
-// import { createUserWithEmailAndPassword } from "firebase/auth";
-// import { doc, setDoc } from "firebase/firestore";
+// import { auth, db } from "./Firebase-config.js";
 
 // const signupForm = document.querySelector(".signup-form");
 
@@ -20,7 +12,6 @@ myInputs.array.forEach((element) => {
 //   const password = document.getElementById("password").value;
 //   const confirmPassword = document.getElementById("confirm-password").value;
 
-//   // Check if passwords match
 //   if (password !== confirmPassword) {
 //     alert("Passwords do not match!");
 //     return;
@@ -28,15 +19,14 @@ myInputs.array.forEach((element) => {
 
 //   try {
 //     // Create user with Firebase Authentication
-//     const userCredential = await createUserWithEmailAndPassword(
-//       auth,
+//     const userCredential = await auth.createUserWithEmailAndPassword(
 //       email,
 //       password
 //     );
 //     const user = userCredential.user;
 
 //     // Store additional user data in Firestore
-//     await setDoc(doc(db, "users", user.uid), {
+//     await db.collection("users").doc(user.uid).set({
 //       fullName: fullName,
 //       email: email,
 //       createdAt: new Date(),

@@ -32,12 +32,14 @@
     border-radius: 23px;
     background-image: conic-gradient(from var(--angle),var(--crimson-color) 10%,var(--secondary-color) 30%,transparent 30%,transparent 30%);
     animation: 7s spin linear infinite;
+    
 }
 
 .bCard::before{
     filter: blur(1.5rem);
     opacity: 0.5;
 }
+
 
 @keyframes spin {
     0% {

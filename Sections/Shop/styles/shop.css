@@ -10,16 +10,14 @@ header nav ul {
 body {
     height: 200vh;
 }
-
-.gym-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.gym-image {
+    background-image: url("../../../images/OxygenShop.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
     animation: fadeIn 0.4s ease-in-out;
 }
+
 
 
 @keyframes fadeIn {
@@ -69,9 +67,6 @@ color: var(--secondary-color);
     transform: translateX(-50%);
 }
 
-.shop {
-    margin-top: calc(100vh + 50px);
-}
 
 .shop .cardd{
     color: var(--secondary-color);
