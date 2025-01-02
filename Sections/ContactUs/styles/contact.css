@@ -11,7 +11,7 @@ main {
 
 .Message {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -21,15 +21,87 @@ main {
     animation: fadeIn 0.4s ease-in-out;
 }
 
-.Message .image {
-    width: 500px;
-    justify-self: flex-start;
-}
-.Message .image img {
-    max-width: 100%;
-    object-fit:contain;
+.instagram{
+    object-fit: cover;
     border-top-left-radius: 23px;
     border-bottom-left-radius: 23px;
+    width: 100%;
+    border-bottom: 1px solid var(--secondary-color);
+    padding-bottom: 30px ;
+    border-radius: 0;
+}
+
+.instagram .profile {
+    display: flex;
+    justify-self: flex-start;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+}
+.instagram img{
+    width: 200px;
+    height: 80%;
+    object-fit: cover;
+    border-top-left-radius: 23px;
+    border-bottom-left-radius: 23px;
+    border-radius: 50%;
+    border: 3px solid var(--crimson-color);
+}
+
+.instagram .image p {
+    color: var(--secondary-color);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+.instagram .profile .text {
+    margin: 10px;
+}
+
+.instagram .profile .text .verified {
+    fill: var(--crimson-color);
+}
+
+.instagram .profile .text h1 {
+    color: var(--secondary-color);
+}
+
+.instagram .profile .text p {
+    color: var(--text);
+}
+
+.instagram .follow {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 1rem;
+    /* margin: 25px 0; */
+}
+
+
+
+.instagram .follow button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    color: var(--main-color);
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    font-weight: 500;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.2s;
+}
+
+
+.instagram .follow button:hover {
+    background-color: var(--main-color);
+    color: var(--secondary-color);
 }
 
 .Message form {
@@ -41,7 +113,9 @@ main {
 }
 
 .Message form .fullName{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    width: 100%;
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
@@ -59,9 +133,9 @@ main {
 
 
 .Message form h1 {
-    color: var(--secondary-color);
+    color: var(--crimson-color);
     font-size: 50px;
-    margin: 15px auto 0;
+    margin: 46px auto 0;
     text-align: left;
 }
 
@@ -75,7 +149,7 @@ main {
     background: none;
     padding: 1rem;
     font-size: 1rem;
-    color: var(--secodary-color);
+    color: var(--secondary-color);
     transition: border 150ms cubic-bezier(0.4,0,0.2,1);
 }
 
@@ -235,9 +309,6 @@ form .Subscribe-btn svg {
     .Message form {
         max-width: 500px;
     }
-    .image{
-        display: none;
-    }
 }
 
 @media (max-width:544px){
@@ -246,6 +317,15 @@ form .Subscribe-btn svg {
     }
     .Message form h2 {
         font-size: 40px;
+    }
+    .instagram .profile {
+        flex-direction: column;
+    }
+    .instagram .profile .text{
+        text-align: center;
+    }
+    .instagram .follow {
+        justify-content: center;
     }
 }
 
