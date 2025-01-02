@@ -236,6 +236,7 @@ header nav #theme-switch i:last-child {
     }
     nav {
         justify-content: space-between;
+        align-items: flex-start;
     }
     nav div {
         padding: 15px;
