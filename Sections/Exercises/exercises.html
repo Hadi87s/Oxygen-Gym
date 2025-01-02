@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../styles/navbar.css">
     <link rel="stylesheet" href="../../styles/normalize.css">
     <link rel="stylesheet" href="../../styles/all.min.css">
+    <link rel="stylesheet" href="./styles/exercises.css">   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- font -->
@@ -32,16 +33,161 @@
                 <li><a href="../SignIn/signin.html"><i class="ri-user-fill" style="font-size: 17px;"></i></a></li>
             </ul>
                     <label class="hamburger" id="burgerList">
-                      <input type="checkbox">
-                      <svg viewBox="0 0 32 32">
+                    <input type="checkbox">
+                    <svg viewBox="0 0 32 32">
                         <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
                         <path class="line" d="M7 16 27 16"></path>
-                      </svg>
+                    </svg>
                     </label>
+                    <button id="theme-switch">
+                        <i class="ri-sun-fill"></i>
+                        <i class="ri-moon-fill"></i>
+                    </button>
         </nav>
     </header>
-    <h1>Exercises Page
-    </h1>
+
+    <body>
+        <section class="welcome-section">
+            <div class="welcome-overlay">
+              <h1>The Ultimate Exercise Guide</h1>
+              <p>Overcome Weaknesses</p>
+              <button id="scroll-button">Discover more</button>
+            </div>
+          </section>
+      <!-- Exercises Page -->
+      <section class="exercises-page">
+        <!-- Chest Exercises -->
+        <section class="exercise-section">
+          <h2>Chest Exercises</h2>
+          <div class="exercise-container">
+            <!-- Exercise Card 1 -->
+            <div class="exercise-card">
+              <div class="exercise-image">
+                <img src="https://via.placeholder.com/300x300" alt="Bench Press" class="default-image">
+                <img src="https://via.placeholder.com/300x300" alt="Bench Press Muscles" class="hover-image">
+              </div>
+              <h3>Bench Press</h3>
+              <p>A compound movement targeting the chest, shoulders, and triceps.</p>
+            </div>
+            <!-- Exercise Card 2 -->
+            <div class="exercise-card">
+              <div class="exercise-image">
+                <img src="https://via.placeholder.com/300x300" alt="Incline Dumbbell Press" class="default-image">
+                <img src="https://via.placeholder.com/300x300" alt="Incline Dumbbell Press Muscles" class="hover-image">
+              </div>
+              <h3>Incline Dumbbell Press</h3>
+              <p>Focuses on the upper chest and shoulders.</p>
+            </div>
+            <!-- Add more chest exercises here -->
+          </div>
+        </section>
+    
+        <!-- Back Exercises -->
+        <section class="exercise-section">
+          <h2>Back Exercises</h2>
+          <div class="exercise-container">
+            <!-- Exercise Card 1 -->
+            <div class="exercise-card">
+              <div class="exercise-image">
+                <img src="https://via.placeholder.com/300x300" alt="Deadlift" class="default-image">
+                <img src="https://via.placeholder.com/300x300" alt="Deadlift Muscles" class="hover-image">
+              </div>
+              <h3>Deadlift</h3>
+              <p>A full-body exercise that primarily targets the back and legs.</p>
+            </div>
+            <!-- Exercise Card 2 -->
+            <div class="exercise-card">
+              <div class="exercise-image">
+                <img src="https://via.placeholder.com/300x300" alt="Pull-Ups" class="default-image">
+                <img src="https://via.placeholder.com/300x300" alt="Pull-Ups Muscles" class="hover-image">
+              </div>
+              <h3>Pull-Ups</h3>
+              <p>Strengthens the upper back and lats.</p>
+            </div>
+            <!-- Add more back exercises here -->
+          </div>
+        </section>
+    
+        <!-- Arms Exercises -->
+        <section class="exercise-section">
+          <h2>Arms Exercises</h2>
+          <div class="exercise-container">
+            <!-- Exercise Card 1 -->
+            <div class="exercise-card">
+              <div class="exercise-image">
+                <img src="https://via.placeholder.com/300x300" alt="Bicep Curls" class="default-image">
+                <img src="https://via.placeholder.com/300x300" alt="Bicep Curls Muscles" class="hover-image">
+              </div>
+              <h3>Bicep Curls</h3>
+              <p>Isolates the biceps for arm strength and size.</p>
+            </div>
+            <!-- Exercise Card 2 -->
+            <div class="exercise-card">
+              <div class="exercise-image">
+                <img src="https://via.placeholder.com/300x300" alt="Tricep Dips" class="default-image">
+                <img src="https://via.placeholder.com/300x300" alt="Tricep Dips Muscles" class="hover-image">
+              </div>
+              <h3>Tricep Dips</h3>
+              <p>Targets the triceps and shoulders.</p>
+            </div>
+            <!-- Add more arms exercises here -->
+          </div>
+        </section>
+    
+        <!-- Shoulders Exercises -->
+        <section class="exercise-section">
+          <h2>Shoulders Exercises</h2>
+          <div class="exercise-container">
+            <!-- Exercise Card 1 -->
+            <div class="exercise-card">
+              <div class="exercise-image">
+                <img src="https://via.placeholder.com/300x300" alt="Overhead Press" class="default-image">
+                <img src="https://via.placeholder.com/300x300" alt="Overhead Press Muscles" class="hover-image">
+              </div>
+              <h3>Overhead Press</h3>
+              <p>Targets the shoulders and triceps.</p>
+            </div>
+            <!-- Exercise Card 2 -->
+            <div class="exercise-card">
+              <div class="exercise-image">
+                <img src="https://via.placeholder.com/300x300" alt="Lateral Raises" class="default-image">
+                <img src="https://via.placeholder.com/300x300" alt="Lateral Raises Muscles" class="hover-image">
+              </div>
+              <h3>Lateral Raises</h3>
+              <p>Isolates the side delts for shoulder width.</p>
+            </div>
+            <!-- Add more shoulders exercises here -->
+          </div>
+        </section>
+    
+        <!-- Legs Exercises -->
+        <section class="exercise-section">
+          <h2>Legs Exercises</h2>
+          <div class="exercise-container">
+            <!-- Exercise Card 1 -->
+            <div class="exercise-card">
+              <div class="exercise-image">
+                <img src="https://via.placeholder.com/300x300" alt="Squats" class="default-image">
+                <img src="https://via.placeholder.com/300x300" alt="Squats Muscles" class="hover-image">
+              </div>
+              <h3>Squats</h3>
+              <p>A compound movement targeting the quads, hamstrings, and glutes.</p>
+            </div>
+            <!-- Exercise Card 2 -->
+            <div class="exercise-card">
+              <div class="exercise-image">
+                <img src="https://via.placeholder.com/300x300" alt="Lunges" class="default-image">
+                <img src="https://via.placeholder.com/300x300" alt="Lunges Muscles" class="hover-image">
+              </div>
+              <h3>Lunges</h3>
+              <p>Works the legs and glutes for strength and balance.</p>
+            </div>
+            <!-- Add more legs exercises here -->
+          </div>
+        </section>
+      </section>
     <script src="../../scripts/navbar.js"></script>
+    <script defer src="../../scripts/navbar.js"></script>
+    <script defer src="../../scripts/darkmode.js"></script>
 </body>
 </html>

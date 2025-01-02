@@ -1,0 +1,156 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+/* Welcome Section */
+.welcome-section {
+    background-image: url('../../../images/exercises.jpg'); /* Replace with gym-related image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    transition: background-color 0.3s ease-out;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  
+  .welcome-overlay {
+    background-color: var(--nav-bck);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    transition: background-color 0.3s ease-out;
+  }
+  
+  .welcome-section h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .welcome-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-section button {
+    background-color: var(--crimson-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .welcome-section button:hover {
+    color: var(--crimson-color);
+    background-color: var(--secondary-color);
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    color: var(--header-color);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--separator-gradient);
+    margin: 10px auto 0;
+  }
+  
+  /* Exercise Section */
+  .exercise-section {
+    padding: 50px 20px;
+    background-color: var(--lighter-bg);
+    transition: background-color 0.3s ease-out;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  
+  .exercise-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Exercise Card */
+  .exercise-card {
+    background-color: var(--main-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: transform 0.3s ease;
+  }
+  
+  .exercise-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .exercise-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .exercise-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+  }
+  
+  .exercise-image .hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  
+  .exercise-card:hover .default-image {
+    opacity: 0;
+  }
+  
+  .exercise-card:hover .hover-image {
+    opacity: 1;
+  }
+  
+  .exercise-card h3 {
+    font-size: 1.5rem;
+    color: var(--header-color);
+    margin: 15px 0 10px;
+  }
+  
+  .exercise-card p {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
