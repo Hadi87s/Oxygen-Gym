@@ -20,6 +20,11 @@ try {
 
         // Fetch each product as an associative array
         while ($row = $result->fetch_assoc()) {
+            // Ensure the image path is correctly formatted
+            if (!empty($row['image_path'])) {
+                // Prepend the base URL if the image path is relative
+                $row['image_path'] = 'http://localhost' . $row['image_path']; // Adjust the base URL as needed
+            }
             $products[] = $row;
         }
 
@@ -34,5 +39,4 @@ try {
 } catch (Exception $e) {
     echo json_encode(["error" => $e->getMessage()]);
 }
-
 ?>

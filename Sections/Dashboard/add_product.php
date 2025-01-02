@@ -8,6 +8,10 @@ if (isset($_POST['name']) && isset($_POST['description']) && isset($_POST['price
 
     // Handle file upload
     $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/'; // Directory to save uploaded files
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0755, true); // Create the directory if it doesn't exist
+    }
+
     $fileName = basename($_FILES['image']['name']); // Get the file name
     $targetFilePath = $uploadDir . $fileName; // Full path for the uploaded file
     $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
@@ -21,12 +25,22 @@ if (isset($_POST['name']) && isset($_POST['description']) && isset($_POST['price
                 // Database connection
                 $db = new mysqli("localhost", "root", "", "oxygen_shop");
 
-                // Save product details into the database
-                $qs = "INSERT INTO `products` (`name`, `description`, `price`, `category`, `image_path`) VALUES ('$name', '$description', '$price', '$category', '/uploads/$fileName')";
-                $db->query($qs);
-                $db->close();
+                // Check for connection errors
+                if ($db->connect_error) {
+                    die("Connection failed: " . $db->connect_error);
+                }
 
-                header("location:control-center.html");
+                // Save product details into the database
+                $imagePath = '/uploads/' . $fileName; // Path to store in the database
+                $qs = "INSERT INTO `products` (`name`, `description`, `price`, `category`, `image_path`) VALUES ('$name', '$description', '$price', '$category', '$imagePath')";
+                if ($db->query($qs) === TRUE) {
+                    header("Location: control-center.html");
+                    exit();
+                } else {
+                    echo "Error: " . $db->error;
+                }
+
+                $db->close();
             } catch (Exception $e) {
                 echo "Error: " . $e->getMessage();
             }

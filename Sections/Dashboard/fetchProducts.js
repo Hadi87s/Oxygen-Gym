@@ -1,241 +1,85 @@
-function renderSupplements(
-  productImage = "../../images/ISO WHEY.jpg",
-  productName,
-  productDescription,
-  productPrice
-) {
-  // The container.
-  let shopSector = document.querySelector(".supplements-sector");
+function createProductCard(product) {
+  // Create the main container for all products
+  const allProductsContainer = document.querySelector(".allProducts");
 
-  // the column for each card.
-  let column = document.createElement("div");
-  column.classList.add("col-sm-6");
-  column.classList.add("col-md-4");
-  column.classList.add("col-lg-3");
-
-  // created the container for the card
-  let card = document.createElement("div");
+  // Create the card element
+  const card = document.createElement("div");
   card.classList.add("card");
-  card.classList.add("text-center");
-  card.classList.add("p-4");
-  card.classList.add("mb-4");
 
-  // creating the Image
-  const image = document.createElement("img");
-  image.alt = "Product";
-  image.src = productImage;
+  // Create the image element
+  const img = document.createElement("img");
+  img.src = product.image_path; // Use the correct field name from your database
+  img.alt = "Product Image";
 
-  // the text Header
-  const header = document.createElement("h1");
+  // Create the card content container
+  const cardContent = document.createElement("div");
+  cardContent.classList.add("card-content");
 
-  header.appendChild(document.createTextNode(productName));
+  // Create the product name element
+  const productName = document.createElement("h3");
+  productName.textContent = product.name;
 
-  const description = document.createElement("p");
-  description.appendChild(document.createTextNode(productDescription));
+  // Create the product description element
+  const productDescription = document.createElement("p");
+  productDescription.textContent = product.description;
 
-  // price tag
-  const price = document.createElement("p");
+  // Append the name and description to the card content
+  cardContent.appendChild(productName);
+  cardContent.appendChild(productDescription);
+
+  // Create the card actions container
+  const cardActions = document.createElement("div");
+  cardActions.classList.add("card-actions");
+
+  // Create the price element
+  const price = document.createElement("span");
   price.classList.add("price");
+  price.textContent = `$${product.price}`; // Format the price as needed
 
-  // Crossed price tag
-  const crossedTag = document.createElement("span");
-  crossedTag.appendChild(document.createTextNode("10.99$"));
-  crossedTag.classList.add("crossed-price");
+  // Create the delete button
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
 
-  price.appendChild(crossedTag);
-  price.appendChild(document.createTextNode(productPrice + "$"));
-  // Creating the Buttons.
+  // Add event listener to the delete button
+  deleteButton.addEventListener("click", () => {
+    // Send a POST request to the PHP backend
+    fetch("delete_product.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ product_id: product.id }), // Send the product ID
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status === "success") {
+          // Remove the card from the DOM
+          allProductsContainer.removeChild(card);
+        } else {
+          alert("Failed to delete product: " + data.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  });
 
-  const Buttons = document.createElement("div");
-  Buttons.classList.add("buttons");
+  // Append the price and delete button to the card actions
+  cardActions.appendChild(price);
+  cardActions.appendChild(deleteButton);
 
-  const trashIcon = document.createElement("i");
-  trashIcon.classList.add("ri-delete-bin-line");
+  // Append the image, card content, and card actions to the card
+  card.appendChild(img);
+  card.appendChild(cardContent);
+  card.appendChild(cardActions);
 
-  const deleteBtn = document.createElement("button");
-  deleteBtn.appendChild(document.createTextNode("Delete"));
-  deleteBtn.appendChild(trashIcon);
-  Buttons.appendChild(deleteBtn);
-
-  // Adding everything to the product List.
-  card.appendChild(image);
-  card.appendChild(header);
-  card.appendChild(description);
-  card.appendChild(price);
-  card.appendChild(Buttons);
-
-  column.appendChild(card);
-
-  shopSector.appendChild(column);
-}
-
-function renderSnacks(
-  productImage = "../../images/ISO WHEY.jpg",
-  productName,
-  productDescription,
-  productPrice
-) {
-  // The container.
-  let shopSector = document.querySelector(".snacks-sector");
-
-  // the column for each card.
-  let column = document.createElement("div");
-  column.classList.add("col-sm-6");
-  column.classList.add("col-md-4");
-  column.classList.add("col-lg-3");
-
-  // created the container for the card
-  let card = document.createElement("div");
-  card.classList.add("card");
-  card.classList.add("text-center");
-  card.classList.add("p-4");
-  card.classList.add("mb-4");
-
-  // creating the Image
-  const image = document.createElement("img");
-  image.alt = "Product";
-  image.src = productImage;
-
-  // the text Header
-  const header = document.createElement("h1");
-
-  header.appendChild(document.createTextNode(productName));
-
-  const description = document.createElement("p");
-  description.appendChild(document.createTextNode(productDescription));
-
-  // price tag
-  const price = document.createElement("p");
-  price.classList.add("price");
-
-  // Crossed price tag
-  const crossedTag = document.createElement("span");
-  crossedTag.appendChild(document.createTextNode("10.99$"));
-  crossedTag.classList.add("crossed-price");
-
-  price.appendChild(crossedTag);
-  price.appendChild(document.createTextNode(productPrice + "$"));
-  // Creating the Buttons.
-
-  const Buttons = document.createElement("div");
-  Buttons.classList.add("buttons");
-
-  const trashIcon = document.createElement("i");
-  trashIcon.classList.add("ri-delete-bin-line");
-
-  const deleteBtn = document.createElement("button");
-  deleteBtn.appendChild(document.createTextNode("Delete"));
-  deleteBtn.appendChild(trashIcon);
-  Buttons.appendChild(deleteBtn);
-
-  // Adding everything to the product List.
-  card.appendChild(image);
-  card.appendChild(header);
-  card.appendChild(description);
-  card.appendChild(price);
-  card.appendChild(Buttons);
-
-  column.appendChild(card);
-
-  shopSector.appendChild(column);
-}
-
-function renderWearables(
-  productImage = "../../images/ISO WHEY.jpg",
-  productName,
-  productDescription,
-  productPrice
-) {
-  // The container.
-  let shopSector = document.querySelector(".wearables-sector");
-
-  // the column for each card.
-  let column = document.createElement("div");
-  column.classList.add("col-sm-6");
-  column.classList.add("col-md-4");
-  column.classList.add("col-lg-3");
-
-  // created the container for the card
-  let card = document.createElement("div");
-  card.classList.add("card");
-  card.classList.add("text-center");
-  card.classList.add("p-4");
-  card.classList.add("mb-4");
-
-  // creating the Image
-  const image = document.createElement("img");
-  image.alt = "Product";
-  image.src = productImage;
-
-  // the text Header
-  const header = document.createElement("h1");
-
-  header.appendChild(document.createTextNode(productName));
-
-  const description = document.createElement("p");
-  description.appendChild(document.createTextNode(productDescription));
-
-  // price tag
-  const price = document.createElement("p");
-  price.classList.add("price");
-
-  // Crossed price tag
-  const crossedTag = document.createElement("span");
-  crossedTag.appendChild(document.createTextNode("10.99$"));
-  crossedTag.classList.add("crossed-price");
-
-  price.appendChild(crossedTag);
-  price.appendChild(document.createTextNode(productPrice + "$"));
-  // Creating the Buttons.
-
-  const Buttons = document.createElement("div");
-  Buttons.classList.add("buttons");
-
-  const trashIcon = document.createElement("i");
-  trashIcon.classList.add("ri-delete-bin-line");
-
-  const deleteBtn = document.createElement("button");
-  deleteBtn.appendChild(document.createTextNode("Delete"));
-  deleteBtn.appendChild(trashIcon);
-  Buttons.appendChild(deleteBtn);
-
-  // Adding everything to the product List.
-  card.appendChild(image);
-  card.appendChild(header);
-  card.appendChild(description);
-  card.appendChild(price);
-  card.appendChild(Buttons);
-
-  column.appendChild(card);
-
-  shopSector.appendChild(column);
+  // Append the card to the all products container
+  allProductsContainer.appendChild(card);
 }
 
 function renderProduct(product) {
   console.log(product);
-
-  if (product["category"] == "supplements") {
-    renderSupplements(
-      product["image"],
-      product["name"],
-      product["description"],
-      product["price"]
-    );
-  } else if (product["category"] == "snacks") {
-    renderSnacks(
-      product["image"],
-      product["name"],
-      product["description"],
-      product["price"]
-    );
-  } else if (product["category"] == "wearables") {
-    renderWearables(
-      product["image"],
-      product["name"],
-      product["description"],
-      product["price"]
-    );
-  }
+  createProductCard(product);
 }
 
 function fetchProducts() {

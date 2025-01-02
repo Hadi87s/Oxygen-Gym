@@ -1,0 +1,340 @@
+.allProducts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1em;
+}
+
+.allProducts .card {
+    background-color: var(--base-clr);
+    border: 1px solid var(--line-clr);
+    border-radius: 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    transition: 200ms ease-in-out;
+}
+
+.allProducts .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+}
+
+.allProducts .card img {
+    width: 80px; /* Adjust the size as needed */
+    height: auto;
+    border-radius: .5em;
+}
+
+.allProducts .card .card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.allProducts .card h3 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.allProducts .card p {
+    color: var(--secondary-text-clr);
+    margin: 0;
+}
+
+.allProducts .card .card-actions {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-left: auto;
+}
+
+.allProducts .card .price {
+    font-size: 1rem;
+    color: var(--primary-text-clr);
+}
+
+.allProducts .card button {
+    padding: .5em 1em;
+    border: none;
+    border-radius: .5em;
+    background-color: var(--accent-clr);
+    color: var(--base-clr);
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+.allProducts .card button:hover {
+    background-color: var(--hover-clr);
+    color: var( --text-clr);
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+#add-product {
+    all: unset;
+    padding: 0.85rem;
+    background-color: var(--accent-clr);
+    color: var(--base-clr);
+    border: 1px solid var(--line-clr);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+}
+
+#add-product:hover{
+    background-color: var(--hover-clr);
+    color: var(--text-clr);
+}
+
+.product-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.352);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    transition: all 0.3s ease-out;
+}
+
+.adding-card,
+.adding-card form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background-color: var(--base-clr);
+    border-radius: 10px;
+    min-height: 200px;
+    min-width: 350px;
+}
+
+.adding-card form table{
+    width: 100%;
+}
+
+.adding-card form table tr td{
+    padding: 0.5em;
+}
+
+.adding-card form table tr td input{
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 10px;
+    background-color: var(--text-clr);
+    color: var(--base-clr);
+    border: 2px solid var(--line-clr);
+}
+
+.adding-card form table tr td input:focus {
+    border: 1px solid var(--accent-clr);
+}
+
+.adding-card form table tr td label {
+    margin-top: 10px;
+}
+
+.adding-card form table tr td select {
+    width: 105%;
+    padding: 0.5em;
+    border-radius: 10px;
+    background-color: var(--text-clr);
+    color: var(--base-clr);
+    border: 2px solid var(--line-clr);
+}
+
+.adding-card form table tr td select:focus {
+    border: 1px solid var(--accent-clr);
+}
+
+.adding-card form table tr td button {
+    all: unset;
+    background-color: var(--base-clr);
+    margin-top: 15px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    border:1px solid var(--line-clr);
+}
+
+.adding-card form table tr td button:hover {
+    background-color: var(--hover-clr);
+}
+
+.adding-card form table #addProduct{
+    all: unset;
+    background-color: var(--accent-clr);
+    margin-top: 15px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    border:1px solid var(--line-clr);
+    transition: 150ms ease-out;
+}
+
+.adding-card form table tr:last-child {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.adding-card form table #addProduct:hover {
+    background-color: var(--hover-clr);
+    color: var(--text-clr);
+}
+
+.adding-card h1 {
+    margin-bottom: 25px;
+}
+
+.adding-card  label {
+    margin-top: 10px;
+}
+
+.adding-card input {
+    padding: 0.4rem;
+    border-radius: 10px;
+    background-color: var(--text-clr);
+    color: var(--base-clr);
+    border: 2px solid var(--line-clr);
+}
+
+.adding-card input:focus {
+    border: 1px solid var(--accent-clr);
+}
+
+@media (max-width: 768px) {
+    .allProducts {
+        grid-template-columns: 1fr;
+    }
+
+    .allProducts .card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .allProducts .card img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1em;
+    }
+
+    .allProducts .card .card-content {
+        width: 100%;
+    }
+
+    .allProducts .card .card-actions {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 1em;
+    }
+
+    .allProducts .card .price {
+        margin-right: auto;
+    }
+
+    .heading #cancel-button {
+        left: -30%;
+        top: -50px;
+    }
+
+}
+
+@media (max-width:712px){
+    .adding-card form table tr td select {
+        width: 110%;
+    }
+}
+
+.add-btn {
+    all: unset;
+    background-color: var(--base-clr);
+    margin-top: 15px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    border:1px solid var(--line-clr);
+}
+.add-btn:hover {
+    background-color: var(--hover-clr);
+}
+
+.file-upload-form {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-upload-label input {
+    display: none;
+}
+
+.file-upload-label svg {
+    height: 50px;
+    fill: rgb(82, 82, 82);
+    margin-bottom: 20px;
+}
+
+.file-upload-label {
+    cursor: pointer;
+    background-color: #ddd;
+    padding: 30px 70px;
+    border-radius: 40px;
+    border: 2px dashed rgb(82, 82, 82);
+    box-shadow: 0px 0px 200px -50px rgba(0, 0, 0, 0.719);
+}
+
+.file-upload-design {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.heading button {
+    all:unset;
+    position: absolute;
+    left: -70%;
+    top: -0.35rem;
+    padding: 0.35rem;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.heading button:hover {
+    background-color: #eb5e2f;
+    color: #fff;
+    border-color: #fff;
+}
+
+
+@media (max-width:768px){
+    .adding-card {
+        height: 100vh;
+        min-width: 65%;
+    }
+}
+

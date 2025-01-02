@@ -1,5 +1,5 @@
 function renderSupplements(
-  productImage = "../../images/ISO WHEY.jpg",
+  productImage,
   productName,
   productDescription,
   productPrice
@@ -9,25 +9,19 @@ function renderSupplements(
 
   // the column for each card.
   let column = document.createElement("div");
-  column.classList.add("col-sm-6");
-  column.classList.add("col-md-4");
-  column.classList.add("col-lg-3");
+  column.classList.add("col-sm-6", "col-md-4", "col-lg-3");
 
   // created the container for the card
   let card = document.createElement("div");
-  card.classList.add("card");
-  card.classList.add("text-center");
-  card.classList.add("p-4");
-  card.classList.add("mb-4");
+  card.classList.add("card", "text-center", "p-4", "mb-4");
 
   // creating the Image
   const image = document.createElement("img");
   image.alt = "Product";
-  image.src = productImage;
+  image.src = productImage; // Use the image path from the database
 
   // the text Header
   const header = document.createElement("h1");
-
   header.appendChild(document.createTextNode(productName));
 
   const description = document.createElement("p");
@@ -44,8 +38,8 @@ function renderSupplements(
 
   price.appendChild(crossedTag);
   price.appendChild(document.createTextNode(productPrice + "$"));
-  // Creating the Buttons.
 
+  // Creating the Buttons.
   const Buttons = document.createElement("div");
   Buttons.classList.add("buttons");
 
@@ -56,6 +50,7 @@ function renderSupplements(
   // wishlist icon
   const wishlist = document.createElement("i");
   wishlist.classList.add("ri-heart-fill");
+
   const addToCart = document.createElement("button");
   addToCart.appendChild(document.createTextNode("Add to "));
   addToCart.appendChild(cart);
@@ -75,12 +70,11 @@ function renderSupplements(
   card.appendChild(Buttons);
 
   column.appendChild(card);
-
   shopSector.appendChild(column);
 }
 
 function renderSnacks(
-  productImage = "../../images/ISO WHEY.jpg",
+  productImage,
   productName,
   productDescription,
   productPrice
@@ -90,25 +84,19 @@ function renderSnacks(
 
   // the column for each card.
   let column = document.createElement("div");
-  column.classList.add("col-sm-6");
-  column.classList.add("col-md-4");
-  column.classList.add("col-lg-3");
+  column.classList.add("col-sm-6", "col-md-4", "col-lg-3");
 
   // created the container for the card
   let card = document.createElement("div");
-  card.classList.add("card");
-  card.classList.add("text-center");
-  card.classList.add("p-4");
-  card.classList.add("mb-4");
+  card.classList.add("card", "text-center", "p-4", "mb-4");
 
   // creating the Image
   const image = document.createElement("img");
   image.alt = "Product";
-  image.src = productImage;
+  image.src = productImage; // Use the image path from the database
 
   // the text Header
   const header = document.createElement("h1");
-
   header.appendChild(document.createTextNode(productName));
 
   const description = document.createElement("p");
@@ -125,8 +113,8 @@ function renderSnacks(
 
   price.appendChild(crossedTag);
   price.appendChild(document.createTextNode(productPrice + "$"));
-  // Creating the Buttons.
 
+  // Creating the Buttons.
   const Buttons = document.createElement("div");
   Buttons.classList.add("buttons");
 
@@ -137,6 +125,7 @@ function renderSnacks(
   // wishlist icon
   const wishlist = document.createElement("i");
   wishlist.classList.add("ri-heart-fill");
+
   const addToCart = document.createElement("button");
   addToCart.appendChild(document.createTextNode("Add to "));
   addToCart.appendChild(cart);
@@ -156,12 +145,11 @@ function renderSnacks(
   card.appendChild(Buttons);
 
   column.appendChild(card);
-
   shopSector.appendChild(column);
 }
 
 function renderWearables(
-  productImage = "../../images/ISO WHEY.jpg",
+  productImage,
   productName,
   productDescription,
   productPrice
@@ -171,25 +159,19 @@ function renderWearables(
 
   // the column for each card.
   let column = document.createElement("div");
-  column.classList.add("col-sm-6");
-  column.classList.add("col-md-4");
-  column.classList.add("col-lg-3");
+  column.classList.add("col-sm-6", "col-md-4", "col-lg-3");
 
   // created the container for the card
   let card = document.createElement("div");
-  card.classList.add("card");
-  card.classList.add("text-center");
-  card.classList.add("p-4");
-  card.classList.add("mb-4");
+  card.classList.add("card", "text-center", "p-4", "mb-4");
 
   // creating the Image
   const image = document.createElement("img");
   image.alt = "Product";
-  image.src = productImage;
+  image.src = productImage; // Use the image path from the database
 
   // the text Header
   const header = document.createElement("h1");
-
   header.appendChild(document.createTextNode(productName));
 
   const description = document.createElement("p");
@@ -206,8 +188,8 @@ function renderWearables(
 
   price.appendChild(crossedTag);
   price.appendChild(document.createTextNode(productPrice + "$"));
-  // Creating the Buttons.
 
+  // Creating the Buttons.
   const Buttons = document.createElement("div");
   Buttons.classList.add("buttons");
 
@@ -218,6 +200,7 @@ function renderWearables(
   // wishlist icon
   const wishlist = document.createElement("i");
   wishlist.classList.add("ri-heart-fill");
+
   const addToCart = document.createElement("button");
   addToCart.appendChild(document.createTextNode("Add to "));
   addToCart.appendChild(cart);
@@ -237,38 +220,27 @@ function renderWearables(
   card.appendChild(Buttons);
 
   column.appendChild(card);
-
   shopSector.appendChild(column);
 }
 
-let shopNow = document.getElementById("shopNow");
-let shop = document.getElementById("shop");
-
-shopNow.onclick = () => {
-  shop.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
-};
-
 function renderProduct(product) {
-  if (product["category"] == "supplements") {
+  if (product["category"] === "supplements") {
     renderSupplements(
-      product["image"],
+      product["image_path"], // Use the correct field from the database
       product["name"],
       product["description"],
       product["price"]
     );
-  } else if (product["category"] == "snacks") {
+  } else if (product["category"] === "snacks") {
     renderSnacks(
-      product["image"],
+      product["image_path"], // Use the correct field from the database
       product["name"],
       product["description"],
       product["price"]
     );
-  } else if (product["category"] == "wearables") {
+  } else if (product["category"] === "wearables") {
     renderWearables(
-      product["image"],
+      product["image_path"], // Use the correct field from the database
       product["name"],
       product["description"],
       product["price"]
@@ -300,4 +272,4 @@ function fetchProducts() {
     });
 }
 
-fetchProducts(); // fetching the data from the server (php code).
+fetchProducts(); // Fetch the data from the server (PHP code).

@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Control Center</title>
+  <link rel="stylesheet" href="../../styles/all.min.css">
   <link rel="stylesheet" href="../../styles/normalize.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./styles/products.css">
-  <link rel="stylesheet" href="../../styles/gBstyle.css">
+  <link rel="stylesheet" href="./styles/productCards.css">
   <script defer type="text/javascript" src="app.js" defer></script>
   
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
@@ -89,7 +90,7 @@
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis porro iure quaerat aliquam! Optio dolorum in eum provident, facilis error repellendus excepturi enim dolor deleniti adipisci consectetur doloremque, unde maiores odit sapiente. Atque ab necessitatibus laboriosam consequatur eius similique, ex dolorum eum eaque sequi id veritatis voluptates perspiciatis, cupiditate pariatur.</p>
     </div>
     <div class="container">
-        <div class="btn-container"><button id="add-product">Add Button</button></div>
+        <div class="btn-container"><button id="add-product">Add Product</button></div>
         <div class="product-popup">
           <div class="adding-card">
             <section class="heading">
@@ -142,6 +143,13 @@
           </div>
         </div>
     </div>
+    <div class="container productsContainer">
+      <h1>Products Added:</h1>
+      <div class="allProducts">
+  
+    </div>
+    </div>
   </main>
+  <script defer src="./fetchProducts.js"></script>
 </body>
 </html>

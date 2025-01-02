@@ -7,14 +7,17 @@
   --accent-clr: #5e63ff;
   --secondary-text-clr: #b0b3c1;
 }
+
 *{
   margin: 0;
   padding: 0;
 }
+
 html{
   font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5rem;
 }
+
 body{
   min-height: 100vh;
   min-height: 100dvh;
@@ -23,6 +26,7 @@ body{
   display: grid;
   grid-template-columns: auto 1fr;
 }
+
 #sidebar{
   box-sizing: border-box;
   height: 100vh;
@@ -38,13 +42,16 @@ body{
   overflow: hidden;
   text-wrap: nowrap;
 }
+
 #sidebar.close{
   padding: 5px;
   width: 60px;
 }
+
 #sidebar ul{
   list-style: none;
 }
+
 #sidebar > ul > li:first-child{
   display: flex;
   justify-content: flex-end;
@@ -53,6 +60,7 @@ body{
     font-weight: 600;
   }
 }
+
 #sidebar ul li.active a{
   color: var(--accent-clr);
 
@@ -70,6 +78,7 @@ body{
   align-items: center;
   gap: 1em;
 }
+
 .dropdown-btn{
   width: 100%;
   text-align: left;
@@ -78,16 +87,20 @@ body{
   font: inherit;
   cursor: pointer;
 }
+
 #sidebar svg{
   flex-shrink: 0;
   fill: var(--text-clr);
 }
+
 #sidebar a span, #sidebar .dropdown-btn span{
   flex-grow: 1;
 }
+
 #sidebar a:hover, #sidebar .dropdown-btn:hover{
   background-color: var(--hover-clr);
 }
+
 #sidebar .sub-menu{
   display: grid;
   grid-template-rows: 0fr;
@@ -97,18 +110,23 @@ body{
     overflow: hidden;
   }
 }
+
 #sidebar .sub-menu.show{
   grid-template-rows: 1fr;
 }
+
 .dropdown-btn svg{
   transition: 200ms ease;
 }
+
 .rotate svg:last-child{
   rotate: 180deg;
 }
+
 #sidebar .sub-menu a{
   padding-left: 2em;
 }
+
 #toggle-btn{
   margin-left: auto;
   padding: 1em;
@@ -121,6 +139,7 @@ body{
     transition: rotate 150ms ease;
   }
 }
+
 #toggle-btn:hover{
   background-color: var(--hover-clr);
 }
@@ -128,11 +147,13 @@ body{
 main{
   padding: min(30px, 7%);
 }
+
 main p{
   color: var(--secondary-text-clr);
   margin-top: 5px;
   margin-bottom: 15px;
 }
+
 .container{
   border: 1px solid var(--line-clr);
   border-radius: 1em;
@@ -213,3 +234,4 @@ main p{
     }
   }
 }
+
