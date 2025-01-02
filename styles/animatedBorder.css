@@ -47,3 +47,14 @@
         --angle:360deg;
     }
 }
+
+@media (max-width:566px){
+    
+    .bCard::before, .bCard::after {
+        background-image: transparent;
+        width: 0;
+        height: 0;
+        padding: 0;
+        position: static;
+    }
+}

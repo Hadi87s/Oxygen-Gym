@@ -159,22 +159,3 @@
         min-width: 65%;
     }
 }
-/* 
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.product-card {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.product-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-} */
