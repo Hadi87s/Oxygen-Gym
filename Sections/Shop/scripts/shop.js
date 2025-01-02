@@ -13,7 +13,7 @@ function renderSupplements(
 
   // created the container for the card
   let card = document.createElement("div");
-  card.classList.add("card", "text-center", "p-4", "mb-4");
+  card.classList.add("cardd", "text-center", "pb-4", "mb-4");
 
   // creating the Image
   const image = document.createElement("img");
@@ -24,8 +24,8 @@ function renderSupplements(
   const header = document.createElement("h1");
   header.appendChild(document.createTextNode(productName));
 
-  const description = document.createElement("p");
-  description.appendChild(document.createTextNode(productDescription));
+  // const description = document.createElement("p");
+  // description.appendChild(document.createTextNode(productDescription));
 
   // price tag
   const price = document.createElement("p");
@@ -33,7 +33,7 @@ function renderSupplements(
 
   // Crossed price tag
   const crossedTag = document.createElement("span");
-  crossedTag.appendChild(document.createTextNode("10.99$"));
+  crossedTag.appendChild(document.createTextNode("10.99$ "));
   crossedTag.classList.add("crossed-price");
 
   price.appendChild(crossedTag);
@@ -52,11 +52,10 @@ function renderSupplements(
   wishlist.classList.add("ri-heart-fill");
 
   const addToCart = document.createElement("button");
-  addToCart.appendChild(document.createTextNode("Add to "));
   addToCart.appendChild(cart);
 
   const addToWishlist = document.createElement("button");
-  addToWishlist.appendChild(document.createTextNode("Add to "));
+  addToWishlist.className = "wishlist";
   addToWishlist.appendChild(wishlist);
 
   Buttons.appendChild(addToCart);
@@ -65,7 +64,7 @@ function renderSupplements(
   // Adding everything to the product List.
   card.appendChild(image);
   card.appendChild(header);
-  card.appendChild(description);
+  // card.appendChild(description);
   card.appendChild(price);
   card.appendChild(Buttons);
 
@@ -88,7 +87,7 @@ function renderSnacks(
 
   // created the container for the card
   let card = document.createElement("div");
-  card.classList.add("card", "text-center", "p-4", "mb-4");
+  card.classList.add("cardd", "text-center", "pb-4", "mb-4");
 
   // creating the Image
   const image = document.createElement("img");
@@ -99,8 +98,8 @@ function renderSnacks(
   const header = document.createElement("h1");
   header.appendChild(document.createTextNode(productName));
 
-  const description = document.createElement("p");
-  description.appendChild(document.createTextNode(productDescription));
+  // const description = document.createElement("p");
+  // description.appendChild(document.createTextNode(productDescription));
 
   // price tag
   const price = document.createElement("p");
@@ -108,7 +107,7 @@ function renderSnacks(
 
   // Crossed price tag
   const crossedTag = document.createElement("span");
-  crossedTag.appendChild(document.createTextNode("10.99$"));
+  crossedTag.appendChild(document.createTextNode("10.99$ "));
   crossedTag.classList.add("crossed-price");
 
   price.appendChild(crossedTag);
@@ -127,11 +126,10 @@ function renderSnacks(
   wishlist.classList.add("ri-heart-fill");
 
   const addToCart = document.createElement("button");
-  addToCart.appendChild(document.createTextNode("Add to "));
   addToCart.appendChild(cart);
 
   const addToWishlist = document.createElement("button");
-  addToWishlist.appendChild(document.createTextNode("Add to "));
+  addToWishlist.className = "wishlist";
   addToWishlist.appendChild(wishlist);
 
   Buttons.appendChild(addToCart);
@@ -140,7 +138,7 @@ function renderSnacks(
   // Adding everything to the product List.
   card.appendChild(image);
   card.appendChild(header);
-  card.appendChild(description);
+  // card.appendChild(description);
   card.appendChild(price);
   card.appendChild(Buttons);
 
@@ -163,7 +161,7 @@ function renderWearables(
 
   // created the container for the card
   let card = document.createElement("div");
-  card.classList.add("card", "text-center", "p-4", "mb-4");
+  card.classList.add("cardd", "text-center", "pb-4", "mb-4");
 
   // creating the Image
   const image = document.createElement("img");
@@ -174,8 +172,8 @@ function renderWearables(
   const header = document.createElement("h1");
   header.appendChild(document.createTextNode(productName));
 
-  const description = document.createElement("p");
-  description.appendChild(document.createTextNode(productDescription));
+  // const description = document.createElement("p");
+  // description.appendChild(document.createTextNode(productDescription));
 
   // price tag
   const price = document.createElement("p");
@@ -183,7 +181,7 @@ function renderWearables(
 
   // Crossed price tag
   const crossedTag = document.createElement("span");
-  crossedTag.appendChild(document.createTextNode("10.99$"));
+  crossedTag.appendChild(document.createTextNode("10.99$ "));
   crossedTag.classList.add("crossed-price");
 
   price.appendChild(crossedTag);
@@ -202,11 +200,10 @@ function renderWearables(
   wishlist.classList.add("ri-heart-fill");
 
   const addToCart = document.createElement("button");
-  addToCart.appendChild(document.createTextNode("Add to "));
   addToCart.appendChild(cart);
 
   const addToWishlist = document.createElement("button");
-  addToWishlist.appendChild(document.createTextNode("Add to "));
+  addToWishlist.className = "wishlist";
   addToWishlist.appendChild(wishlist);
 
   Buttons.appendChild(addToCart);
@@ -215,7 +212,7 @@ function renderWearables(
   // Adding everything to the product List.
   card.appendChild(image);
   card.appendChild(header);
-  card.appendChild(description);
+  // card.appendChild(description);
   card.appendChild(price);
   card.appendChild(Buttons);
 

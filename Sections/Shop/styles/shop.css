@@ -73,35 +73,50 @@ color: var(--secondary-color);
     margin-top: calc(100vh + 50px);
 }
 
-.shop .card{
+.shop .cardd{
     color: var(--secondary-color);
     background-color: var(--lighter-bg);
+    position: relative;
+    border: 1px solid white;
 }
 
-.card .buttons {
+.shop .cardd img{
+max-width: 100%;
+height: auto;
+object-fit: contain;
+    height: 100%;
+    width: 100%;
+    inset: 0px;
+    color: transparent
+}
+
+.cardd .buttons {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: nowrap;
     width: 100%;
 }
 
-.card .buttons > button{
+
+.cardd .buttons > button{
     all: unset;
     padding: 0.4rem 1rem;
     border-radius: 10px;
     cursor: pointer;
-    background-color: var(--crimson-color);
+    background-color: var(--lighter-bg);
     color: var(--secondary-color);
     transition: 0.2s ease-out;  
     margin-right: 10px;
 }
 
-.card .buttons > button:hover {
-    color: var(--crimson-color);
+
+.cardd .buttons > button:hover {
+    color: var(--lighter-bg);
     background-color: var(--secondary-color);
 }
 
-.card .crossed-price {
+.cardd .crossed-price {
+    display: block;
     text-decoration: line-through;
     color: var(--nav-hover);
 }

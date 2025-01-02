@@ -12,16 +12,16 @@ header{
 
 nav {
     position: fixed;
-    top: 5px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 5px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    padding: 3px;
+    align-items: center;
+    padding: 3px 0 !important;
     width: 85vw;
     z-index: 2;
-    margin: 5px auto;
+    margin: 5px auto !important;
     border-radius: 23px;
     height: 60.4px;
     transition: height 400ms, background-color 0.4s ease-in-out;
@@ -49,12 +49,12 @@ nav.filter {
 
 nav .logo {
     position: relative;
-    padding: 10px 10px;
+    padding: 10px 10px !important;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 25px !important;
     text-shadow: 0 0 10px var(--logo-shadow);
     color: var(--secondary-color);
-    transition: color 0.3s, text-shadow 0.3s;
+    transition: all 0.3s ease-out;
 }
 
 nav .logo a {
@@ -64,12 +64,12 @@ nav .logo a {
 
 nav .logo::after {
     content: "";
-    position: absolute;
-    width: 3px;
-    height: 65%;
+    position: absolute !important;
+    width: 3px !important;
+    height: 65% !important;
     background-color: var(--crimson-color);
-    top: 17.5%;
-    right: -10px;
+    top: 17.5% !important;
+    right: -10px !important;
     cursor: default;
     border-radius: 10px;
 }
@@ -79,12 +79,13 @@ nav ul {
     display: flex;
     justify-content: space-between;
     transition: 300ms ease-in-out;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    font: bold 1.5rem;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translate(-50%) !important;
+    font-weight: bold;
     text-transform: uppercase;
     /* margin: 16px !important; */
+    padding-left: 0 !important;
 }
 
 

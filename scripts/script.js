@@ -60,3 +60,17 @@ function handleScroll() {
 window.addEventListener("scroll", handleScroll);
 
 AOS.init();
+
+document.getElementById("UAElearnMore").onclick = () => {
+  window.open(
+    "http://localhost/Web%20Project/Sections/Plans/UAE.html",
+    "_self"
+  );
+};
+
+document.getElementById("KuwaitLearnMore").onclick = () => {
+  window.open(
+    "http://localhost/Web%20Project/Sections/Plans/Kuwait.html",
+    "_self"
+  );
+};
