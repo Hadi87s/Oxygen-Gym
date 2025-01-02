@@ -70,18 +70,27 @@ display: block;
 }
 
 .input-group {
-    margin-bottom: 15px;
+    margin-bottom:25px;
     width: 100%;
+    position:relative
 }
 
 .input-group label {
     display: block;
+    font-size: 1rem;
     margin-bottom: 5px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: var(--secondary-color);
+    color: var(--text);
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    transition: 100ms;
 }
 
+.input-group input:focus + label {
+    top: -20px;
+    left: 0px;
+    color: var(--secondary-color);
+}
 
 .input-group input {
     width: 100%;
@@ -91,6 +100,18 @@ display: block;
     background-color: var(--main-color);
     color: var(--secondary-color);
     transition: all 0.3s ease-out;
+    position: relative;
+}
+
+.input-group input label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--text);
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    transition: 100ms;
 }
 
 .input-group input:focus {
