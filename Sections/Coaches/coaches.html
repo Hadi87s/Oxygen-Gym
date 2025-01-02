@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oxygen Gym - Coaches</title>
+  <link rel="stylesheet" href="./styles/coaches.css">
+  <link rel="stylesheet" href="../../styles/variables.css">
+  <link rel="stylesheet" href="../../styles/navbar.css">
+  <link rel="stylesheet" href="../../styles/normalize.css">
+  <link rel="stylesheet" href="../../styles/navbar.css">
+  <link rel="stylesheet" href="../../styles/all.min.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+          <!--   Remix Icons   -->
+          <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="filter">
+            <div class="logo"><a href="../../index.html">OXYGEN</a></div>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../Shop/shops.html">Shop</a></li>
+                <li><a href="../Plans/plans.html">Plans</a></li>
+                <li><a class="active" href="../Trainers/trainers.html">Trainers</a></li>
+                <li><a href="../Exercises/exercises.html">Exercises</a></li>
+                <li><a href="../Classes/classes.html">Classes</a></li>
+                <li><a href="../ContactUs/contact.html">Contact</a></li>
+                <li><a href="../SignIn/signin.html"><i class="ri-user-fill" style="font-size: 17px;"></i></a></li>
+            </ul>
+                    <label class="hamburger" id="burgerList">
+                    <input type="checkbox">
+                    <svg viewBox="0 0 32 32">
+                        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                        <path class="line" d="M7 16 27 16"></path>
+                    </svg>
+                    </label>
+                    <button id="theme-switch">
+                        <i class="ri-sun-fill"></i>
+                        <i class="ri-moon-fill"></i>
+                    </button>
+        </nav>
+    </header>
+  <!-- Welcome Section -->
+  <section class="welcome-section">
+    <div class="welcome-overlay">
+      <h1>Welcome to Oxygen Gym</h1>
+      <p>Your journey to fitness starts here</p>
+      <button id="scroll-button">Get to Know Our Trainers</button>
+    </div>
+  </section>
+
+  <!-- Coaches Section -->
+  <section class="coaches-section">
+    <h2>Our Coaches</h2>
+    <div class="coaches-container">
+      <!-- Coach 1 -->
+      <div class="coach-card">
+        <img src="../../images/CBUM.jpg" alt="Coach 1">
+        <h3>Chris Bumstead</h3>
+        <p class="age">Age: 28</p>
+        <p class="bio">5x Mr. Olympia Classic Physique Champion. Specializes in bodybuilding and nutrition.</p>
+      </div>
+      <!-- Coach 2 -->
+      <div class="coach-card">
+        <img src="../../images/hanyRambod.jpg" alt="Coach 2">
+        <h3>Haney Rambod</h3>
+        <p class="age">Age: 35</p>
+        <p class="bio">Renowned fitness coach and creator of the FST-7 training system.</p>
+      </div>
+      <!-- Coach 3 -->
+      <div class="coach-card">
+        <img src="../../images/RonnieColeman.jpg" alt="Coach 3">
+        <h3>Ronnie Coleman</h3>
+        <p class="age">Age: 50</p>
+        <p class="bio">8x Mr. Olympia. Legendary bodybuilder with decades of experience.</p>
+      </div>
+      <!-- Coach 4 -->
+      <div class="coach-card">
+        <img src="../../images/RamonDino.jpg" alt="Coach 4">
+        <h3>Ramon Dino</h3>
+        <p class="age">Age: 30</p>
+        <p class="bio">A rising star in Classic Physique, Ramon Dino is known for his flawless symmetry and dedication to the sport.</p>
+      </div>
+      <!-- Coach 5 -->
+      <div class="coach-card">
+        <img src="../../images/JayCutler.jpg" alt="Coach 5">
+        <h3>Jay Cutler</h3>
+        <p class="age">Age: 45</p>
+        <p class="bio">4x Mr. Olympia. Known for his incredible symmetry and conditioning.</p>
+      </div>
+      <!-- Coach 6 -->
+      <div class="coach-card">
+        <img src="../../images/PhilHeath.jpg" alt="Coach 6">
+        <h3>Phil Heath</h3>
+        <p class="age">Age: 40</p>
+        <p class="bio">7x Mr. Olympia. Nicknamed "The Gift" for his genetic potential.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scroll to coaches section
+    document.getElementById('scroll-button').addEventListener('click', () => {
+      document.querySelector('.coaches-section').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+  <script defer src="../../scripts/navbar.js"></script>
+  <script defer src="../../scripts/darkmode.js"></script>
+</body>
+</html>
