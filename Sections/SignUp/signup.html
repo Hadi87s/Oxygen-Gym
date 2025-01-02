@@ -51,19 +51,19 @@
                 <p class="signup-subtitle">Join us and start your fitness journey today</p>
                 <form class="signup-form">
                     <div class="input-group">
-                        <input type="text" id="fullname" required>
+                        <input type="text" id="fullname" placeholder="" required>
                         <label for="fullname">Full Name</label>
                     </div>
                     <div class="input-group">
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" placeholder="" required>
                         <label for="email">Email</label>
                     </div>
                     <div class="input-group">
-                        <input type="password" id="password" required>
+                        <input type="password" id="password" placeholder="" required>
                         <label for="password">Password</label>
                     </div>
                     <div class="input-group">
-                        <input type="password" id="confirm-password"required>
+                        <input type="password" placeholder="" id="confirm-password"required>
                         <label for="confirm-password">Confirm Password</label>
                     </div>
                     <button type="submit" class="btn-grad">Sign Up</button>
@@ -74,6 +74,8 @@
             </div>
         </div>
     </div>
+    <script type="module" src="firebase-config.js"></script>
+    <script defer src="./scripts/SignUp.js"></script>
     <script src="../../scripts/darkmode.js"></script>
     <script src="../../scripts/navbar.js"></script>
 </body>
