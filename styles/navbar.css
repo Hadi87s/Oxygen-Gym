@@ -114,23 +114,9 @@ nav ul li a:hover {
 }
 
 nav ul li a.active {
-    color: var(--crimson-color);
+    color: var(--lighter-bg);
+    background-color: var(--nav-shadow);
 }
-
-/* nav ul li::before{
-    content: "";
-    position: absolute;
-    top: 97%;
-    width: 0;
-    height: 2px;
-    background-color: var(--crimson-color);
-    transition: width 300ms;
-    border-radius: 10px;
-}
-
-nav ul li:hover::before{
-    width: 100%;
-} */
 
 
 nav.grow{
@@ -164,8 +150,15 @@ nav .hamburger{
     position: absolute;
     top: 10px;
     right: 10px;
+    transition: 0.2s ease-out;
+}
+.hamburger:hover svg {
+    background-color: var(--nav-shadow);
 }
 
+.hamburger:hover svg .line {
+    stroke: var(--lighter-bg);
+}
 .line {
     fill: none;
     stroke: var(--secondary-color);
@@ -210,7 +203,11 @@ header nav #theme-switch{
 }
 
 header nav #theme-switch:hover{
-    background-color: #ffffff6e;
+    background-color: var(--nav-shadow);
+}
+header nav #theme-switch:hover i {
+    color: var(--lighter-bg);
+
 }
 
 header nav #theme-switch i:last-child {
