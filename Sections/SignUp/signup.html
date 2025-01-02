@@ -49,21 +49,21 @@
             <div class="signup-card">
                 <h1 class="signup-title">Create Account</h1>
                 <p class="signup-subtitle">Join us and start your fitness journey today</p>
-                <form class="signup-form">
+                <form class="signup-form" action="./signup.php" method="post" enctype="multipart/form-data">
                     <div class="input-group">
-                        <input type="text" id="fullname" placeholder="" required>
+                        <input type="text" id="fullname" name="fullname" placeholder="" required>
                         <label for="fullname">Full Name</label>
                     </div>
                     <div class="input-group">
-                        <input type="email" id="email" placeholder="" required>
+                        <input type="email" id="email" name="email" placeholder="" required>
                         <label for="email">Email</label>
                     </div>
                     <div class="input-group">
-                        <input type="password" id="password" placeholder="" required>
+                        <input type="password" id="password" name="password"  placeholder="" required>
                         <label for="password">Password</label>
                     </div>
                     <div class="input-group">
-                        <input type="password" placeholder="" id="confirm-password"required>
+                        <input type="password" placeholder="" id="confirm-password" name="confirm-password" required>
                         <label for="confirm-password">Confirm Password</label>
                     </div>
                     <button type="submit" class="btn-grad">Sign Up</button>

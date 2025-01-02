@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="../../styles/all.min.css">
   <link rel="stylesheet" href="../../styles/normalize.css">
   <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./styles/products.css">
   <link rel="stylesheet" href="./styles/productCards.css">
   <script defer type="text/javascript" src="app.js" defer></script>
   
@@ -60,59 +59,51 @@
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis porro iure quaerat aliquam! Optio dolorum in eum provident, facilis error repellendus excepturi enim dolor deleniti adipisci consectetur doloremque, unde maiores odit sapiente. Atque ab necessitatibus laboriosam consequatur eius similique, ex dolorum eum eaque sequi id veritatis voluptates perspiciatis, cupiditate pariatur.</p>
     </div>
     <div class="container">
-        <div class="btn-container"><button id="add-product">Add Product</button></div>
-        <div class="product-popup">
+      <div class="btn-container">
+          <button id="add-product">Add Product</button>
+      </div>
+      <div class="product-popup">
           <div class="adding-card">
-            <section class="heading">
-              <button id="cancel-button">Cancel</button>
-              <h1>Add a Product</h1>  
-            </section>
+              <section class="heading">
+                  <button id="cancel-button">✕</button>
+                  <h1>Add a Product</h1>
+              </section>
               <form action="add_product.php" method="post" enctype="multipart/form-data">
-                <table>
-                  <tr>
-                    <td>Upload An Image</td>
-                    <td>
-                    <input type="file" name="image" id="image">
-                  </td>
-                </tr>
-                  <tr>
-                    <td>Name</td>
-                    <td>
-                      <input id="name" name="name" type="text">
-                  </td>
-                </tr>
-                  <tr>
-                    <td>Description</td>
-                    <td>
-                      <input id="description" name="description" type="text">
-                  </td>
-                </tr>
-                  <tr>
-                    <td>Price</td>
-                    <td>
-                      <input id="price" name="price" type="number" step="0.01" required>
-                  </td>
-                </tr>
-                  <tr>
-                    <td>Category</td>
-                    <td>
+                  <div class="form-group">
+                      <label for="image" class="file-upload-label">
+                          <div class="file-upload-design">
+                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                              <span>Upload An Image</span>
+                          </div>
+                          <input type="file" name="image" id="image" accept="image/*">
+                      </label>
+                  </div>
+                  <div class="form-group">
+                      <input type="text" id="name" name="name" placeholder="Product Name" required>
+                  </div>
+                  <div class="form-group">
+                      <input type="text" id="description" name="description" placeholder="Description" required>
+                  </div>
+                  <div class="form-group">
+                      <input type="number" id="price" name="price" step="0.01" placeholder="Price" required>
+                  </div>
+                  <div class="form-group">
                       <select id="category" name="category" required>
+                          <option value="" disabled selected>Select Category</option>
                           <option value="supplements">Supplements</option>
                           <option value="snacks">Snacks</option>
                           <option value="wearables">Wearables</option>
                       </select>
-                  </td>
-                </tr>
-                  <tr>
-                    <td>
-                      <input id="addProduct" name="addProduct" type="submit" value="Add Product">
-                    </td>
-                  </tr>
-                </table>
+                  </div>
+                  <div class="form-group">
+                      <button type="submit" id="addProduct">Add Product</button>
+                  </div>
               </form>
           </div>
-        </div>
-    </div>
+      </div>
+  </div>
     <div class="container productsContainer">
       <h1>Products Added:</h1>
       <div class="allProducts">
@@ -120,6 +111,29 @@
     </div>
     </div>
   </main>
+  <script>
+    // Get the elements
+const addProductButton = document.getElementById('add-product');
+const productPopup = document.querySelector('.product-popup');
+const cancelButton = document.getElementById('cancel-button');
+
+// Show the popup
+addProductButton.addEventListener('click', () => {
+    productPopup.classList.add('active');
+});
+
+// Hide the popup
+cancelButton.addEventListener('click', () => {
+    productPopup.classList.remove('active');
+});
+
+// Hide the popup when clicking outside of it
+window.addEventListener('click', (event) => {
+    if (event.target === productPopup) {
+        productPopup.classList.remove('active');
+    }
+});
+  </script>
   <script defer src="./fetchProducts.js"></script>
 </body>
 </html>

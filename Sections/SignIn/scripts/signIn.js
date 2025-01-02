@@ -33,30 +33,30 @@ login.onclick = (e) => {
 
 // signIn.js
 
-// import { auth } from "./firebase-config.js";
-// import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./firebase-config.js";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
-// const signinForm = document.querySelector(".signin-form");
+const signinForm = document.querySelector(".signin-form");
 
-// signinForm.addEventListener("submit", async (e) => {
-//   e.preventDefault();
+signinForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-//   const email = document.getElementById("email").value;
-//   const password = document.getElementById("password").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-//   try {
-//     // Sign in with Firebase Authentication
-//     const userCredential = await signInWithEmailAndPassword(
-//       auth,
-//       email,
-//       password
-//     );
-//     const user = userCredential.user;
+  try {
+    // Sign in with Firebase Authentication
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    const user = userCredential.user;
 
-//     alert("Signed in successfully!");
-//     window.location.href = "../../index.html"; // Redirect to home page
-//   } catch (error) {
-//     console.error("Error signing in:", error.message);
-//     alert(error.message);
-//   }
-// });
+    alert("Signed in successfully!");
+    window.location.href = "../../index.html"; // Redirect to home page
+  } catch (error) {
+    console.error("Error signing in:", error.message);
+    alert(error.message);
+  }
+});

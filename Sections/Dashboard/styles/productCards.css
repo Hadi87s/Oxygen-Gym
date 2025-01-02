@@ -106,7 +106,9 @@
     transition: all 0.3s ease-out;
 }
 
-
+.adding-card {
+    height: 80%;
+}
 
 .adding-card,
 .adding-card form {
@@ -118,7 +120,7 @@
     background-color: var(--base-clr);
     border-radius: 10px;
     min-height: 200px;
-    min-width: 350px;
+    min-width: 300px;
 }
 
 .adding-card form table{
@@ -246,10 +248,8 @@
     }
 
     .heading #cancel-button {
-        left: -30%;
-        top: -50px;
+        top: 0;
     }
-
 }
 
 @media (max-width:712px){
@@ -267,6 +267,7 @@
     border-radius: 10px;
     border:1px solid var(--line-clr);
 }
+
 .add-btn:hover {
     background-color: var(--hover-clr);
 }
@@ -332,7 +333,6 @@
     border-color: #fff;
 }
 
-
 @media (max-width:768px){
     .adding-card {
         height: 100vh;
@@ -340,3 +340,193 @@
     }
 }
 
+/* General Styles */
+.container {
+    position: relative;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#add-product {
+    all: unset;
+    padding: 0.85rem 1.5rem;
+    background-color: var(--accent-clr);
+    color: var(--base-clr);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+    font-weight: 500;
+}
+
+#add-product:hover {
+    background-color: var(--hover-clr);
+    color: var(--text-clr);
+}
+
+/* Popup Styles */
+.product-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+.product-popup.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.adding-card {
+    background-color: var(--base-clr);
+    border-radius: 15px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.product-popup.active .adding-card {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.heading h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--text-clr);
+}
+
+#cancel-button {
+    all: unset;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-clr);
+    transition: color 0.2s ease;
+    position: absolute;
+    top: 0;
+    left: -100px;
+}
+
+#cancel-button:hover {
+    color: var(--accent-clr);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--line-clr);
+    border-radius: 10px;
+    background-color: var(--text-clr);
+    color: var(--base-clr);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--accent-clr);
+    outline: none;
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 12px;
+}
+
+.file-upload-label {
+    display: block;
+    cursor: pointer;
+    background-color: var(--text-clr);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 2px dashed var(--line-clr);
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+.file-upload-label:hover {
+    border-color: var(--accent-clr);
+}
+
+.file-upload-design {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.file-upload-design svg {
+    height: 40px;
+    fill: var(--base-clr);
+}
+
+.file-upload-design span {
+    color: var(--base-clr);
+    font-size: 0.9rem;
+}
+
+#addProduct {
+    all: unset;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--accent-clr);
+    color: var(--base-clr);
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+#addProduct:hover {
+    background-color: var(--hover-clr);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .adding-card {
+        padding: 1.5rem;
+    }
+
+    .heading h1 {
+        font-size: 1.25rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 0.5rem;
+    }
+}
