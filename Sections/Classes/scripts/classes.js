@@ -1,3 +1,7 @@
+if (localStorage.getItem("logout") === "shown") {
+  document.getElementById("logout-link").classList.add("show");
+}
+
 document.querySelectorAll(".table-controls ul li").forEach(function (item) {
   item.addEventListener("click", function () {
     var tsfilter = this.getAttribute("data-tsfilter");

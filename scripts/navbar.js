@@ -50,6 +50,10 @@ function fetchUserName() {
       userNameElement.textContent = JSON.parse(text).fullname.split(" ")[0];
       localStorage.setItem("fullname", JSON.parse(text).fullname.split(" ")[0]);
       const userElement = document.getElementById("user-signIn");
+      const userLogout = document.getElementById("logout-link");
+      localStorage.setItem("logout", "shown");
+
+      userLogout.classList.add("show");
       userElement.style.display = "flex";
     })
     .catch((error) => {
@@ -75,6 +79,11 @@ document.getElementById("logout-link").addEventListener("click", function (e) {
         if (userGreeting) {
           userGreeting.style.display = "none";
         }
+        const userLogout = document.getElementById("logout-link");
+        if (userLogout) {
+          userLogout.classList.remove("show");
+        }
+        localStorage.removeItem("logout");
 
         // Redirect to the home page or login page
         window.location.href = "../../index.html"; // Change this to your desired redirect page

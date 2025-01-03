@@ -1,0 +1,158 @@
+/* Import Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Define Color Variables */
+:root {
+  --main-color: #181818;
+  --lighter-bg: #242424;
+  --secondary-color: #f3f3f3;
+  --header-color: white;
+  --crimson-color: #dc143c;
+  --crimson-shadow: #dc143c88;
+  --nav-bck: #0000004d;
+  --nav-hover: #bcbcbc4d;
+  --text: #a7a7a7;
+  --box-shadow: rgba(229, 9, 20, 0.4);
+  --nav-shadow: rgba(255, 255, 255, 0.5);
+  --logo-shadow: rgba(255, 255, 255, 0.6);
+  --hover-shadow: rgba(255, 255, 255, 0.6);
+  --footer-shadow: rgba(104, 15, 19, 0.5);
+  --card-shadow: rgb(50 50 50 / 36%);
+  --separator-gradient: linear-gradient(90deg, #E50914, #181818);
+}
+
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+}
+
+.profile-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: var(--lighter-bg);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px var(--card-shadow);
+}
+
+.profile-picture {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 5px 10px var(--box-shadow);
+}
+
+.upload-btn {
+  display: none;
+  border-radius: 13px;
+}
+
+.upload-label {
+  display: inline-block;
+  background-color: var(--crimson-color);
+  color: var(--header-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-label:hover {
+  background-color: var(--secondary-color);
+    color: var(--crimson-color);
+}
+
+.change-username, .change-password {
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: var(--header-color);
+  margin-bottom: 15px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--text);
+  border-radius: 5px;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+}
+
+form input::placeholder {
+  color: var(--text);
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--crimson-color);
+  color: var(--header-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: var(--secondary-color);
+  color: var(--crimson-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 20px;
+  }
+}
+
+.field {
+    position: relative;
+    margin-bottom: 20px;
+
+}
+input{
+    transition: 50ms ease-out;
+}
+
+input + label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: grey;
+    transition: 150ms ease-out;
+}
+
+input:focus + label {
+    top: -26px;
+    left: 0px;
+}
+
+input:not(:placeholder-shown):not(:focus) + label {
+    top: -23px;
+    left: 0px;
+    color: var(--secondary-color);
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 0 5px 0 var(--secondary-color);
+}

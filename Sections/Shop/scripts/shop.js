@@ -6,6 +6,10 @@ if (localStorage.getItem("fullname")) {
   document.getElementById("user-greeting").style.display = "block";
 }
 
+if (localStorage.getItem("logout") === "shown") {
+  document.getElementById("logout-link").classList.add("show");
+}
+
 function renderSupplements(
   productImage,
   productName,
@@ -278,4 +282,3 @@ function fetchProducts() {
 }
 
 fetchProducts(); // Fetch the data from the server (PHP code).
-

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="./styles/profile.css">
+  <!-- Import Poppins Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="profile-container">
+    <!-- Profile Picture Section -->
+    <div class="profile-picture">
+      <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+      <input type="file" accept="image/*" class="upload-btn" id="upload-btn" />
+      <div></div>
+      <label style="margin-top:10px" for="upload-btn" class="upload-label">Upload Picture</label>
+    </div>
+    <!-- Change Username Section -->
+    <div class="change-username">
+      <h2 style="margin-bottom: 30px;">Change Username</h2>
+      <form action="#" method="post">
+        <div class="field">
+            <input id="newUsername" type="text" placeholder="" name="new_username" required>
+            <label for="newUsername">New Username</label>
+        </div>
+        <button type="submit">Change</button>
+    </form>
+</div>
+<!-- Change Password Section -->
+<div class="change-password">
+    <h2 style="margin-bottom: 25px;">Change Password</h2>
+    <form action="#" method="post">
+        <div class="field">
+            <input type="password" name="current_password" id="current_password" placeholder="" required>
+            <label for="current_password">Current Password</label>
+        </div>
+        <div class="field">
+            <input type="password" id="new_password" name="new_password" placeholder="" required>
+            <label for="new_password">New Password</label>
+        </div>
+        <div class="field">
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="" required>
+            <label for="confirm_password">Confirm Password</label>
+        </div> 
+        <button type="submit">Change</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

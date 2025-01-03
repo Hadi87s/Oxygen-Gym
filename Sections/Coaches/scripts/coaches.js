@@ -7,3 +7,7 @@ window.onload = function () {
     document.getElementById("user-greeting").style.display = "block";
   }
 };
+
+if (localStorage.getItem("logout") === "shown") {
+  document.getElementById("logout-link").classList.add("show");
+}

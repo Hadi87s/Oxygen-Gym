@@ -6,6 +6,9 @@ if (localStorage.getItem("fullname")) {
     localStorage.getItem("fullname");
   // document.getElementById("user-greeting").style.display = "block";
 }
+if(localStorage.getItem("logout") === "shown") {  
+  document.getElementById("logout-link").classList.add("show");
+}
 
 const build = document.querySelector(".build");
 const greatness = document.querySelector(".greatness");

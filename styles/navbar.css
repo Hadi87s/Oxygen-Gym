@@ -267,6 +267,10 @@ header nav #theme-switch i:last-child {
     display: block;
 }
 
+#logout-link.show {
+    display: block !important;
+}
+
 @media (max-width:1180px) {
     nav ul{
         flex-direction: column;
@@ -340,6 +344,6 @@ header nav #theme-switch i:last-child {
         margin-bottom: 5px;
     }
     #logout-link {
-        display: none !important;
+        display: none;
     }
 }
