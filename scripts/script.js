@@ -6,13 +6,27 @@ if (localStorage.getItem("fullname")) {
     localStorage.getItem("fullname");
   // document.getElementById("user-greeting").style.display = "block";
 }
-if(localStorage.getItem("logout") === "shown") {  
+if (localStorage.getItem("logout") === "shown") {
   document.getElementById("logout-link").classList.add("show");
 }
 
 const build = document.querySelector(".build");
 const greatness = document.querySelector(".greatness");
 const btn = document.querySelector(".gB");
+
+setTimeout(() => {
+  build.style.display = "block";
+}, 320);
+setTimeout(() => {
+  greatness.style.display = "block";
+}, 900);
+if (window.outerWidth <= 617) {
+  Jc.style.display = "none";
+} else {
+  setTimeout(() => {
+    btn.style.display = "block";
+  }, 1600);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   AOS.init({
@@ -21,22 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     offset: 100, // Offset for triggering animations
   });
 });
-
-window.onload = () => {
-  setTimeout(() => {
-    build.style.display = "block";
-  }, 320);
-  setTimeout(() => {
-    greatness.style.display = "block";
-  }, 900);
-  if (window.outerWidth <= 617) {
-    Jc.style.display = "none";
-  } else {
-    setTimeout(() => {
-      btn.style.display = "block";
-    }, 1600);
-  }
-};
 
 btn.onclick = () => {
   window.scrollTo({

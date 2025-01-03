@@ -99,9 +99,21 @@ nav ul li{
     margin: 0 10px;
 }
 
+nav ul li#user-greeting{
+    margin-left: -20px;
+    margin-top: 5px;
+    text-transform:none;
+    font-size: 13px;
+    color: var(--secondary-color);
+}
+
+.sharedHover:hover{
+    background-color: transparent !important;
+}
+
 nav ul + div {
     position: absolute;
-    right: 5em;
+    right: -10px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -154,6 +166,10 @@ nav ul li a {
 nav ul li a:hover {
     background-color: var(--nav-shadow);
     color: var(--lighter-bg);
+}
+
+nav ul li .sharedHover:hover {
+    color:var(--secondary-color)
 }
 
 nav ul li a.active {
