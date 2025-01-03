@@ -88,8 +88,9 @@ nav ul {
     transform: translate(-50%) !important;
     font-weight: bold;
     text-transform: uppercase;
-    /* margin: 16px !important; */
+    margin: 16px;
     padding-left: 0 !important;
+    align-items: center;
 }
 
 
@@ -111,8 +112,34 @@ nav ul + div {
 }
 
 nav ul + div a {
-    all: unset;
+    all:unset;
+    padding: 5px 10px !important;
+    cursor: pointer;
+    color:var(--secondary-color);
+    border-radius: 6px;
+    transition: all 0.15s ease-out;
+    display: block;
+    width: fit-content;
+}
+
+nav ul + div a:hover {
+    background-color: var(--nav-shadow);
+    color: var(--lighter-bg);
+}
+
+nav ul li a:hover {
+    background-color: var(--nav-shadow);
+    color: var(--lighter-bg);
+}
+
+nav ul + div a i {
     color: var(--secondary-color);
+    transition: 150ms ease-out;
+
+}
+
+nav ul + div a:hover i {
+    color: var(--crimson-color);
 }
 
 nav ul li a {
@@ -137,6 +164,10 @@ nav ul li a.active {
 
 nav.grow{
     height:calc(100% - 20px);
+
+    #user-signIn {
+        display: flex !important;
+    }
 }
 
 nav ul.order {
@@ -295,5 +326,16 @@ header nav #theme-switch i:last-child {
     
     nav #theme-switch:hover {
         transform:none;
+    }
+
+    #user-signIn {
+        flex-direction: column;
+        top: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none !important;
+    }
+    #user-signIn a {
+        margin-bottom: 5px;
     }
 }

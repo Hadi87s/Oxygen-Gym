@@ -3,16 +3,6 @@ body {
     color: var(--secondary-color);
 }
 
-header nav ul {
-    margin-top: 15px !important;
-}
-
-@media (max-width:961px){
-    header nav ul {
-        margin-top: 45px !important;
-    }
-}
-
 .plans {
     margin-top: 100px;
     animation: fadeIn 0.4s ease-in-out;
