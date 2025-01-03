@@ -339,4 +339,7 @@ header nav #theme-switch i:last-child {
     #user-signIn a {
         margin-bottom: 5px;
     }
+    #logout-link {
+        display: none !important;
+    }
 }
