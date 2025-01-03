@@ -33,6 +33,10 @@
                 <li><a href="../ContactUs/contact.html">Contact</a></li>
                 <li><a class="active" href="./signin.html"><i class="ri-user-fill" style="font-size: 17px;"></i></a></li>
             </ul>
+            <div id="user-signIn" style="display: none;" class="onLogIn">
+                <a id="user-greeting" href="#"></a>
+                <span> <a href="#" id="logout-link"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a></span>
+            </div>
                     <label class="hamburger" id="burgerList">
                       <input type="checkbox">
                       <svg viewBox="0 0 32 32">
@@ -90,7 +94,7 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script type="module" src="./scripts/signIn.js"></script>
+    <script src="./scripts/signIn.js"></script>
     <script  src="../../scripts/navbar.js"></script>
     <script src="../../scripts/darkmode.js"></script>
     <script type="module" src="./scripts/firebase-config.js"></script>

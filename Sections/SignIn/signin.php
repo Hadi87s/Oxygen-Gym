@@ -52,7 +52,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['email'
                     exit();
                 } else {
                     // Redirect regular users to the home page
-                    header("Location: ../../index.html");
+                    header("Location: ./signin.html");
                     exit();
                 }
             } else {

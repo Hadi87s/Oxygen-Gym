@@ -95,9 +95,25 @@ nav ul {
 
 nav ul li{
     position: relative;
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
+nav ul + div {
+    position: absolute;
+    right: 5em;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+}
+
+nav ul + div a {
+    all: unset;
+    color: var(--secondary-color);
+}
 
 nav ul li a {
     all:unset;

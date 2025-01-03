@@ -29,3 +29,13 @@ document.querySelectorAll(".table-controls ul li").forEach(function (item) {
     });
   });
 });
+
+window.onload = function () {
+  if (localStorage.getItem("fullname")) {
+    console.log(document.getElementById("user-greeting"));
+
+    document.getElementById("user-greeting").textContent =
+      localStorage.getItem("fullname");
+    document.getElementById("user-greeting").style.display = "block";
+  }
+};

@@ -1,41 +1,33 @@
-// // SignUp.js
+// const userElement = document.getElementById("user-signIn");
+// const userNameElement = document.getElementById("user-greeting");
+// if (localStorage.getItem("fullname")) {
+//   userElement.style.display = "flex";
+//   userNameElement.textContent = localStorage.getItem("fullname");
+// }
 
-import { auth, db } from "./Firebase-config.js";
+// document.getElementById("logout-link").addEventListener("click", function (e) {
+//   e.preventDefault(); // Prevent the default link behavior
 
-const signupForm = document.querySelector(".signup-form");
+//   // Send a request to the logout endpoint
+//   fetch("logout.php")
+//     .then((response) => {
+//       if (response.ok) {
+//         // Clear the user's name from local storage
+//         localStorage.removeItem("fullname");
 
-signupForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
+//         // Hide the user greeting and show the login link
+//         const userGreeting = document.getElementById("user-signIn");
+//         if (userGreeting) {
+//           userGreeting.style.display = "none";
+//         }
 
-  const fullName = document.getElementById("fullname").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("confirm-password").value;
-
-  if (password !== confirmPassword) {
-    alert("Passwords do not match!");
-    return;
-  }
-
-  try {
-    // Create user with Firebase Authentication
-    const userCredential = await auth.createUserWithEmailAndPassword(
-      email,
-      password
-    );
-    const user = userCredential.user;
-
-    // Store additional user data in Firestore
-    await db.collection("users").doc(user.uid).set({
-      fullName: fullName,
-      email: email,
-      createdAt: new Date(),
-    });
-
-    alert("Account created successfully!");
-    window.location.href = "../SignIn/signin.html"; // Redirect to sign-in page
-  } catch (error) {
-    console.error("Error signing up:", error.message);
-    alert(error.message);
-  }
-});
+//         // Redirect to the home page or login page
+//         window.location.href = "../../index.html"; // Change this to your desired redirect page
+//       } else {
+//         console.error("Logout failed");
+//       }
+//     })
+//     .catch((error) => {
+//       console.error("Error during logout:", error);
+//     });
+// });

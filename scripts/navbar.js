@@ -1,3 +1,10 @@
+const userElement = document.getElementById("user-signIn");
+const userNameElement = document.getElementById("user-greeting");
+if (localStorage.getItem("fullname")) {
+  userElement.style.display = "flex";
+  userNameElement.textContent = localStorage.getItem("fullname");
+}
+
 let nav = document.querySelector("nav");
 let navElements = document.querySelector("nav ul");
 let navListElements = [...document.querySelectorAll("nav ul li a")];
@@ -29,3 +36,53 @@ window.onclick = (event) => {
     navElements.classList.remove("order");
   }
 };
+
+function fetchUserName() {
+  fetch("getUser.php")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.text(); // Log the raw response
+    })
+    .then((text) => {
+      const userNameElement = document.getElementById("user-greeting");
+      userNameElement.textContent = JSON.parse(text).fullname.split(" ")[0];
+      localStorage.setItem("fullname", JSON.parse(text).fullname.split(" ")[0]);
+      const userElement = document.getElementById("user-signIn");
+      userElement.style.display = "flex";
+    })
+    .catch((error) => {
+      console.error("Error fetching user data:", error);
+    });
+}
+
+// Call the function when the page loads
+document.addEventListener("DOMContentLoaded", fetchUserName);
+
+document.getElementById("logout-link").addEventListener("click", function (e) {
+  e.preventDefault(); // Prevent the default link behavior
+
+  // Send a request to the logout endpoint
+  fetch("/Web%20Project/logout.php")
+    .then((response) => {
+      if (response.ok) {
+        // Clear the user's name from local storage
+        localStorage.removeItem("fullname");
+
+        // Hide the user greeting and show the login link
+        const userGreeting = document.getElementById("user-signIn");
+        if (userGreeting) {
+          userGreeting.style.display = "none";
+        }
+
+        // Redirect to the home page or login page
+        window.location.href = "../../index.html"; // Change this to your desired redirect page
+      } else {
+        console.error("Logout failed");
+      }
+    })
+    .catch((error) => {
+      console.error("Error during logout:", error);
+    });
+});

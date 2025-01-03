@@ -14,49 +14,29 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
-const email = document.getElementById("email");
-const password = document.getElementById("password");
-const login = document.getElementById("submit-btn");
+// document.getElementById("logout-link").addEventListener("click", function (e) {
+//   e.preventDefault(); // Prevent the default link behavior
 
-login.onclick = (e) => {
-  console.log(email.value);
-  console.log(password.value);
-  e.preventDefault(); // Prevents the default form submission behavior
-  if (email.value == "admin@pal.com" && password.value == "admin") {
-    // Redirects to the dashboard
-    window.open(
-      "http://localhost/Web%20Project/Sections/Dashboard/control-center.html",
-      "_self"
-    );
-  }
-};
+//   // Send a request to the logout endpoint
+//   fetch("logout.php")
+//     .then((response) => {
+//       if (response.ok) {
+//         // Clear the user's name from local storage
+//         localStorage.removeItem("fullname");
 
-// signIn.js
+//         // Hide the user greeting and show the login link
+//         const userGreeting = document.getElementById("user-signIn");
+//         if (userGreeting) {
+//           userGreeting.style.display = "none";
+//         }
 
-import { auth } from "./firebase-config.js";
-import { signInWithEmailAndPassword } from "firebase/auth";
-
-const signinForm = document.querySelector(".signin-form");
-
-signinForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
-  try {
-    // Sign in with Firebase Authentication
-    const userCredential = await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-    const user = userCredential.user;
-
-    alert("Signed in successfully!");
-    window.location.href = "../../index.html"; // Redirect to home page
-  } catch (error) {
-    console.error("Error signing in:", error.message);
-    alert(error.message);
-  }
-});
+//         // Redirect to the home page or login page
+//         window.location.href = "../../index.html"; // Change this to your desired redirect page
+//       } else {
+//         console.error("Logout failed");
+//       }
+//     })
+//     .catch((error) => {
+//       console.error("Error during logout:", error);
+//     });
+// });
