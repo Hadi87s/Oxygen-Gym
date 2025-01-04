@@ -362,4 +362,7 @@ header nav #theme-switch i:last-child {
     #logout-link {
         display: none;
     }
+    nav ul li#user-greeting {
+        margin: 0;
+    }
 }

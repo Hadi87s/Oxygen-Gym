@@ -102,7 +102,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatBox = document.getElementById("chat-box");
   const userInput = document.getElementById("user-input");
   const sendButton = document.getElementById("send-btn");
-
+  const today = document.createElement("div");
+  today.style.margin = "1px auto";
+  today.textContent = "Today";
   // Toggle chat window visibility
   function toggleChat() {
     if (chatWindow.classList.contains("active")) {
@@ -116,11 +118,12 @@ document.addEventListener("DOMContentLoaded", () => {
     chatWindow.classList.add("active");
     openIcon.style.display = "none";
     closeIcon.style.display = "block";
+    chatBox.appendChild(today);
   }
 
   function closeChat() {
     chatWindow.classList.remove("active");
-
+    chatBox.removeChild(today);
     closeIcon.style.display = "none";
     openIcon.style.display = "block";
   }
