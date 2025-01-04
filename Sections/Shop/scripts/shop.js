@@ -10,10 +10,25 @@ if (localStorage.getItem("logout") === "shown") {
   document.getElementById("logout-link").classList.add("show");
 }
 
+window.onload = () => {
+  const cart = JSON.parse(localStorage.getItem("cart"));
+  if (cart) {
+    cart.forEach((product) => {
+      createProductElement(
+        product.productName,
+        product.description,
+        product.price,
+        product.quantity,
+        product.imageSrc
+      );
+    });
+  }
+};
+
 const cartBtn = document.getElementById("cartBtn");
 const cartPopup = document.getElementById("cartPopup");
 const cartProductList = document.getElementById("cartProducts");
-
+const addedProducts = [];
 cartBtn.addEventListener("click", () => {
   cartPopup.classList.toggle("show");
 });
@@ -61,6 +76,20 @@ function createProductElement(
   quantityParagraph.innerHTML = `Quantity: <span>${quantity}</span>`;
   productQuantityDiv.appendChild(quantityParagraph);
 
+  const newProduct = {
+    productName,
+    description,
+    price,
+    quantity,
+    imageSrc,
+  };
+  localStorage.setItem(
+    "cart",
+    JSON.stringify([
+      ...(JSON.parse(localStorage.getItem("cart")) || []),
+      newProduct,
+    ])
+  );
   // Append all sections to the main container
   boxDiv.appendChild(imageDiv);
   boxDiv.appendChild(aboutProductDiv);
