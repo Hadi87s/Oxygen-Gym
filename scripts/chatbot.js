@@ -1,3 +1,4 @@
+document.querySelector(".chat-icon-close").style.display = "none";
 document.addEventListener("DOMContentLoaded", () => {
   const chatBox = document.getElementById("chat-box");
   const userInput = document.getElementById("user-input");
@@ -119,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function closeChat() {
     chatWindow.classList.remove("active");
+
     closeIcon.style.display = "none";
     openIcon.style.display = "block";
   }
