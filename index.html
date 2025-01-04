@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./styles/gBstyle.css">
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/all.min.css">
+    <link rel="stylesheet" href="./styles/chatbot.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- fonts -->
@@ -81,6 +82,11 @@
         <p>Your Journey, Your Transformation.</p>
     </div>
     
+    <!-- Chatbot's Code -->
+    <div id="chat-icon">
+        <i class="fas fa-comment chat-icon-open"></i>
+        <i class="fas fa-times chat-icon-close"></i>
+      </div>
     <div class="container">
         <div class="about red-border reveal" data-aos="fade-up">
             <section class="main-heading">
@@ -207,11 +213,24 @@
         <div style="border-top: 1px solid var(--secondary-color); width:100%; padding-top:48px" class="rights">&copy; 2021 Oxygen Gym &ThinSpace; – &ThinSpace; Building Strength, Inspiring Lives.</div>
       </footer>
       
-
+      <div id="chat-window">
+        <header id="chat-header">
+          <h2>Chatbot</h2>
+        </header>
+        <div id="chat-box"></div>
+        <div id="input-container">
+          <input type="text" id="user-input" placeholder="Type your message...">
+          <button id="send-btn">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+      
       <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
       <script defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script defer src="./scripts/script.js"></script>
       <script defer src="./scripts/darkmode.js"></script>
-      <script  src="./scripts/navbar.js"></script>
+      <script defer src="./scripts/navbar.js"></script>
+      <script defer src="./scripts/chatbot.js"></script>
     </body>
 </html>
