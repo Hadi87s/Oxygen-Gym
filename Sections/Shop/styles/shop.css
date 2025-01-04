@@ -111,3 +111,120 @@ object-fit: contain;
     border-radius: 10px;
     border: 1px solid var(--nav-hover);
 }
+
+#cartPopup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--nav-bck);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-out;
+}
+
+#cartPopup.show {
+    display: flex;
+
+}
+.popup .cart {
+    background-color: var(--lighter-bg);
+    width: 85%;
+    height: 550px;
+    border-radius: 23px;
+    padding: 2em;
+    overflow: auto;
+}
+
+.popup .cart .cart-header h1 {
+    color: var(--secondary-color);
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.popup .cart .products{
+    display: flex;
+    flex-direction: column;
+}
+.popup .cart .box {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    background-color: var(--third);   
+    border-radius: 23px;
+    width: 80%;
+    margin: 10px auto;
+}
+.popup .cart .box img {
+    width: 100px;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.popup .cart .box .about-product,
+.popup .cart .box .product-price,
+.popup .cart .box .product-quantity {
+    color: var(--secondary-color);
+    margin: 10px;
+}
+
+.popup .cart .box .about-product {
+    max-width: 500px;
+    word-break: break-all;
+}
+
+#cartBtn{
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+#cartBtn:hover {
+    color: var(--lighter-bg);
+}
+
+.checkout {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.checkout button {
+    all: unset;
+    padding: 1rem 2rem;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    transition: 0.2s ease-out;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.checkout button:hover {
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+
+@media (max-width:960px) {
+    .popup .cart .box {
+        flex-direction: column;
+        text-align: center;
+    }
+    .popup .cart .box .about-product,
+    .popup .cart .box .product-price,
+    .popup .cart .box .product-quantity {
+        margin: 0;
+    }
+    .popup .cart .products {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+    }
+}
+
+@media (max-width:480px){
+    .popup .cart .box img {
+        width: 85px;
+    }
+}

@@ -10,6 +10,66 @@ if (localStorage.getItem("logout") === "shown") {
   document.getElementById("logout-link").classList.add("show");
 }
 
+const cartBtn = document.getElementById("cartBtn");
+const cartPopup = document.getElementById("cartPopup");
+const cartProductList = document.getElementById("cartProducts");
+
+cartBtn.addEventListener("click", () => {
+  cartPopup.classList.toggle("show");
+});
+
+function createProductElement(
+  productName,
+  description,
+  price,
+  quantity,
+  imageSrc
+) {
+  // Create the main container div with the class "box"
+  const boxDiv = document.createElement("div");
+  boxDiv.className = "box";
+
+  // Create the image container and image element
+  const imageDiv = document.createElement("div");
+  imageDiv.className = "image";
+  const img = document.createElement("img");
+  img.src = imageSrc;
+  img.alt = `${productName} image`;
+  imageDiv.appendChild(img);
+
+  // Create the about-product section
+  const aboutProductDiv = document.createElement("div");
+  aboutProductDiv.className = "about-product";
+  const productNameHeading = document.createElement("h4");
+  productNameHeading.textContent = productName;
+  const productDescription = document.createElement("p");
+  productDescription.textContent = description;
+  aboutProductDiv.appendChild(productNameHeading);
+  aboutProductDiv.appendChild(productDescription);
+
+  // Create the product-price section
+  const productPriceDiv = document.createElement("div");
+  productPriceDiv.className = "product-price";
+  const priceParagraph = document.createElement("p");
+  priceParagraph.innerHTML = `Price: $<span>${price}</span>`;
+  productPriceDiv.appendChild(priceParagraph);
+
+  // Create the product-quantity section
+  const productQuantityDiv = document.createElement("div");
+  productQuantityDiv.className = "product-quantity";
+  const quantityParagraph = document.createElement("p");
+  quantityParagraph.innerHTML = `Quantity: <span>${quantity}</span>`;
+  productQuantityDiv.appendChild(quantityParagraph);
+
+  // Append all sections to the main container
+  boxDiv.appendChild(imageDiv);
+  boxDiv.appendChild(aboutProductDiv);
+  boxDiv.appendChild(productPriceDiv);
+  boxDiv.appendChild(productQuantityDiv);
+  // Append the main container to the body or any specific element
+  cartProductList.appendChild(boxDiv);
+}
+
 function renderSupplements(
   productImage,
   productName,
@@ -73,6 +133,15 @@ function renderSupplements(
   Buttons.appendChild(addToCart);
   Buttons.appendChild(addToWishlist);
 
+  addToCart.addEventListener("click", () => {
+    createProductElement(
+      productName,
+      productDescription,
+      productPrice,
+      1,
+      productImage
+    );
+  });
   // Adding everything to the product List.
   card.appendChild(image);
   card.appendChild(header);
@@ -146,7 +215,15 @@ function renderSnacks(
 
   Buttons.appendChild(addToCart);
   Buttons.appendChild(addToWishlist);
-
+  addToCart.addEventListener("click", () => {
+    createProductElement(
+      productName,
+      productDescription,
+      productPrice,
+      1,
+      productImage
+    );
+  });
   // Adding everything to the product List.
   card.appendChild(image);
   card.appendChild(header);
@@ -221,6 +298,15 @@ function renderWearables(
   Buttons.appendChild(addToCart);
   Buttons.appendChild(addToWishlist);
 
+  addToCart.addEventListener("click", () => {
+    createProductElement(
+      productName,
+      productDescription,
+      productPrice,
+      1,
+      productImage
+    );
+  });
   // Adding everything to the product List.
   card.appendChild(image);
   card.appendChild(header);
