@@ -29,8 +29,14 @@ const cartBtn = document.getElementById("cartBtn");
 const cartPopup = document.getElementById("cartPopup");
 const cartProductList = document.getElementById("cartProducts");
 const addedProducts = [];
-cartBtn.addEventListener("click", () => {
+const closeBtn = document.getElementById("closeCart");
+
+cartBtn.addEventListener("click", (e) => {
   cartPopup.classList.toggle("show");
+});
+
+closeBtn.addEventListener("click", () => {
+  cartPopup.classList.remove("show");
 });
 
 function createProductElement(
