@@ -133,7 +133,8 @@ object-fit: contain;
     background-color: var(--lighter-bg);
     width: 85%;
     height: 550px;
-    border-radius: 23px;
+    border-top-left-radius: 23px;
+    border-bottom-left-radius: 23px;
     padding: 2em;
     overflow: auto;
 }

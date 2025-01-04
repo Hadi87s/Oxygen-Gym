@@ -1,0 +1,82 @@
+[
+    {
+        "question": "hi",
+        "answer": "Hello! How can I assist you today? 😊"
+    },
+    {
+    "question": "What is the name of the gym?",
+    "answer": "The gym is called Oxygen Gym."
+    },
+    {
+    "question": "What are the operating hours of the gym?",
+    "answer": "Our operating hours vary by location: Kuwait (24/7), Abu Dhabi (5:00 AM to 2:00 AM), and Dubai (24/7)."
+    },
+    {
+    "question": "Where are the gym locations?",
+    "answer": "Our gym locations include Kuwait, UAE (Abu Dhabi and Dubai)."
+    },
+    {
+    "question": "What is the Instagram page for the gym?",
+    "answer": "You can find us on Instagram at https://www.instagram.com/o2_gyms/."
+    },
+    {
+    "question": "How can I contact the gym?",
+    "answer": "You can reach us via WhatsApp at +965 6583 8171."
+    },
+    {
+    "question": "What are the membership plans in Kuwait?",
+    "answer": "In Kuwait, membership plans vary by location: Al Adailia Black (1 month: 65KD, 3 months: 175KD, 6 months: 295KD, 1 year: 490KD), New Riggae, Sabah AlSalem, Jabriya, Mahboula (1 month: 50KD, 3 months: 140KD, 6 months: 240KD, 1 year: 440KD), Old Riggae, Mangaf (1 month: 30KD, 3 months: 80KD, 6 months: 140KD, 1 year: 200KD)."
+    },
+    {
+    "question": "What are the membership plans in Abu Dhabi?",
+    "answer": "In Abu Dhabi, membership plans are as follows: 1 month: 682.50 AED, 3 months: 1942.50 AED, 6 months: 3360 AED, 1 year: 5775 AED."
+    },
+    {
+    "question": "What are the membership plans in Dubai?",
+    "answer": "In Dubai, membership plans are as follows: 1 month: 900 AED, 3 months: 2480 AED, 6 months: 4500 AED, 1 year: 8780 AED."
+    },
+    {
+    "question": "What services does the gym offer?",
+    "answer": "We offer personal training, group classes, spa facilities, and nutrition consultations."
+    },
+    {
+    "question": "What equipment is available at the gym?",
+    "answer": "Our gym is equipped with all kinds of machines, including cardio, weightlifting, and specialized equipment."
+    },
+    {
+    "question": "Does the gym have additional facilities?",
+    "answer": "Yes, we have saunas, swimming pools, lockers, and more. The gym is also accessible for people with disabilities."
+    },
+    {
+    "question": "Who are the trainers at the gym?",
+    "answer": "Our trainers include Cbum, Ronnie Coleman, Jay Cutler, Phil Jeath, Hany Ranbot, and Ramon Dino."
+    },
+    {
+    "question": "Are personal training sessions available?",
+    "answer": "Yes, we offer personal training sessions. Each trainer has their own pricing."
+    },
+    {
+    "question": "What is the gym's refund policy?",
+    "answer": "Refunds are not permissible. Once a member pays, they will have access to the gym for the duration of their subscription."
+    },
+    {
+    "question": "Are guests allowed at the gym?",
+    "answer": "Yes, guests are always welcome, but the reception or someone in charge should be informed."
+    },
+    {
+    "question": "Is parking available for members?",
+    "answer": "Yes, parking is available for members."
+    },
+    {
+    "question": "Can I freeze my membership temporarily?",
+    "answer": "Yes, memberships can be frozen temporarily for members subscribed for three months or more."
+    },
+    {
+    "question": "Does the gym offer discounts or promotions?",
+    "answer": "Yes, we offer constant discounts on supplements, wearables, and snacks. Check our Instagram page for updates."
+    },
+    {
+    "question": "What is unique about Oxygen Gym?",
+    "answer": "Oxygen Gym is known for its welcoming atmosphere and powerful motivational phrases to inspire bodybuilders and fitness enthusiasts."
+    }
+]

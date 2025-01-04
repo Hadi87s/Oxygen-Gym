@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const userInput = document.getElementById("user-input");
   const sendButton = document.getElementById("send-btn");
   let apiKey = ""; // Placeholder for the fetched API key
+  let knowledgeBase = []; // Custom knowledge base from JSON
 
   // Fetch the API key from the PHP file
   async function fetchApiKey() {
@@ -16,11 +17,37 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Load training data from JSON file
+  async function loadTrainingData() {
+    try {
+      const response = await fetch("training_data.json"); // Path to your JSON file
+      knowledgeBase = await response.json();
+    } catch (error) {
+      console.error("Failed to load training data:", error);
+    }
+  }
+
   // Append messages to the chatbox
   function appendMessage(content, sender) {
     const messageElement = document.createElement("div");
     messageElement.className = `message ${sender}-message`;
-    messageElement.textContent = content;
+
+    // Add timestamp
+    const timestamp = document.createElement("div");
+    timestamp.className = "timestamp";
+    timestamp.textContent = new Date().toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
+    // Render markdown for bot messages
+    if (sender === "bot") {
+      messageElement.innerHTML = marked.parse(content); // Parse markdown to HTML
+    } else {
+      messageElement.textContent = content;
+    }
+
+    messageElement.appendChild(timestamp);
     chatBox.appendChild(messageElement);
     chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll
   }
@@ -48,7 +75,11 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         body: JSON.stringify({
           messages: [
-            { role: "system", content: "You are a helpful assistant." },
+            {
+              role: "system",
+              content:
+                "You are a helpful assistant trained on gym-related data.",
+            },
             { role: "user", content: message },
           ],
           model: "deepseek-chat",
@@ -77,7 +108,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const typingIndicator = showTypingIndicator();
 
-    const botResponse = await callDeepSeekAPI(message);
+    // Try to find a response in the knowledge base
+    const knowledgeBaseResponse = knowledgeBase.find((item) =>
+      item.question.toLowerCase().includes(message.toLowerCase())
+    );
+
+    let botResponse;
+    if (knowledgeBaseResponse) {
+      botResponse = knowledgeBaseResponse.answer;
+    } else {
+      botResponse = await callDeepSeekAPI(message);
+    }
+
     typingIndicator.remove(); // Remove typing indicator
     appendMessage(botResponse, "bot");
   }
@@ -90,8 +132,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Fetch the API key when the page loads
+  // Fetch the API key and load training data when the page loads
   fetchApiKey();
+  loadTrainingData();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
