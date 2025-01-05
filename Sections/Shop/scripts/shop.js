@@ -104,6 +104,7 @@ function createProductElement(
   // Append the main container to the body or any specific element
   cartProductList.appendChild(boxDiv);
 }
+const cartBox = document.getElementById("addedToCart");
 
 function renderSupplements(
   productImage,
@@ -168,7 +169,19 @@ function renderSupplements(
   Buttons.appendChild(addToCart);
   Buttons.appendChild(addToWishlist);
 
+  //<div class="addedToCart"><i  class="ri-box-3-fill"></i></div>
+  const addedToCartDiv = document.createElement("div");
+  addedToCartDiv.classList.add("addedToCart");
+  const boxIcon = document.createElement("i");
+  boxIcon.classList.add("ri-box-3-fill");
+  addedToCartDiv.appendChild(boxIcon);
+
   addToCart.addEventListener("click", () => {
+    addedToCartDiv.classList.add("active");
+    addedToCartDiv.addEventListener("animationend", function () {
+      addedToCartDiv.classList.remove("active");
+    });
+
     createProductElement(
       productName,
       productDescription,
@@ -177,11 +190,13 @@ function renderSupplements(
       productImage
     );
   });
+
   // Adding everything to the product List.
   card.appendChild(image);
   card.appendChild(header);
   // card.appendChild(description);
   card.appendChild(price);
+  card.appendChild(addedToCartDiv);
   card.appendChild(Buttons);
 
   column.appendChild(card);
@@ -250,7 +265,20 @@ function renderSnacks(
 
   Buttons.appendChild(addToCart);
   Buttons.appendChild(addToWishlist);
+
+  //<div class="addedToCart"><i  class="ri-box-3-fill"></i></div>
+  const addedToCartDiv = document.createElement("div");
+  addedToCartDiv.classList.add("addedToCart");
+  const boxIcon = document.createElement("i");
+  boxIcon.classList.add("ri-box-3-fill");
+  addedToCartDiv.appendChild(boxIcon);
+
   addToCart.addEventListener("click", () => {
+    addedToCartDiv.classList.add("active");
+    addedToCartDiv.addEventListener("animationend", function () {
+      addedToCartDiv.classList.remove("active");
+    });
+
     createProductElement(
       productName,
       productDescription,
@@ -259,11 +287,13 @@ function renderSnacks(
       productImage
     );
   });
+
   // Adding everything to the product List.
   card.appendChild(image);
   card.appendChild(header);
   // card.appendChild(description);
   card.appendChild(price);
+  card.appendChild(addedToCartDiv);
   card.appendChild(Buttons);
 
   column.appendChild(card);
@@ -330,10 +360,22 @@ function renderWearables(
   addToWishlist.className = "wishlist";
   addToWishlist.appendChild(wishlist);
 
+  //<div class="addedToCart"><i  class="ri-box-3-fill"></i></div>
+  const addedToCartDiv = document.createElement("div");
+  addedToCartDiv.classList.add("addedToCart");
+  const boxIcon = document.createElement("i");
+  boxIcon.classList.add("ri-box-3-fill");
+  addedToCartDiv.appendChild(boxIcon);
+
   Buttons.appendChild(addToCart);
   Buttons.appendChild(addToWishlist);
 
   addToCart.addEventListener("click", () => {
+    addedToCartDiv.classList.add("active");
+    addedToCartDiv.addEventListener("animationend", function () {
+      addedToCartDiv.classList.remove("active");
+    });
+
     createProductElement(
       productName,
       productDescription,
@@ -342,11 +384,13 @@ function renderWearables(
       productImage
     );
   });
+
   // Adding everything to the product List.
   card.appendChild(image);
   card.appendChild(header);
   // card.appendChild(description);
   card.appendChild(price);
+  card.appendChild(addedToCartDiv);
   card.appendChild(Buttons);
 
   column.appendChild(card);

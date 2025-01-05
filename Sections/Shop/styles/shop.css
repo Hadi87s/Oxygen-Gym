@@ -64,6 +64,7 @@ color: var(--secondary-color);
     background-color: var(--lighter-bg);
     position: relative;
     border: 1px solid var(--secondary-color);
+    position:relative;
 }
 
 .shop .cardd img{
@@ -220,8 +221,36 @@ object-fit: contain;
     font-size: 24px;
 }
 
+.addedToCart {
+    color: var(--secondary-color);
+    z-index: 5;
+    position: absolute;
+    color: var(--crimson-color);
+    bottom: 15%;
+    left: 36%;
+    opacity: 0;
+}
 
-@media (max-width:960px) {
+.addedToCart.active {
+    opacity: 1;
+    animation: box 0.5s ease-out;
+}
+
+@keyframes box {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    
+}
+
+
+@media (min-width:576px) and (max-width:992px) {
     .popup .cart .box {
         flex-direction: column;
         text-align: center;
@@ -234,6 +263,22 @@ object-fit: contain;
     .popup .cart .products {
         display: grid;
         grid-template-columns: 1fr 1fr; 
+    }
+    .addedToCart{
+        left: 31%;
+    }
+}
+
+@media (max-width:575px){
+    .addedToCart{
+        left: 42%;
+        bottom: 11%;
+    }
+}
+@media (max-width:432px){
+    .addedToCart{
+        left: 38%;
+        bottom: 11%;
     }
 }
 
