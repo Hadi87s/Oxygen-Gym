@@ -25,6 +25,7 @@ window.onload = () => {
       product.imageSrc
     );
   });
+  updateTotalPrice(); // Update total price on page load
 };
 
 // Toggle cart popup visibility
@@ -186,6 +187,29 @@ function updateQuantity(productName, change) {
         product.imageSrc
       );
     });
+
+    // Update the total price display
+    updateTotalPrice();
+  }
+}
+
+// Function to calculate the total price of all products in the cart
+function calculateTotalPrice() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let totalPrice = 0;
+
+  cart.forEach((product) => {
+    totalPrice += product.price * product.quantity;
+  });
+
+  return totalPrice.toFixed(2); // Returns the total price rounded to 2 decimal places
+}
+
+// Function to update the total price display
+function updateTotalPrice() {
+  const totalPriceElement = document.getElementById("totalPrice");
+  if (totalPriceElement) {
+    totalPriceElement.innerText = calculateTotalPrice();
   }
 }
 
@@ -307,6 +331,9 @@ function renderProductCard(
         product.imageSrc
       );
     });
+
+    // Update the total price display
+    updateTotalPrice();
   });
 
   // Append all elements to the card

@@ -236,6 +236,15 @@ object-fit: contain;
     animation: box 0.5s ease-out;
 }
 
+#totalPrice {
+    color: var(--secondary-color);
+    align-content: space-evenly;
+    padding: 5px;
+    margin-left: 15px;
+    border-radius: 16px;
+    border: 1px solid var(--secondary-color);
+}
+
 @keyframes box {
     0% {
         opacity: 1;
