@@ -8,46 +8,105 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles/variables.css">
+  <link rel="stylesheet" href="../../styles/navbar.css">
+  <link rel="stylesheet" href="../../styles/normalize.css">
+  <link rel="stylesheet" href="../../styles/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <!--   Remix Icons   -->
+      <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
-  <div class="profile-container">
-    <!-- Profile Picture Section -->
-    <div class="profile-picture">
-      <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
-      <input type="file" accept="image/*" class="upload-btn" id="upload-btn" />
-      <div></div>
-      <label style="margin-top:10px" for="upload-btn" class="upload-label">Upload Picture</label>
+  <header>
+    <nav class="filter">
+        <div class="logo"><a href="../../index.html">OXYGEN</a></div>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../Shop/shops.html">Shop</a></li>
+            <li><a href="../Plans/plans.html">Plans</a></li>
+            <li><a href="../Coaches/coaches.html">Trainers</a></li>
+            <li><a href="../Exercises/exercises.html">Exercises</a></li>
+            <li><a href="../Classes/classes.html">Classes</a></li>
+            <li><a href="../ContactUs/contact.html">Contact</a></li>
+            <li><a class="sharedHover" class="active" href="./signin.html"><i class="ri-user-fill" style="font-size: 17px;"></i></a></li>
+            <li class="sharedHover" id="user-greeting"></li>
+        </ul>
+        <div id="user-signIn" style="display: none;" class="onLogIn">
+            <!-- <a id="user-greeting" href="#"></a> -->
+            <span> <a href="#" id="logout-link"><i class="fa-solid fa-right-from-bracket"></i></a></span>
+        </div>
+                <label class="hamburger" id="burgerList">
+                <input type="checkbox">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+                </label>
+                <button id="theme-switch">
+                    <i class="ri-sun-fill"></i>
+                    <i class="ri-moon-fill"></i>
+                </button>
+    </nav>
+</header>
+  <main>
+    <div class="Ourcontainer">
+      <h1>Profile</h1>
+      <div class="profile-header">
+        <img src="../../images/profileImage.jpg" alt="Profile Picture" class="profile-picture">
+        <h3 class="profile-name">User</h3>
+      </div>
+      <div class="profile-details">
+        <div class="detail">
+          <label>Email:&ThinSpace;</label>
+          <span>name@example.com</span>
+        </div>
+        <div class="detail">
+          <label>Role:&ThinSpace;</label>
+          <span>User</span>
+        </div>
+      </div>
+      <div class="change-password">
+        <h3>Change Password</h3>
+        <form id="changePasswordForm">
+          <div class="form-group">
+            <label for="currentPassword">Current Password:</label>
+            <input type="password" id="currentPassword" required>
+          </div>
+          <div class="form-group">
+            <label for="newPassword">New Password:</label>
+            <input type="password" id="newPassword" required>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm New Password:</label>
+            <input type="password" id="confirmPassword" required>
+          </div>
+          <button type="submit" class="btn">Change Password</button>
+        </form>
+      </div>
     </div>
-    <!-- Change Username Section -->
-    <div class="change-username">
-      <h2 style="margin-bottom: 30px;">Change Username</h2>
-      <form action="#" method="post">
-        <div class="field">
-            <input id="newUsername" type="text" placeholder="" name="new_username" required>
-            <label for="newUsername">New Username</label>
-        </div>
-        <button type="submit">Change</button>
-    </form>
-</div>
-<!-- Change Password Section -->
-<div class="change-password">
-    <h2 style="margin-bottom: 25px;">Change Password</h2>
-    <form action="#" method="post">
-        <div class="field">
-            <input type="password" name="current_password" id="current_password" placeholder="" required>
-            <label for="current_password">Current Password</label>
-        </div>
-        <div class="field">
-            <input type="password" id="new_password" name="new_password" placeholder="" required>
-            <label for="new_password">New Password</label>
-        </div>
-        <div class="field">
-            <input type="password" id="confirm_password" name="confirm_password" placeholder="" required>
-            <label for="confirm_password">Confirm Password</label>
-        </div> 
-        <button type="submit">Change</button>
-      </form>
-    </div>
-  </div>
+  </main>
+
+  <script>
+    document.getElementById('changePasswordForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const newPassword = document.getElementById('newPassword').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (newPassword !== confirmPassword) {
+        alert('New passwords do not match.');
+        return;
+      }
+
+      // Simulate password change (you can replace this with an API call)
+      alert('Password changed successfully!');
+    });
+  </script>
+  <script defer src="../../scripts/navbar.js"></script>
+  <script defer src="../../scripts/darkmode.js"></script>
 </body>
 </html>
