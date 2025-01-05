@@ -1,3 +1,9 @@
+const cartBtn = document.getElementById("cartBtn");
+const cartPopup = document.getElementById("cartPopup");
+const cartProductList = document.getElementById("cartProducts");
+const addedProducts = [];
+const closeBtn = document.getElementById("closeCart");
+
 if (localStorage.getItem("fullname")) {
   console.log(document.getElementById("user-greeting"));
 
@@ -24,12 +30,6 @@ window.onload = () => {
     });
   }
 };
-
-const cartBtn = document.getElementById("cartBtn");
-const cartPopup = document.getElementById("cartPopup");
-const cartProductList = document.getElementById("cartProducts");
-const addedProducts = [];
-const closeBtn = document.getElementById("closeCart");
 
 cartBtn.addEventListener("click", (e) => {
   cartPopup.classList.toggle("show");
@@ -82,157 +82,47 @@ function createProductElement(
   quantityParagraph.innerHTML = `Quantity: <span>${quantity}</span>`;
   productQuantityDiv.appendChild(quantityParagraph);
 
-  const newProduct = {
-    productName,
-    description,
-    price,
-    quantity,
-    imageSrc,
-  };
-  localStorage.setItem(
-    "cart",
-    JSON.stringify([
-      ...(JSON.parse(localStorage.getItem("cart")) || []),
-      newProduct,
-    ])
-  );
   // Append all sections to the main container
   boxDiv.appendChild(imageDiv);
   boxDiv.appendChild(aboutProductDiv);
   boxDiv.appendChild(productPriceDiv);
   boxDiv.appendChild(productQuantityDiv);
+
   // Append the main container to the body or any specific element
   cartProductList.appendChild(boxDiv);
 }
-const cartBox = document.getElementById("addedToCart");
 
-function renderSupplements(
-  productImage,
-  productName,
-  productDescription,
-  productPrice
-) {
-  // The container.
-  let shopSector = document.querySelector(".supplements-sector");
-
-  // the column for each card.
-  let column = document.createElement("div");
-  column.classList.add("col-sm-6", "col-md-4", "col-lg-3");
-
-  // created the container for the card
-  let card = document.createElement("div");
-  card.classList.add("cardd", "text-center", "pb-4", "mb-4");
-
-  // creating the Image
-  const image = document.createElement("img");
-  image.alt = "Product";
-  image.src = productImage; // Use the image path from the database
-
-  // the text Header
-  const header = document.createElement("h1");
-  header.appendChild(document.createTextNode(productName));
-
-  // const description = document.createElement("p");
-  // description.appendChild(document.createTextNode(productDescription));
-
-  // price tag
-  const price = document.createElement("p");
-  price.classList.add("price");
-
-  // Crossed price tag
-  const crossedTag = document.createElement("span");
-  crossedTag.appendChild(document.createTextNode("10.99$ "));
-  crossedTag.classList.add("crossed-price");
-
-  price.appendChild(crossedTag);
-  price.appendChild(document.createTextNode(productPrice + "$"));
-
-  // Creating the Buttons.
-  const Buttons = document.createElement("div");
-  Buttons.classList.add("buttons");
-
-  // cart Icon
-  const cart = document.createElement("i");
-  cart.classList.add("ri-shopping-cart-fill");
-
-  // wishlist icon
-  const wishlist = document.createElement("i");
-  wishlist.classList.add("ri-heart-fill");
-
-  const addToCart = document.createElement("button");
-  addToCart.appendChild(cart);
-
-  const addToWishlist = document.createElement("button");
-  addToWishlist.className = "wishlist";
-  addToWishlist.appendChild(wishlist);
-
-  Buttons.appendChild(addToCart);
-  Buttons.appendChild(addToWishlist);
-
-  //<div class="addedToCart"><i  class="ri-box-3-fill"></i></div>
-  const addedToCartDiv = document.createElement("div");
-  addedToCartDiv.classList.add("addedToCart");
-  const boxIcon = document.createElement("i");
-  boxIcon.classList.add("ri-box-3-fill");
-  addedToCartDiv.appendChild(boxIcon);
-
-  addToCart.addEventListener("click", () => {
-    addedToCartDiv.classList.add("active");
-    addedToCartDiv.addEventListener("animationend", function () {
-      addedToCartDiv.classList.remove("active");
-    });
-
-    createProductElement(
-      productName,
-      productDescription,
-      productPrice,
-      1,
-      productImage
-    );
-  });
-
-  // Adding everything to the product List.
-  card.appendChild(image);
-  card.appendChild(header);
-  // card.appendChild(description);
-  card.appendChild(price);
-  card.appendChild(addedToCartDiv);
-  card.appendChild(Buttons);
-
-  column.appendChild(card);
-  shopSector.appendChild(column);
+function addToCart(product) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(product);
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-function renderSnacks(
+function renderProductCard(
   productImage,
   productName,
   productDescription,
-  productPrice
+  productPrice,
+  container
 ) {
-  // The container.
-  let shopSector = document.querySelector(".snacks-sector");
-
-  // the column for each card.
-  let column = document.createElement("div");
+  // Create the column for each card
+  const column = document.createElement("div");
   column.classList.add("col-sm-6", "col-md-4", "col-lg-3");
 
-  // created the container for the card
-  let card = document.createElement("div");
+  // Create the container for the card
+  const card = document.createElement("div");
   card.classList.add("cardd", "text-center", "pb-4", "mb-4");
 
-  // creating the Image
+  // Create the product image
   const image = document.createElement("img");
   image.alt = "Product";
   image.src = productImage; // Use the image path from the database
 
-  // the text Header
+  // Create the product name header
   const header = document.createElement("h1");
   header.appendChild(document.createTextNode(productName));
 
-  // const description = document.createElement("p");
-  // description.appendChild(document.createTextNode(productDescription));
-
-  // price tag
+  // Price tag
   const price = document.createElement("p");
   price.classList.add("price");
 
@@ -244,15 +134,15 @@ function renderSnacks(
   price.appendChild(crossedTag);
   price.appendChild(document.createTextNode(productPrice + "$"));
 
-  // Creating the Buttons.
+  // Create the buttons container
   const Buttons = document.createElement("div");
   Buttons.classList.add("buttons");
 
-  // cart Icon
+  // Cart icon
   const cart = document.createElement("i");
   cart.classList.add("ri-shopping-cart-fill");
 
-  // wishlist icon
+  // Wishlist icon
   const wishlist = document.createElement("i");
   wishlist.classList.add("ri-heart-fill");
 
@@ -266,7 +156,7 @@ function renderSnacks(
   Buttons.appendChild(addToCart);
   Buttons.appendChild(addToWishlist);
 
-  //<div class="addedToCart"><i  class="ri-box-3-fill"></i></div>
+  // Added to cart animation element
   const addedToCartDiv = document.createElement("div");
   addedToCartDiv.classList.add("addedToCart");
   const boxIcon = document.createElement("i");
@@ -288,138 +178,33 @@ function renderSnacks(
     );
   });
 
-  // Adding everything to the product List.
+  // Append all elements to the card
   card.appendChild(image);
   card.appendChild(header);
-  // card.appendChild(description);
   card.appendChild(price);
   card.appendChild(addedToCartDiv);
   card.appendChild(Buttons);
 
+  // Append card to the column and column to the container
   column.appendChild(card);
-  shopSector.appendChild(column);
-}
-
-function renderWearables(
-  productImage,
-  productName,
-  productDescription,
-  productPrice
-) {
-  // The container.
-  let shopSector = document.querySelector(".wearables-sector");
-
-  // the column for each card.
-  let column = document.createElement("div");
-  column.classList.add("col-sm-6", "col-md-4", "col-lg-3");
-
-  // created the container for the card
-  let card = document.createElement("div");
-  card.classList.add("cardd", "text-center", "pb-4", "mb-4");
-
-  // creating the Image
-  const image = document.createElement("img");
-  image.alt = "Product";
-  image.src = productImage; // Use the image path from the database
-
-  // the text Header
-  const header = document.createElement("h1");
-  header.appendChild(document.createTextNode(productName));
-
-  // const description = document.createElement("p");
-  // description.appendChild(document.createTextNode(productDescription));
-
-  // price tag
-  const price = document.createElement("p");
-  price.classList.add("price");
-
-  // Crossed price tag
-  const crossedTag = document.createElement("span");
-  crossedTag.appendChild(document.createTextNode("10.99$ "));
-  crossedTag.classList.add("crossed-price");
-
-  price.appendChild(crossedTag);
-  price.appendChild(document.createTextNode(productPrice + "$"));
-
-  // Creating the Buttons.
-  const Buttons = document.createElement("div");
-  Buttons.classList.add("buttons");
-
-  // cart Icon
-  const cart = document.createElement("i");
-  cart.classList.add("ri-shopping-cart-fill");
-
-  // wishlist icon
-  const wishlist = document.createElement("i");
-  wishlist.classList.add("ri-heart-fill");
-
-  const addToCart = document.createElement("button");
-  addToCart.appendChild(cart);
-
-  const addToWishlist = document.createElement("button");
-  addToWishlist.className = "wishlist";
-  addToWishlist.appendChild(wishlist);
-
-  //<div class="addedToCart"><i  class="ri-box-3-fill"></i></div>
-  const addedToCartDiv = document.createElement("div");
-  addedToCartDiv.classList.add("addedToCart");
-  const boxIcon = document.createElement("i");
-  boxIcon.classList.add("ri-box-3-fill");
-  addedToCartDiv.appendChild(boxIcon);
-
-  Buttons.appendChild(addToCart);
-  Buttons.appendChild(addToWishlist);
-
-  addToCart.addEventListener("click", () => {
-    addedToCartDiv.classList.add("active");
-    addedToCartDiv.addEventListener("animationend", function () {
-      addedToCartDiv.classList.remove("active");
-    });
-
-    createProductElement(
-      productName,
-      productDescription,
-      productPrice,
-      1,
-      productImage
-    );
-  });
-
-  // Adding everything to the product List.
-  card.appendChild(image);
-  card.appendChild(header);
-  // card.appendChild(description);
-  card.appendChild(price);
-  card.appendChild(addedToCartDiv);
-  card.appendChild(Buttons);
-
-  column.appendChild(card);
-  shopSector.appendChild(column);
+  container.appendChild(column);
 }
 
 function renderProduct(product) {
   if (product["category"] === "supplements") {
-    renderSupplements(
-      product["image_path"], // Use the correct field from the database
-      product["name"],
-      product["description"],
-      product["price"]
-    );
+    container = document.querySelector(".supplements-sector");
   } else if (product["category"] === "snacks") {
-    renderSnacks(
-      product["image_path"], // Use the correct field from the database
-      product["name"],
-      product["description"],
-      product["price"]
-    );
+    container = document.querySelector(".snacks-sector");
   } else if (product["category"] === "wearables") {
-    renderWearables(
-      product["image_path"], // Use the correct field from the database
-      product["name"],
-      product["description"],
-      product["price"]
-    );
+    container = document.querySelector(".wearables-sector");
   }
+  renderProductCard(
+    product["image_path"], // Use the correct field from the database
+    product["name"],
+    product["description"],
+    product["price"],
+    container
+  );
 }
 
 function fetchProducts() {
