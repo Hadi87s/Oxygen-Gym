@@ -13,6 +13,11 @@ if (localStorage.getItem("logout") === "shown") {
   document.getElementById("logout-link").classList.add("show");
 }
 
+document.getElementById("checkoutBtn").onclick = () => {
+  window.location.href =
+    "http://localhost/Web%20Project/Sections/checkout/checkout.html";
+};
+
 // Load cart from local storage on page load
 window.onload = () => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -92,7 +97,7 @@ function createProductElement(
 
   // Style the - button
   minusButton.style.all = "unset";
-  minusButton.style.backgroundColor = "var(--text)";
+  minusButton.style.backgroundColor = "var(--lighter-bg)";
   minusButton.style.width = "20px"; // Adjust as needed
   minusButton.style.height = "20px"; // Adjust as needed
   minusButton.style.borderRadius = "50%";
@@ -101,11 +106,14 @@ function createProductElement(
   minusButton.style.justifyContent = "center";
   minusButton.style.cursor = "pointer";
   minusButton.style.color = "var(--secondary-color)"; // Icon color
+  minusButton.style.transition = "0.2s ease-out";
   minusButton.addEventListener("mouseenter", () => {
-    minusButton.style.backgroundColor = "var(--nav-hover)";
+    minusButton.style.backgroundColor = "var(--secondary-color)";
+    minusButton.style.color = "var(--lighter-bg)";
   });
   minusButton.addEventListener("mouseleave", () => {
-    minusButton.style.backgroundColor = "var(--text)";
+    minusButton.style.backgroundColor = "var(--lighter-bg)";
+    minusButton.style.color = "var(--secondary-color)";
   });
   minusButton.addEventListener("click", () => {
     updateQuantity(productName, -1);
@@ -123,7 +131,7 @@ function createProductElement(
 
   // Style the + button
   plusButton.style.all = "unset";
-  plusButton.style.backgroundColor = "var(--text)";
+  plusButton.style.backgroundColor = "var(--lighter-bg)";
   plusButton.style.width = "20px"; // Adjust as needed
   plusButton.style.height = "20px"; // Adjust as needed
   plusButton.style.borderRadius = "50%";
@@ -132,11 +140,14 @@ function createProductElement(
   plusButton.style.justifyContent = "center";
   plusButton.style.cursor = "pointer";
   plusButton.style.color = "var(--secondary-color)"; // Icon color
+  plusButton.style.transition = "0.2s ease-out";
   plusButton.addEventListener("mouseenter", () => {
-    plusButton.style.backgroundColor = "var(--nav-hover)";
+    plusButton.style.backgroundColor = "var(--secondary-color)";
+    plusButton.style.color = "var(--lighter-bg)";
   });
   plusButton.addEventListener("mouseleave", () => {
-    plusButton.style.backgroundColor = "var(--text)";
+    plusButton.style.backgroundColor = "var(--lighter-bg)";
+    plusButton.style.color = "var(--secondary-color)";
   });
   plusButton.addEventListener("click", () => {
     updateQuantity(productName, 1);

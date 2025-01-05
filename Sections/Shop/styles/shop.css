@@ -209,7 +209,7 @@ object-fit: contain;
 .checkout button:hover {
     background-color: var(--main-color);
     color: var(--secondary-color);
-    transform: scale(1.05);
+    border: 1px solid var(--secondary-color);
 }
 
 #closeCart {
