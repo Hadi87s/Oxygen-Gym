@@ -204,7 +204,7 @@
   }
   .payment-details input:focus{
     outline: none;
-    box-shadow: 0 0 15px -8px var(--secondary-color);
+    box-shadow: 0 0 12px -3px var(--secondary-color);
   }
 
   @media (max-width:768px){
