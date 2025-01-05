@@ -46,31 +46,29 @@ if (isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['email'
 
                 // Check if the user is the admin
                 if ($dbEmail === 'admin@oxygen.com' && $password === 'admin@oxygen2') {
-                    // Redirect to the admin dashboard
-                    // Replace 'dashboard.php' with the actual link to your admin dashboard
                     header("Location: ../Dashboard/control-center.html");
                     exit();
                 } else {
-                    // Redirect regular users to the home page
                     header("Location: ./signin.html");
                     exit();
                 }
             } else {
-                // Password is incorrect
-                echo "Invalid email or password.";
+                throw new Exception("Invalid email or password.");
             }
         } else {
-            // No member found with the given email
-            echo "Invalid email or password.";
+            throw new Exception("Invalid email or password.");
         }
 
         // Close the statement and connection
         $stmt->close();
         $db->close();
     } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
+        // Redirect to an error page with the error message
+        header("Location: error.php?message=" . urlencode($e->getMessage()));
+        exit();
     }
 } else {
-    echo "Please fill in all fields.";
+    header("Location: error.php?message=" . urlencode("Please fill in all fields."));
+    exit();
 }
 ?>

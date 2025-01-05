@@ -1,10 +1,5 @@
 const userElement = document.getElementById("user-signIn");
 const userNameElement = document.getElementById("user-greeting");
-if (localStorage.getItem("fullname")) {
-  userElement.style.display = "flex";
-  userNameElement.textContent = localStorage.getItem("fullname");
-}
-
 let nav = document.querySelector("nav");
 let navElements = document.querySelector("nav ul");
 let navListElements = [...document.querySelectorAll("nav ul li a")];
@@ -12,6 +7,15 @@ let Logo = document.querySelector("nav .logo");
 const burgerList = document.querySelector("nav .hamburger svg");
 const hamburger = document.querySelector("#burgerList");
 const checkbox = hamburger.querySelector("input");
+const userIsLogged = document.getElementById("userIsLoggedIn");
+const userIsNotLogged = document.getElementById("login");
+
+if (localStorage.getItem("fullname")) {
+  userElement.style.display = "flex";
+  userNameElement.textContent = localStorage.getItem("fullname");
+  userIsLogged.style.display = "block";
+  userIsNotLogged.style.display = "none";
+}
 
 checkbox.onchange = (e) => {
   e.stopPropagation();
@@ -66,7 +70,8 @@ document.addEventListener("DOMContentLoaded", fetchUserName);
 
 document.getElementById("logout-link").addEventListener("click", function (e) {
   e.preventDefault(); // Prevent the default link behavior
-
+  userIsLogged.style.display = "none";
+  userIsNotLogged.style.display = "block";
   // Send a request to the logout endpoint
   fetch("/Web%20Project/logout.php")
     .then((response) => {
@@ -86,7 +91,7 @@ document.getElementById("logout-link").addEventListener("click", function (e) {
         localStorage.removeItem("logout");
 
         // Redirect to the home page or login page
-        window.location.href = "../../index.html"; // Change this to your desired redirect page
+        window.location.href = "http://localhost/Web%20Project/index.html"; // Change this to your desired redirect page
       } else {
         console.error("Logout failed");
       }
