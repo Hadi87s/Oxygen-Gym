@@ -513,6 +513,7 @@
 
 #addProduct:hover {
     background-color: var(--hover-clr);
+    color: var(--text-clr);
 }
 
 /* Responsive Styles */
