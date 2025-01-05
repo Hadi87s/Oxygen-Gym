@@ -18,6 +18,12 @@ document.getElementById("checkoutBtn").onclick = () => {
     "http://localhost/Web%20Project/Sections/checkout/checkout.html";
 };
 
+document.getElementById("shopNow").onclick = () => {
+  document.getElementById("discover").scrollIntoView({
+    behavior: "smooth",
+  });
+};
+
 // Load cart from local storage on page load
 window.onload = () => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];

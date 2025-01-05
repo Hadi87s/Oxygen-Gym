@@ -11,3 +11,9 @@ window.onload = function () {
 if (localStorage.getItem("logout") === "shown") {
   document.getElementById("logout-link").classList.add("show");
 }
+
+document.getElementById("scroll-button").onclick = () => {
+  document
+    .getElementById("exercises-page")
+    .scrollIntoView({ behavior: "smooth" });
+};
