@@ -1,12 +1,9 @@
 const cartBtn = document.getElementById("cartBtn");
 const cartPopup = document.getElementById("cartPopup");
 const cartProductList = document.getElementById("cartProducts");
-const addedProducts = [];
 const closeBtn = document.getElementById("closeCart");
 
 if (localStorage.getItem("fullname")) {
-  console.log(document.getElementById("user-greeting"));
-
   document.getElementById("user-greeting").textContent =
     localStorage.getItem("fullname");
   document.getElementById("user-greeting").style.display = "block";
@@ -16,29 +13,31 @@ if (localStorage.getItem("logout") === "shown") {
   document.getElementById("logout-link").classList.add("show");
 }
 
+// Load cart from local storage on page load
 window.onload = () => {
-  const cart = JSON.parse(localStorage.getItem("cart"));
-  if (cart) {
-    cart.forEach((product) => {
-      createProductElement(
-        product.productName,
-        product.description,
-        product.price,
-        product.quantity,
-        product.imageSrc
-      );
-    });
-  }
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.forEach((product) => {
+    createProductElement(
+      product.productName,
+      product.description,
+      product.price,
+      product.quantity,
+      product.imageSrc
+    );
+  });
 };
 
+// Toggle cart popup visibility
 cartBtn.addEventListener("click", (e) => {
   cartPopup.classList.toggle("show");
 });
 
+// Close cart popup
 closeBtn.addEventListener("click", () => {
   cartPopup.classList.remove("show");
 });
 
+// Function to create a product element in the cart
 function createProductElement(
   productName,
   description,
@@ -71,6 +70,8 @@ function createProductElement(
   // Create the product-price section
   const productPriceDiv = document.createElement("div");
   productPriceDiv.className = "product-price";
+
+  // Create the price paragraph
   const priceParagraph = document.createElement("p");
   priceParagraph.innerHTML = `Price: $<span>${price}</span>`;
   productPriceDiv.appendChild(priceParagraph);
@@ -78,26 +79,136 @@ function createProductElement(
   // Create the product-quantity section
   const productQuantityDiv = document.createElement("div");
   productQuantityDiv.className = "product-quantity";
-  const quantityParagraph = document.createElement("p");
-  quantityParagraph.innerHTML = `Quantity: <span>${quantity}</span>`;
+  productQuantityDiv.style.display = "flex";
+  productQuantityDiv.style.justifyContent = "space-around";
+  productQuantityDiv.style.width = "70px";
+
+  // Create the - button
+  const minusButton = document.createElement("button");
+  const minusIcon = document.createElement("i");
+  minusIcon.classList.add("ri-subtract-line"); // Remix Icon for minus
+  minusButton.appendChild(minusIcon);
+
+  // Style the - button
+  minusButton.style.all = "unset";
+  minusButton.style.backgroundColor = "var(--text)";
+  minusButton.style.width = "20px"; // Adjust as needed
+  minusButton.style.height = "20px"; // Adjust as needed
+  minusButton.style.borderRadius = "50%";
+  minusButton.style.display = "flex";
+  minusButton.style.alignItems = "center";
+  minusButton.style.justifyContent = "center";
+  minusButton.style.cursor = "pointer";
+  minusButton.style.color = "var(--secondary-color)"; // Icon color
+  minusButton.addEventListener("mouseenter", () => {
+    minusButton.style.backgroundColor = "var(--nav-hover)";
+  });
+  minusButton.addEventListener("mouseleave", () => {
+    minusButton.style.backgroundColor = "var(--text)";
+  });
+  minusButton.addEventListener("click", () => {
+    updateQuantity(productName, -1);
+  });
+
+  // Create the quantity display
+  const quantityParagraph = document.createElement("span");
+  quantityParagraph.textContent = quantity;
+
+  // Create the + button
+  const plusButton = document.createElement("button");
+  const plusIcon = document.createElement("i");
+  plusIcon.classList.add("ri-add-line"); // Remix Icon for plus
+  plusButton.appendChild(plusIcon);
+
+  // Style the + button
+  plusButton.style.all = "unset";
+  plusButton.style.backgroundColor = "var(--text)";
+  plusButton.style.width = "20px"; // Adjust as needed
+  plusButton.style.height = "20px"; // Adjust as needed
+  plusButton.style.borderRadius = "50%";
+  plusButton.style.display = "flex";
+  plusButton.style.alignItems = "center";
+  plusButton.style.justifyContent = "center";
+  plusButton.style.cursor = "pointer";
+  plusButton.style.color = "var(--secondary-color)"; // Icon color
+  plusButton.addEventListener("mouseenter", () => {
+    plusButton.style.backgroundColor = "var(--nav-hover)";
+  });
+  plusButton.addEventListener("mouseleave", () => {
+    plusButton.style.backgroundColor = "var(--text)";
+  });
+  plusButton.addEventListener("click", () => {
+    updateQuantity(productName, 1);
+  });
+
+  // Append buttons and quantity display to the quantity container
+  productQuantityDiv.appendChild(minusButton);
   productQuantityDiv.appendChild(quantityParagraph);
+  productQuantityDiv.appendChild(plusButton);
+
+  // Append the quantity container to the product-price div
+  productPriceDiv.appendChild(productQuantityDiv);
 
   // Append all sections to the main container
   boxDiv.appendChild(imageDiv);
   boxDiv.appendChild(aboutProductDiv);
   boxDiv.appendChild(productPriceDiv);
-  boxDiv.appendChild(productQuantityDiv);
 
-  // Append the main container to the body or any specific element
+  // Append the main container to the cart product list
   cartProductList.appendChild(boxDiv);
 }
 
+// Function to update the quantity of a product in the cart
+function updateQuantity(productName, change) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const productIndex = cart.findIndex((p) => p.productName === productName);
+
+  if (productIndex !== -1) {
+    // Update the quantity
+    cart[productIndex].quantity += change;
+
+    // Remove the product if the quantity reaches 0
+    if (cart[productIndex].quantity <= 0) {
+      cart.splice(productIndex, 1);
+    }
+
+    // Update local storage
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Re-render the cart
+    cartProductList.innerHTML = ""; // Clear the current list
+    cart.forEach((product) => {
+      createProductElement(
+        product.productName,
+        product.description,
+        product.price,
+        product.quantity,
+        product.imageSrc
+      );
+    });
+  }
+}
+
+// Function to add a product to the cart in local storage
 function addToCart(product) {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.push(product);
+  const existingProduct = cart.find(
+    (p) => p.productName === product.productName
+  );
+
+  if (existingProduct) {
+    // If the product already exists, increment its quantity
+    existingProduct.quantity += 1;
+  } else {
+    // If the product doesn't exist, add it to the cart
+    product.quantity = 1; // Initialize quantity to 1 for new products
+    cart.push(product);
+  }
+
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
+// Function to render a product card
 function renderProductCard(
   productImage,
   productName,
@@ -116,7 +227,7 @@ function renderProductCard(
   // Create the product image
   const image = document.createElement("img");
   image.alt = "Product";
-  image.src = productImage; // Use the image path from the database
+  image.src = productImage;
 
   // Create the product name header
   const header = document.createElement("h1");
@@ -146,14 +257,14 @@ function renderProductCard(
   const wishlist = document.createElement("i");
   wishlist.classList.add("ri-heart-fill");
 
-  const addToCart = document.createElement("button");
-  addToCart.appendChild(cart);
+  const addToCartBtn = document.createElement("button");
+  addToCartBtn.appendChild(cart);
 
   const addToWishlist = document.createElement("button");
   addToWishlist.className = "wishlist";
   addToWishlist.appendChild(wishlist);
 
-  Buttons.appendChild(addToCart);
+  Buttons.appendChild(addToCartBtn);
   Buttons.appendChild(addToWishlist);
 
   // Added to cart animation element
@@ -163,19 +274,39 @@ function renderProductCard(
   boxIcon.classList.add("ri-box-3-fill");
   addedToCartDiv.appendChild(boxIcon);
 
-  addToCart.addEventListener("click", () => {
+  // Add to cart button click event
+  addToCartBtn.addEventListener("click", () => {
+    // Trigger the animation
     addedToCartDiv.classList.add("active");
-    addedToCartDiv.addEventListener("animationend", function () {
-      addedToCartDiv.classList.remove("active");
-    });
-
-    createProductElement(
-      productName,
-      productDescription,
-      productPrice,
-      1,
-      productImage
+    addedToCartDiv.addEventListener(
+      "animationend",
+      () => {
+        addedToCartDiv.classList.remove("active");
+      },
+      { once: true }
     );
+
+    // Add the product to the cart
+    const product = {
+      productName,
+      description: productDescription,
+      price: productPrice,
+      imageSrc: productImage,
+    };
+    addToCart(product);
+
+    // Clear the cart product list and re-render it
+    cartProductList.innerHTML = ""; // Clear the current list
+    const updatedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    updatedCart.forEach((product) => {
+      createProductElement(
+        product.productName,
+        product.description,
+        product.price,
+        product.quantity,
+        product.imageSrc
+      );
+    });
   });
 
   // Append all elements to the card
@@ -190,7 +321,9 @@ function renderProductCard(
   container.appendChild(column);
 }
 
+// Function to render a product based on its category
 function renderProduct(product) {
+  let container;
   if (product["category"] === "supplements") {
     container = document.querySelector(".supplements-sector");
   } else if (product["category"] === "snacks") {
@@ -207,6 +340,7 @@ function renderProduct(product) {
   );
 }
 
+// Fetch products from the server
 function fetchProducts() {
   fetch(
     "http://localhost/Web%20Project/Sections/Shop/scripts/fetch_products.php"
