@@ -317,40 +317,54 @@ function renderProductCard(
 
   // Add to cart button click event
   addToCartBtn.addEventListener("click", () => {
-    // Trigger the animation
-    addedToCartDiv.classList.add("active");
-    addedToCartDiv.addEventListener(
-      "animationend",
-      () => {
-        addedToCartDiv.classList.remove("active");
-      },
-      { once: true }
-    );
-
-    // Add the product to the cart
-    const product = {
-      productName,
-      description: productDescription,
-      price: productPrice,
-      imageSrc: productImage,
-    };
-    addToCart(product);
-
-    // Clear the cart product list and re-render it
-    cartProductList.innerHTML = ""; // Clear the current list
-    const updatedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    updatedCart.forEach((product) => {
-      createProductElement(
-        product.productName,
-        product.description,
-        product.price,
-        product.quantity,
-        product.imageSrc
+    if (localStorage.getItem("fullname")) {
+      // Trigger the animation
+      addedToCartDiv.classList.add("active");
+      addedToCartDiv.addEventListener(
+        "animationend",
+        () => {
+          addedToCartDiv.classList.remove("active");
+        },
+        { once: true }
       );
-    });
 
-    // Update the total price display
-    updateTotalPrice();
+      // Add the product to the cart
+      const product = {
+        productName,
+        description: productDescription,
+        price: productPrice,
+        imageSrc: productImage,
+      };
+      addToCart(product);
+
+      // Clear the cart product list and re-render it
+      cartProductList.innerHTML = ""; // Clear the current list
+      const updatedCart = JSON.parse(localStorage.getItem("cart")) || [];
+      updatedCart.forEach((product) => {
+        createProductElement(
+          product.productName,
+          product.description,
+          product.price,
+          product.quantity,
+          product.imageSrc
+        );
+      });
+
+      // Update the total price display
+      updateTotalPrice();
+    } else {
+      document.querySelector(".userNotLoggedIn").style.display = "flex";
+      let timeLeft = 3;
+      const interval = setInterval(() => {
+        timeLeft--;
+        document.getElementById("timeLeft").innerHTML = timeLeft.toString();
+        if (timeLeft <= 0) {
+          clearInterval(interval);
+          window.location.href =
+            "http://localhost/Web%20Project/Sections/SignIn/signin.html";
+        }
+      }, 1000);
+    }
   });
 
   // Append all elements to the card

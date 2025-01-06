@@ -55,6 +55,8 @@
   .products-list {
     margin-bottom: 1.5rem;
     background-color: var(--main-color);
+    color: var(--secondary-color);
+    font-weight: bold;
     padding: 1rem;
     border-radius: 10px;
     overflow-y: auto;
