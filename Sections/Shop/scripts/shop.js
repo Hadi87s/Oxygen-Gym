@@ -359,6 +359,7 @@ function renderProductCard(
         timeLeft--;
         document.getElementById("timeLeft").innerHTML = timeLeft.toString();
         if (timeLeft <= 0) {
+          document.querySelector(".userNotLoggedIn").style.display = "none";
           clearInterval(interval);
           window.location.href =
             "http://localhost/Web%20Project/Sections/SignIn/signin.html";
