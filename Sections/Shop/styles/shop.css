@@ -289,6 +289,25 @@ object-fit: contain;
     fill: var(--secondary-color);
 }
 
+video {
+    max-width: 100%;
+}
+
+.checkout{
+    all: unset;
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    border-radius: 13px;
+}
+
+.checkout:hover {
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+}
+
 @keyframes box {
     0% {
         opacity: 1;
