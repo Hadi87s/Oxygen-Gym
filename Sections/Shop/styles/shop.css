@@ -266,6 +266,29 @@ object-fit: contain;
     font-weight: bold;
 }
 
+#emptyCart{
+    display: none;
+}
+#emptyCart svg {
+    fill: var(--lighter-bg);
+}
+
+#emptyCart.showCart{
+    display: block;
+}
+
+.emptyC{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.emptyC svg {
+    fill: var(--secondary-color);
+}
+
 @keyframes box {
     0% {
         opacity: 1;

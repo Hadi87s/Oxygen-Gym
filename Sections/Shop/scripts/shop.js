@@ -23,6 +23,13 @@ document.getElementById("shopNow").onclick = () => {
     behavior: "smooth",
   });
 };
+console.log(localStorage.getItem("cart").length);
+
+if (localStorage.getItem("cart").length == 2) {
+  console.log("We are here!!");
+
+  document.getElementById("emptyCart").classList.add("showCart");
+}
 
 // Load cart from local storage on page load
 window.onload = () => {
@@ -188,8 +195,8 @@ function updateQuantity(productName, change) {
     // Remove the product if the quantity reaches 0
     if (cart[productIndex].quantity <= 0) {
       cart.splice(productIndex, 1);
+      document.getElementById("emptyCart").classList.remove("showCart");
     }
-
     // Update local storage
     localStorage.setItem("cart", JSON.stringify(cart));
 
@@ -366,6 +373,7 @@ function renderProductCard(
         }
       }, 1000);
     }
+    document.getElementById("emptyCart").classList.remove("showCart");
   });
 
   // Append all elements to the card
