@@ -56,6 +56,20 @@ closeBtn.addEventListener("click", () => {
   cartPopup.classList.remove("show");
 });
 
+// Function to add a product to the wishlist in local storage
+function addToWishlist(product) {
+  const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+  const existingProduct = wishlist.find(
+    (p) => p.productName === product.productName
+  );
+
+  if (!existingProduct) {
+    // If the product doesn't exist, add it to the wishlist
+    wishlist.push(product);
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  }
+}
+
 // Function to create a product element in the cart
 function createProductElement(
   productName,
@@ -311,6 +325,31 @@ function renderProductCard(
   const addToWishlist = document.createElement("button");
   addToWishlist.className = "wishlist";
   addToWishlist.appendChild(wishlist);
+
+  addToWishlist.addEventListener("click", () => {
+    if (localStorage.getItem("fullname")) {
+      const product = {
+        productName,
+        description: productDescription,
+        price: productPrice,
+        imageSrc: productImage,
+      };
+      addToWishlist(product);
+    } else {
+      document.querySelector(".userNotLoggedIn").style.display = "flex";
+      let timeLeft = 3;
+      const interval = setInterval(() => {
+        timeLeft--;
+        document.getElementById("timeLeft").innerHTML = timeLeft.toString();
+        if (timeLeft <= 0) {
+          document.querySelector(".userNotLoggedIn").style.display = "none";
+          clearInterval(interval);
+          window.location.href =
+            "http://localhost/Web%20Project/Sections/SignIn/signin.html";
+        }
+      }, 1000);
+    }
+  });
 
   Buttons.appendChild(addToCartBtn);
   Buttons.appendChild(addToWishlist);

@@ -16,12 +16,12 @@
     justify-content: space-between;
     margin-top: 100px;
     padding: 0 0 0 20px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out !important;
 
 }
 .about:hover {
     box-shadow: 0 8px 30px var(--box-shadow);
-    transform: translateY(-5px); 
+    transform: translateY(-5px) !important; 
 }
 
 
