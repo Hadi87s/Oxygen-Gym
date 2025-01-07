@@ -19,6 +19,7 @@ main {
     border-radius: 23px;
     background-color: var(--lighter-bg);
     animation: fadeIn 0.4s ease-in-out;
+    border: 1px solid var(--main-color);
 }
 
 .instagram{
@@ -26,7 +27,7 @@ main {
     border-top-left-radius: 23px;
     border-bottom-left-radius: 23px;
     width: 100%;
-    border-bottom: 1px solid var(--secondary-color);
+    border-bottom: 1px solid var(--main-color);
     padding-bottom: 30px ;
     border-radius: 0;
 }

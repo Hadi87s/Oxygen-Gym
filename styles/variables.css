@@ -16,7 +16,9 @@
   --hover-shadow:rgba(255, 255, 255, 0.6);
   --footer-shadow:rgba(104, 15, 19, 0.5);
   --card-shadow: rgb(50 50 50 / 36%);
-  --separator-gradient:linear-gradient(90deg, #E50914, #181818);
+  --separator-gradient:linear-gradient(90deg, #E50914, #2e1b1b);
+  --separator-clr:linear-gradient(45deg, #dc143c, #cc9200);
+
 }
 
 .lightmode{
@@ -34,7 +36,9 @@
   --logo-shadow:rgba(0, 0, 0, 0.2);
   --hover-shadow:rgba(26, 26, 26, 0.2);
   --footer-shadow:rgba(189, 17, 26, 0.5);
-  --separator-gradient:linear-gradient(90deg, #E50914, #f3f3f3);
+  --separator-gradient:linear-gradient(90deg, #E50914, #f59f9f);
+  --separator-clr: linear-gradient(45deg, #dc143c, #7d6600);
+
 }
 
 

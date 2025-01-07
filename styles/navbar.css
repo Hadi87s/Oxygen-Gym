@@ -71,7 +71,7 @@ nav .logo::after {
     position: absolute !important;
     width: 3px !important;
     height: 65% !important;
-    background-color: var(--crimson-color);
+    background: var(--separator-clr);
     top: 17.5% !important;
     right: -10px !important;
     cursor: default;
@@ -90,7 +90,6 @@ nav ul {
     text-transform: uppercase;
     margin: 16px;
     padding-left: 0 !important;
-    /* align-items: center; */
 }
 
 

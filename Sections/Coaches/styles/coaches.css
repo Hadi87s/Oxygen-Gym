@@ -57,6 +57,7 @@ body {
     border-radius: 14px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-weight: bold;
   }
   
   .welcome-section button:hover {
@@ -92,6 +93,7 @@ body {
     padding: 20px;
     box-shadow: 0 4px 8px var(--card-shadow);
     transition: transform 0.3s ease, background-color 0.3s ease-out;
+    border: 2px solid var(--lighter-bg)
   }
   
   .coach-card:hover {
