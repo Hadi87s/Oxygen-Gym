@@ -46,7 +46,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['email'
 
                 // Check if the user is the admin
                 if ($dbEmail === 'admin@oxygen.com' && $password === 'admin@oxygen2') {
-                    header("Location: ../Dashboard/control-center.html");
+                    header("Location: ../Dashboard/index.html");
                     exit();
                 } else {
                     header("Location: ./signin.html");
