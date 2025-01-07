@@ -97,6 +97,7 @@ main {
     justify-content: center;
     position: relative;
     transition: all 0.2s;
+    margin: 1px;
 }
 
 
