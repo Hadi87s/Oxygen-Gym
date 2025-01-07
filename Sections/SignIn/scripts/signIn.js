@@ -1,3 +1,9 @@
+window.onload = () => {
+  if (localStorage.getItem("fullname")) {
+    window.location.href = "http://localhost/Web%20Project/index.html";
+  }
+};
+
 const swiper = new Swiper(".swiper", {
   loop: true,
   autoplay: {
