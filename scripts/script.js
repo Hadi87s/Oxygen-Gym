@@ -1,4 +1,4 @@
-AOS.init(); 
+AOS.init();
 if (localStorage.getItem("fullname")) {
   const userLogOut = document.getElementById("user-signIn");
   userLogOut.style.display = "flex";
@@ -10,6 +10,14 @@ if (localStorage.getItem("fullname")) {
 if (localStorage.getItem("logout") === "shown") {
   document.getElementById("logout-link").classList.add("show");
 }
+
+document.getElementById("logo").onclick = () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+};
 
 const build = document.querySelector(".build");
 const greatness = document.querySelector(".greatness");
@@ -39,14 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
 btn.onclick = () => {
   window.scrollTo({
     top: 986.4,
-    behavior: "smooth",
-  });
-};
-
-document.getElementById("logo").onclick = () => {
-  window.scrollTo({
-    top: 0,
-    left: 0,
     behavior: "smooth",
   });
 };

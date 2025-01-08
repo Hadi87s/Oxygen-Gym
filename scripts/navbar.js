@@ -13,9 +13,20 @@ const userIsNotLogged = document.getElementById("login");
 document.addEventListener("click", function (event) {
   const burgerList = document.getElementById("burgerList");
   const checkbox = burgerList.querySelector('input[type="checkbox"]');
+  const nav = document.querySelector("nav"); // Select the navbar
+  const themeSwitch = document.getElementById("theme-switch"); // Select the theme switch
+  const logo = document.getElementById("logo"); // Select the logo
 
-  // Check if the click is outside the navbar and the checkbox is checked
-  if (!burgerList.contains(event.target) && checkbox.checked) {
+  // Check if the click is on the theme switch or logo
+  if (themeSwitch.contains(event.target) || logo.contains(event.target)) {
+    checkbox.checked = false; // Uncheck the checkbox
+  }
+  // Check if the click is outside the navbar and not on the hamburger menu
+  else if (
+    !nav.contains(event.target) &&
+    !burgerList.contains(event.target) &&
+    checkbox.checked
+  ) {
     checkbox.checked = false; // Uncheck the checkbox
   }
 });
