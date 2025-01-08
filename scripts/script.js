@@ -1,3 +1,4 @@
+AOS.init(); 
 if (localStorage.getItem("fullname")) {
   const userLogOut = document.getElementById("user-signIn");
   userLogOut.style.display = "flex";
@@ -32,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   AOS.init({
     once: true,
     duration: 500,
-    offset: 100, // Offset for triggering animations
   });
 });
 
@@ -68,8 +68,6 @@ function handleScroll() {
 
 // Attach the scroll event
 window.addEventListener("scroll", handleScroll);
-
-AOS.init();
 
 document.getElementById("UAElearnMore").onclick = () => {
   window.open(
