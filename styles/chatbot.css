@@ -14,7 +14,6 @@
     z-index: 1000;
     transition: all 0.3s ease;
     opacity: 1;
-    z-index: 0;
 }
 
 #chat-icon:hover {
