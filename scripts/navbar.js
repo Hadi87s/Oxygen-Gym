@@ -10,6 +10,16 @@ const checkbox = hamburger.querySelector("input");
 const userIsLogged = document.getElementById("userIsLoggedIn");
 const userIsNotLogged = document.getElementById("login");
 
+document.addEventListener("click", function (event) {
+  const burgerList = document.getElementById("burgerList");
+  const checkbox = burgerList.querySelector('input[type="checkbox"]');
+
+  // Check if the click is outside the navbar and the checkbox is checked
+  if (!burgerList.contains(event.target) && checkbox.checked) {
+    checkbox.checked = false; // Uncheck the checkbox
+  }
+});
+
 if (localStorage.getItem("fullname")) {
   userElement.style.display = "flex";
   userNameElement.textContent = localStorage.getItem("fullname");
