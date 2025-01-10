@@ -76,3 +76,28 @@
       background-position: 0% 50%;
     }
   }
+
+
+  #oxyLogo {
+    position: fixed; /* Fixed position to stay in place while scrolling */
+    top: 50%; /* Center vertically */
+    left: -50%; /* Align to the left edge */
+    transform: translateY(-50%); /* Adjust vertical centering */
+    z-index: -1; /* Keep it behind other content */
+    width: 100vw; /* Make it smaller, only half the viewport width */
+    overflow: hidden; /* Hide the right half */
+    opacity: 0.08;
+}
+
+#oxyLogo svg {
+    fill: var(--text);
+    stroke: var(--text);
+    width: 100%; /* Ensure SVG scales with the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width:1000px) {
+    #oxyLogo {
+        display: none;
+    }
+}
