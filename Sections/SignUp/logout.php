@@ -22,6 +22,6 @@ if (ini_get("session.use_cookies")) {
 }
 
 // Redirect to the home page or login page
-header("Location: /Web%20Project/index.html"); // Change this to your desired redirect page
+header("Location: ./index.html"); // Change this to your desired redirect page
 exit();
 ?>
