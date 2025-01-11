@@ -1,6 +1,6 @@
 window.onload = () => {
   if (localStorage.getItem("fullname")) {
-    window.location.href = "http://localhost/Web%20Project/index.html";
+    window.location.href = "../../index.html";
   }
 };
 
