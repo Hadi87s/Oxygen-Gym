@@ -328,24 +328,10 @@ img {
     
 }
 
-
 @media (max-width:992px) {
     .popup .cart .box {
-        flex-direction: column;
-        text-align: center;
-    }
-    .popup .cart .box .about-product,
-    .popup .cart .box .product-price,
-    .popup .cart .box .product-quantity {
-        margin-bottom: 10px;
-        display: flex;
-        justify-content: space-between;
-        width: 100px;
-    }
-    
-    .popup .cart .products {
-        display: grid;
-        grid-template-columns: 1fr 1fr; 
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 @media (min-width:576px) and (max-width:992px) {

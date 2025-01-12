@@ -20,6 +20,7 @@ main {
     background-color: var(--lighter-bg);
     animation: fadeIn 0.4s ease-in-out;
     border: 1px solid var(--main-color);
+    transition: 0.3s ease-out;
 }
 
 .instagram{
@@ -36,8 +37,8 @@ main {
     display: flex;
     justify-self: flex-start;
     flex-direction: row;
-    align-items: center;
     padding: 1rem;
+    align-items: flex-start;
 }
 .instagram img{
     width: 200px;
@@ -48,7 +49,9 @@ main {
     border-radius: 50%;
     border: 3px solid var(--crimson-color);
 }
-
+.instagram .image {
+    margin-top: 30px;
+}
 .instagram .image p {
     color: var(--secondary-color);
     text-align: center;
@@ -75,7 +78,7 @@ main {
 
 .instagram .follow {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     padding: 0 1rem;
     /* margin: 25px 0; */
@@ -289,6 +292,12 @@ form .Subscribe-btn svg {
     transform: scale(0.9);
 }
 
+.about {
+    line-height: 1.6;
+    margin-left: 15px;
+    word-break: break-all;
+}
+
 
 
 @media (max-width:1440px){
@@ -311,9 +320,6 @@ form .Subscribe-btn svg {
     .Message form {
         max-width: 500px;
     }
-}
-
-@media (max-width:544px){
     .textarea{
         width: 230px;
     }
@@ -322,6 +328,7 @@ form .Subscribe-btn svg {
     }
     .instagram .profile {
         flex-direction: column;
+        align-items: center;
     }
     .instagram .profile .text{
         text-align: center;

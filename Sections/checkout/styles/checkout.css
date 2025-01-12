@@ -71,12 +71,16 @@
     border: 1px solid var(--lighter-bg);
     background-color: var(--third);
   }
+  .product-item:last-child {
+    margin-bottom: 0;
+  }
   
   .product-item img {
-    width: 80px;
+    max-width: 100%;
     height: 80px;
     border-radius: 10px;
     margin-right: 1rem;
+    object-fit: cover;
   }
   
   .product-details {
@@ -164,14 +168,13 @@
   
   .shipping-method input {
     margin-right: 0.5rem;
-    appearance: none;
-    width: 16px;
-    height: 16px;
     border: 2px solid var(--text);
     border-radius: 50%;
     cursor: pointer;
+    /* appearance:var(--crimson-color); */
+    accent-color: var(--crimson-shadow)
   }
-  
+
   .shipping-method input:checked {
     background-color: var(--crimson-color);
     border-color: var(--crimson-color);

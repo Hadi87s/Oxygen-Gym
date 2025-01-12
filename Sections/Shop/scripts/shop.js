@@ -247,7 +247,7 @@ function calculateTotalPrice() {
 function updateTotalPrice() {
   const totalPriceElement = document.getElementById("totalPrice");
   if (totalPriceElement) {
-    totalPriceElement.innerText = calculateTotalPrice();
+    totalPriceElement.innerText = calculateTotalPrice() + "$";
   }
 }
 
