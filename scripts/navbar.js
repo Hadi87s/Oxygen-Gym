@@ -94,7 +94,7 @@ document.getElementById("logout-link").addEventListener("click", function (e) {
   userIsLogged.style.display = "none";
   userIsNotLogged.style.display = "block";
   // Send a request to the logout endpoint
-  fetch("/Web%20Project/logout.php")
+  fetch("/Oxygen-Gym/logout.php")
     .then((response) => {
       if (response.ok) {
         // Clear the user's name from local storage
@@ -112,7 +112,7 @@ document.getElementById("logout-link").addEventListener("click", function (e) {
         localStorage.removeItem("logout");
 
         // Redirect to the home page or login page
-        window.location.href = "http://localhost/Web%20Project/index.html"; // Change this to your desired redirect page
+        window.location.href = "http://localhost/Oxygen-Gym/index.html";
       } else {
         console.error("Logout failed");
       }

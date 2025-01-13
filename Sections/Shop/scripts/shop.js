@@ -14,8 +14,7 @@ if (localStorage.getItem("logout") === "shown") {
 }
 
 document.getElementById("checkoutBtn").onclick = () => {
-  window.location.href =
-    "http://localhost/Web%20Project/Sections/checkout/checkout.html";
+  window.location.href = "../checkout/checkout.html";
 };
 
 document.getElementById("shopNow").onclick = () => {
@@ -345,7 +344,7 @@ function renderProductCard(
           document.querySelector(".userNotLoggedIn").style.display = "none";
           clearInterval(interval);
           window.location.href =
-            "http://localhost/Web%20Project/Sections/SignIn/signin.html";
+            "http://localhost/Oxygen-Gym/Sections/SignIn/signin.html";
         }
       }, 1000);
     }
@@ -408,7 +407,7 @@ function renderProductCard(
           document.querySelector(".userNotLoggedIn").style.display = "none";
           clearInterval(interval);
           window.location.href =
-            "http://localhost/Web%20Project/Sections/SignIn/signin.html";
+            "http://localhost/Oxygen-Gym/Sections/SignIn/signin.html";
         }
       }, 1000);
     }
@@ -448,9 +447,7 @@ function renderProduct(product) {
 
 // Fetch products from the server
 function fetchProducts() {
-  fetch(
-    "http://localhost/Web%20Project/Sections/Shop/scripts/fetch_products.php"
-  )
+  fetch("../../fetch_products.php")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Failed to fetch products");
