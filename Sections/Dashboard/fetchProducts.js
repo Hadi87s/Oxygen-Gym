@@ -78,14 +78,11 @@ function createProductCard(product) {
 }
 
 function renderProduct(product) {
-  console.log(product);
   createProductCard(product);
 }
 
 function fetchProducts() {
-  fetch(
-    "http://localhost/Web%20Project/Sections/Shop/scripts/fetch_products.php"
-  )
+  fetch("http://localhost/Oxygen-Gym/Sections/Shop/scripts/fetch_products.php")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Failed to fetch products");
