@@ -1,6 +1,6 @@
 ﻿# Oxygen Gym Website
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0LLAJfMO0DY" frameborder="0" allowfullscreen></iframe>
+[**Watch the website's Demo here**](https://youtu.be/0LLAJfMO0DY)
 
 ## Overview
 
