@@ -28,6 +28,7 @@
     text-align: start;
     line-height: 24px;
     color: var(--text);
+    word-break: break-all;
 }
 
 
@@ -37,6 +38,7 @@
     }
     .container .pricing p {
         line-height: 17px;
+        /* word-break: break-all; */
     }
     .bCard {
         width: 300px;
