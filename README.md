@@ -125,7 +125,6 @@ _Add your screenshots here._
 - **Frontend**: HTML, CSS (Bootstrap), JavaScript
 - **Backend**: PHP
 - **Database**: MySQL
-- **Authentication**: Firebase
 
 ---
 
