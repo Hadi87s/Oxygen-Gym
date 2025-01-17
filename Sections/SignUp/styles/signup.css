@@ -224,6 +224,7 @@ body {
     .signup-container{
         width: 90%;
         height: auto;
+        margin-top: 270px;
     }
     .signup-image {
         /* display: none; */
@@ -232,7 +233,7 @@ body {
     .signup-image img {
         max-width: 100%;
         height: auto;
-        /* aspect-ratio: 16 / 9; */
+        aspect-ratio: 16 / 9;
         object-fit: cover;
     }
     .signup-wrapper{
