@@ -138,16 +138,8 @@ _Add your screenshots here._
 
 ### Step 2: Configure Database
 
-1. Open phpMyAdmin and create a database named `oxygen_shop`.
-2. Run the following SQL query to create the `products` table:
-   ```sql
-   CREATE TABLE products (
-       id INT AUTO_INCREMENT PRIMARY KEY,
-       name VARCHAR(255) NOT NULL,
-       description TEXT NOT NULL,
-       price DECIMAL(10, 2) NOT NULL,
-       category ENUM('supplements', 'snacks', 'wearables') NOT NULL,
-       image_path VARCHAR(255) NOT NULL,
-       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-   );
-   ```
+1. Open the database folder, reach to oxygen_shop.sql and open it.
+2. Import the database on your MySQL server.
+3. if the import didn't work, open the file and copy the content.
+4. create a new database with the same name in the file.
+5. paste the code in the database's CLI and press CTRL + Enter to execute.
